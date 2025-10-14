@@ -1,0 +1,346 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7112
+load:0x40078000,len:15624
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (29) boot: ESP-IDF v5.1.4 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 14 2025 16:29:46[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (34) boot: chip revision: v3.1[0m
+[0;32mI (37) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (42) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (51) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (60) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (67) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (82) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (94) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=09f3ch ( 40764) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=00019f64 vaddr=3ffb0000 size=02160h (  8544) load[0m
+[0;32mI (121) esp_image: segment 2: paddr=0001c0cc vaddr=40080000 size=03f4ch ( 16204) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=15554h ( 87380) map[0m
+[0;32mI (163) esp_image: segment 4: paddr=0003557c vaddr=40083f4c size=08154h ( 33108) load[0m
+[0;32mI (183) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (183) boot: Disabling RNG early entropy source...[0m
+[0;32mI (195) cpu_start: Multicore app[0m
+[0;32mI (195) cpu_start: Pro cpu up.[0m
+[0;32mI (195) cpu_start: Starting app cpu, entry point is 0x400810f4[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (213) cpu_start: Pro cpu start user code[0m
+[0;32mI (213) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (213) cpu_start: Application information:[0m
+[0;32mI (218) cpu_start: Project name:     proyecto_riego[0m
+[0;32mI (223) cpu_start: App version:      1[0m
+[0;32mI (228) cpu_start: Compile time:     Oct 14 2025 16:28:39[0m
+[0;32mI (234) cpu_start: ELF file SHA256:  f4a71ab58b70e36e...[0m
+[0;32mI (240) cpu_start: ESP-IDF:          v5.1.4[0m
+[0;32mI (245) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (249) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (254) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (259) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (266) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (272) heap_init: At 3FFB29E8 len 0002D618 (181 KiB): DRAM[0m
+[0;32mI (278) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (285) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (291) heap_init: At 4008C0A0 len 00013F60 (79 KiB): IRAM[0m
+[0;32mI (299) spi_flash: detected chip: generic[0m
+[0;32mI (302) spi_flash: flash io: dio[0m
+[0;33mW (306) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (319) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (328) app_start: Starting scheduler on CPU0[0m
+[0;32mI (333) app_start: Starting scheduler on CPU1[0m
+[0;32mI (333) main_task: Started on CPU0[0m
+[0;32mI (343) main_task: Calling app_main()[0m
+[0;32mI (343) example:  Example configured to blink GPIO LED![0m
+[0;32mI (343) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (353) example:  Configurando bomba...[0m
+[0;32mI (363) gpio: GPIO[15]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (373) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (1383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (2383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (3383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (4383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (5383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (6383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (7383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 0
+[0;32mI (8383) example:  Valor bajo[0m
+[0;32mI (8383) example:  Bomba Encendida[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (9383) example:  Valor medio[0m
+[0;32mI (9383) example:  Bomba Apagada[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (10383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (11383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 999
+[0;32mI (12383) example:  Valor bajo[0m
+[0;32mI (12383) example:  Bomba Encendida[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 999
+[0;32mI (13383) example:  Valor bajo[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 9999
+[0;32mI (14383) example:  Valor medio[0m
+[0;32mI (14383) example:  Bomba Apagada[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (15383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (16383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (17383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (18383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (19383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (20383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (21383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (22383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (23383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (24383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (25383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (26383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 0
+[0;32mI (27383) example:  Valor bajo[0m
+[0;32mI (27383) example:  Bomba Encendida[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (28383) example:  Valor medio[0m
+[0;32mI (28383) example:  Bomba Apagada[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (29383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (30383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (31383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (32383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 2147483647
+[0;32mI (33383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 2147483647
+[0;32mI (34383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 2147483647
+[0;32mI (35383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 2147483647
+[0;32mI (36383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 2147483647
+[0;32mI (37383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 2147483647
+[0;32mI (38383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 2147483647
+[0;32mI (39383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 2147483647
+[0;32mI (40383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (41383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (42383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (43383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (44383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (45383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (46383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 999
+[0;32mI (47383) example:  Valor bajo[0m
+[0;32mI (47383) example:  Bomba Encendida[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 99999
+[0;32mI (48383) example:  Valor medio[0m
+[0;32mI (48383) example:  Bomba Apagada[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 2147483647
+[0;32mI (49383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 2147483647
+[0;32mI (50383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 9
+[0;32mI (51383) example:  Valor bajo[0m
+[0;32mI (51383) example:  Bomba Encendida[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 99
+[0;32mI (52383) example:  Valor bajo[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 9999
+[0;32mI (53383) example:  Valor medio[0m
+[0;32mI (53383) example:  Bomba Apagada[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 99
+[0;32mI (54383) example:  Valor bajo[0m
+[0;32mI (54383) example:  Bomba Encendida[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 9
+[0;32mI (55383) example:  Valor bajo[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 9
+[0;32mI (56383) example:  Valor bajo[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 9
+[0;32mI (57383) example:  Valor bajo[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 9
+[0;32mI (58383) example:  Valor bajo[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (59383) example:  Valor medio[0m
+[0;32mI (59383) example:  Bomba Apagada[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (60383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (61383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (62383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (63383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (64383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (65383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 999
+[0;32mI (66383) example:  Valor bajo[0m
+[0;32mI (66383) example:  Bomba Encendida[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (67383) example:  Valor medio[0m
+[0;32mI (67383) example:  Bomba Apagada[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (68383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (69383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (70383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (71383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (72383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (73383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 9999
+[0;32mI (74383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (75383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (76383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (77383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (78383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (79383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (80383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 99999
+[0;32mI (81383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (82383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (83383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (84383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 99
+[0;32mI (85383) example:  Valor bajo[0m
+[0;32mI (85383) example:  Bomba Encendida[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 9999
+[0;32mI (86383) example:  Valor medio[0m
+[0;32mI (86383) example:  Bomba Apagada[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (87383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (88383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 999999
+[0;32mI (89383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (90383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (91383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (92383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 2147483647
+[0;32mI (93383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (94383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (95383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (96383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (97383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (98383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 99999
+[0;32mI (99383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (100383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 99999
+[0;32mI (101383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 2147483647
+[0;32mI (102383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (103383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (104383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (105383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (106383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (107383) example:  Valor medio[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 0
+[0;32mI (108383) example:  Valor bajo[0m
+[0;32mI (108383) example:  Bomba Encendida[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 0
+[0;32mI (109383) example:  Valor bajo[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: [0;32mI (110383) example:  Valor medio[0m
+[0;32mI (110383) example:  Bomba Apagada[0m
+
+--- Ingrese nuevo valor para RANGO_HUMEDAD: Nuevo rango establecido: 0
+[0;32mI (111383) example:  Valor bajo[0m
+[0;32mI (111383) example:  Bomba Encendida[0m
