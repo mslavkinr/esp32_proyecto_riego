@@ -17,16 +17,6 @@
 #define WAIT_TIME 5000
 #define RIEGO_TIME 2000
 
-
-static const char *TAG = "example";
-
-
-void logi(const char *texto)
-{
-  ESP_LOGI(TAG," %s", texto);
-}
-
-
 void configure_led(void)
 {
   logi("Example configured to blink GPIO LED!");
