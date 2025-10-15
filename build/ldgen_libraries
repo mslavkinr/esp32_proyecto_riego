@@ -60,4 +60,4 @@
 /home/mslavkin/esp/proyecto_riego/build/esp-idf/spiffs/libspiffs.a
 /home/mslavkin/esp/proyecto_riego/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 /home/mslavkin/esp/proyecto_riego/build/esp-idf/espressif__led_strip/libespressif__led_strip.a
-/home/mslavkin/esp/proyecto_riego/build/esp-idf/main/libmain.a
+/home/mslavkin/esp/proyecto_riego/build/esp-idf/main_code/libmain_code.a

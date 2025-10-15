@@ -1,0 +1,778 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7112
+load:0x40078000,len:15624
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (29) boot: ESP-IDF v5.1.4 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Oct 15 2025 11:21:07[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (34) boot: chip revision: v3.1[0m
+[0;32mI (37) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (42) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (47) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (51) boot: Enabling RNG early entropy source...[0m
+[0;32mI (57) boot: Partition Table:[0m
+[0;32mI (60) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (67) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (82) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (90) boot: End of partition table[0m
+[0;32mI (94) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0a0bch ( 41148) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=0001a0e4 vaddr=3ffb0000 size=02160h (  8544) load[0m
+[0;32mI (121) esp_image: segment 2: paddr=0001c24c vaddr=40080000 size=03dcch ( 15820) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=15910h ( 88336) map[0m
+[0;32mI (164) esp_image: segment 4: paddr=00035938 vaddr=40083dcc size=082d4h ( 33492) load[0m
+[0;32mI (184) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (184) boot: Disabling RNG early entropy source...[0m
+[0;32mI (195) cpu_start: Multicore app[0m
+[0;32mI (196) cpu_start: Pro cpu up.[0m
+[0;32mI (196) cpu_start: Starting app cpu, entry point is 0x400810f4[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (214) cpu_start: Pro cpu start user code[0m
+[0;32mI (214) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (214) cpu_start: Application information:[0m
+[0;32mI (218) cpu_start: Project name:     proyecto_riego[0m
+[0;32mI (224) cpu_start: App version:      4176f3a-dirty[0m
+[0;32mI (229) cpu_start: Compile time:     Oct 15 2025 11:20:58[0m
+[0;32mI (236) cpu_start: ELF file SHA256:  a26027423ca11ee5...[0m
+[0;32mI (242) cpu_start: ESP-IDF:          v5.1.4[0m
+[0;32mI (246) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (251) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (256) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (261) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (268) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (274) heap_init: At 3FFB29F0 len 0002D610 (181 KiB): DRAM[0m
+[0;32mI (280) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (287) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (293) heap_init: At 4008C0A0 len 00013F60 (79 KiB): IRAM[0m
+[0;32mI (301) spi_flash: detected chip: generic[0m
+[0;32mI (304) spi_flash: flash io: dio[0m
+[0;33mW (308) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (321) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (330) app_start: Starting scheduler on CPU0[0m
+[0;32mI (334) app_start: Starting scheduler on CPU1[0m
+[0;32mI (334) main_task: Started on CPU0[0m
+[0;32mI (344) main_task: Calling app_main()[0m
+[0;32mI (344) example:  Example configured to blink GPIO LED![0m
+[0;32mI (344) gpio: GPIO[33]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (354) example:  Configurando bomba...[0m
+[0;32mI (364) gpio: GPIO[15]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (374) example: adc raw 268![0m
+[0;32mI (374) example:  Valor bajo[0m
+[0;32mI (374) example:  Bomba Encendida[0m
+[0;32mI (1384) example: adc raw 357![0m
+[0;32mI (1384) example:  Valor bajo[0m
+[0;32mI (2384) example: adc raw 353![0m
+[0;32mI (2384) example:  Valor bajo[0m
+[0;32mI (2384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (3384) example: adc raw 357![0m
+[0;32mI (3384) example:  Valor bajo[0m
+[0;32mI (4384) example: adc raw 353![0m
+[0;32mI (4384) example:  Valor bajo[0m
+[0;32mI (5384) example: adc raw 355![0m
+[0;32mI (5384) example:  Valor bajo[0m
+[0;32mI (6384) example: adc raw 363![0m
+[0;32mI (6384) example:  Valor bajo[0m
+[0;32mI (7384) example: adc raw 356![0m
+[0;32mI (7384) example:  Valor bajo[0m
+[0;32mI (7384) example:  Tiempo de espera terminado[0m
+[0;32mI (8384) example: adc raw 353![0m
+[0;32mI (8384) example:  Valor bajo[0m
+[0;32mI (8384) example:  Bomba Encendida[0m
+[0;32mI (9384) example: adc raw 357![0m
+[0;32mI (9384) example:  Valor bajo[0m
+[0;32mI (10384) example: adc raw 357![0m
+[0;32mI (10384) example:  Valor bajo[0m
+[0;32mI (10384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (11384) example: adc raw 358![0m
+[0;32mI (11384) example:  Valor bajo[0m
+[0;32mI (12384) example: adc raw 360![0m
+[0;32mI (12384) example:  Valor bajo[0m
+[0;32mI (13384) example: adc raw 364![0m
+[0;32mI (13384) example:  Valor bajo[0m
+[0;32mI (14384) example: adc raw 362![0m
+[0;32mI (14384) example:  Valor bajo[0m
+[0;32mI (15384) example: adc raw 365![0m
+[0;32mI (15384) example:  Valor bajo[0m
+[0;32mI (15384) example:  Tiempo de espera terminado[0m
+[0;32mI (16384) example: adc raw 363![0m
+[0;32mI (16384) example:  Valor bajo[0m
+[0;32mI (16384) example:  Bomba Encendida[0m
+[0;32mI (17384) example: adc raw 365![0m
+[0;32mI (17384) example:  Valor bajo[0m
+[0;32mI (18384) example: adc raw 366![0m
+[0;32mI (18384) example:  Valor bajo[0m
+[0;32mI (18384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (19384) example: adc raw 367![0m
+[0;32mI (19384) example:  Valor bajo[0m
+[0;32mI (20384) example: adc raw 368![0m
+[0;32mI (20384) example:  Valor bajo[0m
+[0;32mI (21384) example: adc raw 368![0m
+[0;32mI (21384) example:  Valor bajo[0m
+[0;32mI (22384) example: adc raw 367![0m
+[0;32mI (22384) example:  Valor bajo[0m
+[0;32mI (23384) example: adc raw 366![0m
+[0;32mI (23384) example:  Valor bajo[0m
+[0;32mI (23384) example:  Tiempo de espera terminado[0m
+[0;32mI (24384) example: adc raw 368![0m
+[0;32mI (24384) example:  Valor bajo[0m
+[0;32mI (24384) example:  Bomba Encendida[0m
+[0;32mI (25384) example: adc raw 366![0m
+[0;32mI (25384) example:  Valor bajo[0m
+[0;32mI (26384) example: adc raw 363![0m
+[0;32mI (26384) example:  Valor bajo[0m
+[0;32mI (26384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (27384) example: adc raw 368![0m
+[0;32mI (27384) example:  Valor bajo[0m
+[0;32mI (28384) example: adc raw 365![0m
+[0;32mI (28384) example:  Valor bajo[0m
+[0;32mI (29384) example: adc raw 365![0m
+[0;32mI (29384) example:  Valor bajo[0m
+[0;32mI (30384) example: adc raw 365![0m
+[0;32mI (30384) example:  Valor bajo[0m
+[0;32mI (31384) example: adc raw 365![0m
+[0;32mI (31384) example:  Valor bajo[0m
+[0;32mI (31384) example:  Tiempo de espera terminado[0m
+[0;32mI (32384) example: adc raw 368![0m
+[0;32mI (32384) example:  Valor bajo[0m
+[0;32mI (32384) example:  Bomba Encendida[0m
+[0;32mI (33384) example: adc raw 368![0m
+[0;32mI (33384) example:  Valor bajo[0m
+[0;32mI (34384) example: adc raw 366![0m
+[0;32mI (34384) example:  Valor bajo[0m
+[0;32mI (34384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (35384) example: adc raw 368![0m
+[0;32mI (35384) example:  Valor bajo[0m
+[0;32mI (36384) example: adc raw 368![0m
+[0;32mI (36384) example:  Valor bajo[0m
+[0;32mI (37384) example: adc raw 363![0m
+[0;32mI (37384) example:  Valor bajo[0m
+[0;32mI (38384) example: adc raw 364![0m
+[0;32mI (38384) example:  Valor bajo[0m
+[0;32mI (39384) example: adc raw 368![0m
+[0;32mI (39384) example:  Valor bajo[0m
+[0;32mI (39384) example:  Tiempo de espera terminado[0m
+[0;32mI (40384) example: adc raw 362![0m
+[0;32mI (40384) example:  Valor bajo[0m
+[0;32mI (40384) example:  Bomba Encendida[0m
+[0;32mI (41384) example: adc raw 368![0m
+[0;32mI (41384) example:  Valor bajo[0m
+[0;32mI (42384) example: adc raw 367![0m
+[0;32mI (42384) example:  Valor bajo[0m
+[0;32mI (42384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (43384) example: adc raw 368![0m
+[0;32mI (43384) example:  Valor bajo[0m
+[0;32mI (44384) example: adc raw 368![0m
+[0;32mI (44384) example:  Valor bajo[0m
+[0;32mI (45384) example: adc raw 367![0m
+[0;32mI (45384) example:  Valor bajo[0m
+[0;32mI (46384) example: adc raw 362![0m
+[0;32mI (46384) example:  Valor bajo[0m
+[0;32mI (47384) example: adc raw 365![0m
+[0;32mI (47384) example:  Valor bajo[0m
+[0;32mI (47384) example:  Tiempo de espera terminado[0m
+[0;32mI (48384) example: adc raw 368![0m
+[0;32mI (48384) example:  Valor bajo[0m
+[0;32mI (48384) example:  Bomba Encendida[0m
+[0;32mI (49384) example: adc raw 351![0m
+[0;32mI (49384) example:  Valor bajo[0m
+[0;32mI (50384) example: adc raw 332![0m
+[0;32mI (50384) example:  Valor bajo[0m
+[0;32mI (50384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (51384) example: adc raw 358![0m
+[0;32mI (51384) example:  Valor bajo[0m
+[0;32mI (52384) example: adc raw 362![0m
+[0;32mI (52384) example:  Valor bajo[0m
+[0;32mI (53384) example: adc raw 353![0m
+[0;32mI (53384) example:  Valor bajo[0m
+[0;32mI (54384) example: adc raw 368![0m
+[0;32mI (54384) example:  Valor bajo[0m
+[0;32mI (55384) example: adc raw 366![0m
+[0;32mI (55384) example:  Valor bajo[0m
+[0;32mI (55384) example:  Tiempo de espera terminado[0m
+[0;32mI (56384) example: adc raw 359![0m
+[0;32mI (56384) example:  Valor bajo[0m
+[0;32mI (56384) example:  Bomba Encendida[0m
+[0;32mI (57384) example: adc raw 351![0m
+[0;32mI (57384) example:  Valor bajo[0m
+[0;32mI (58384) example: adc raw 368![0m
+[0;32mI (58384) example:  Valor bajo[0m
+[0;32mI (58384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (59384) example: adc raw 368![0m
+[0;32mI (59384) example:  Valor bajo[0m
+[0;32mI (60384) example: adc raw 363![0m
+[0;32mI (60384) example:  Valor bajo[0m
+[0;32mI (61384) example: adc raw 354![0m
+[0;32mI (61384) example:  Valor bajo[0m
+[0;32mI (62384) example: adc raw 353![0m
+[0;32mI (62384) example:  Valor bajo[0m
+[0;32mI (63384) example: adc raw 354![0m
+[0;32mI (63384) example:  Valor bajo[0m
+[0;32mI (63384) example:  Tiempo de espera terminado[0m
+[0;32mI (64384) example: adc raw 356![0m
+[0;32mI (64384) example:  Valor bajo[0m
+[0;32mI (64384) example:  Bomba Encendida[0m
+[0;32mI (65384) example: adc raw 358![0m
+[0;32mI (65384) example:  Valor bajo[0m
+[0;32mI (66384) example: adc raw 363![0m
+[0;32mI (66384) example:  Valor bajo[0m
+[0;32mI (66384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (67384) example: adc raw 367![0m
+[0;32mI (67384) example:  Valor bajo[0m
+[0;32mI (68384) example: adc raw 368![0m
+[0;32mI (68384) example:  Valor bajo[0m
+[0;32mI (69384) example: adc raw 366![0m
+[0;32mI (69384) example:  Valor bajo[0m
+[0;32mI (70384) example: adc raw 357![0m
+[0;32mI (70384) example:  Valor bajo[0m
+[0;32mI (71384) example: adc raw 354![0m
+[0;32mI (71384) example:  Valor bajo[0m
+[0;32mI (71384) example:  Tiempo de espera terminado[0m
+[0;32mI (72384) example: adc raw 350![0m
+[0;32mI (72384) example:  Valor bajo[0m
+[0;32mI (72384) example:  Bomba Encendida[0m
+[0;32mI (73384) example: adc raw 349![0m
+[0;32mI (73384) example:  Valor bajo[0m
+[0;32mI (74384) example: adc raw 347![0m
+[0;32mI (74384) example:  Valor bajo[0m
+[0;32mI (74384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (75384) example: adc raw 355![0m
+[0;32mI (75384) example:  Valor bajo[0m
+[0;32mI (76384) example: adc raw 359![0m
+[0;32mI (76384) example:  Valor bajo[0m
+[0;32mI (77384) example: adc raw 359![0m
+[0;32mI (77384) example:  Valor bajo[0m
+[0;32mI (78384) example: adc raw 355![0m
+[0;32mI (78384) example:  Valor bajo[0m
+[0;32mI (79384) example: adc raw 362![0m
+[0;32mI (79384) example:  Valor bajo[0m
+[0;32mI (79384) example:  Tiempo de espera terminado[0m
+[0;32mI (80384) example: adc raw 355![0m
+[0;32mI (80384) example:  Valor bajo[0m
+[0;32mI (80384) example:  Bomba Encendida[0m
+[0;32mI (81384) example: adc raw 357![0m
+[0;32mI (81384) example:  Valor bajo[0m
+[0;32mI (82384) example: adc raw 354![0m
+[0;32mI (82384) example:  Valor bajo[0m
+[0;32mI (82384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (83384) example: adc raw 359![0m
+[0;32mI (83384) example:  Valor bajo[0m
+[0;32mI (84384) example: adc raw 365![0m
+[0;32mI (84384) example:  Valor bajo[0m
+[0;32mI (85384) example: adc raw 352![0m
+[0;32mI (85384) example:  Valor bajo[0m
+[0;32mI (86384) example: adc raw 364![0m
+[0;32mI (86384) example:  Valor bajo[0m
+[0;32mI (87384) example: adc raw 356![0m
+[0;32mI (87384) example:  Valor bajo[0m
+[0;32mI (87384) example:  Tiempo de espera terminado[0m
+[0;32mI (88384) example: adc raw 358![0m
+[0;32mI (88384) example:  Valor bajo[0m
+[0;32mI (88384) example:  Bomba Encendida[0m
+[0;32mI (89384) example: adc raw 355![0m
+[0;32mI (89384) example:  Valor bajo[0m
+[0;32mI (90384) example: adc raw 356![0m
+[0;32mI (90384) example:  Valor bajo[0m
+[0;32mI (90384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (91384) example: adc raw 356![0m
+[0;32mI (91384) example:  Valor bajo[0m
+[0;32mI (92384) example: adc raw 360![0m
+[0;32mI (92384) example:  Valor bajo[0m
+[0;32mI (93384) example: adc raw 349![0m
+[0;32mI (93384) example:  Valor bajo[0m
+[0;32mI (94384) example: adc raw 354![0m
+[0;32mI (94384) example:  Valor bajo[0m
+[0;32mI (95384) example: adc raw 350![0m
+[0;32mI (95384) example:  Valor bajo[0m
+[0;32mI (95384) example:  Tiempo de espera terminado[0m
+[0;32mI (96384) example: adc raw 357![0m
+[0;32mI (96384) example:  Valor bajo[0m
+[0;32mI (96384) example:  Bomba Encendida[0m
+[0;32mI (97384) example: adc raw 350![0m
+[0;32mI (97384) example:  Valor bajo[0m
+[0;32mI (98384) example: adc raw 352![0m
+[0;32mI (98384) example:  Valor bajo[0m
+[0;32mI (98384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (99384) example: adc raw 352![0m
+[0;32mI (99384) example:  Valor bajo[0m
+[0;32mI (100384) example: adc raw 353![0m
+[0;32mI (100384) example:  Valor bajo[0m
+[0;32mI (101384) example: adc raw 354![0m
+[0;32mI (101384) example:  Valor bajo[0m
+[0;32mI (102384) example: adc raw 349![0m
+[0;32mI (102384) example:  Valor bajo[0m
+[0;32mI (103384) example: adc raw 355![0m
+[0;32mI (103384) example:  Valor bajo[0m
+[0;32mI (103384) example:  Tiempo de espera terminado[0m
+[0;32mI (104384) example: adc raw 352![0m
+[0;32mI (104384) example:  Valor bajo[0m
+[0;32mI (104384) example:  Bomba Encendida[0m
+[0;32mI (105384) example: adc raw 349![0m
+[0;32mI (105384) example:  Valor bajo[0m
+[0;32mI (106384) example: adc raw 354![0m
+[0;32mI (106384) example:  Valor bajo[0m
+[0;32mI (106384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (107384) example: adc raw 350![0m
+[0;32mI (107384) example:  Valor bajo[0m
+[0;32mI (108384) example: adc raw 356![0m
+[0;32mI (108384) example:  Valor bajo[0m
+[0;32mI (109384) example: adc raw 352![0m
+[0;32mI (109384) example:  Valor bajo[0m
+[0;32mI (110384) example: adc raw 354![0m
+[0;32mI (110384) example:  Valor bajo[0m
+[0;32mI (111384) example: adc raw 350![0m
+[0;32mI (111384) example:  Valor bajo[0m
+[0;32mI (111384) example:  Tiempo de espera terminado[0m
+[0;32mI (112384) example: adc raw 356![0m
+[0;32mI (112384) example:  Valor bajo[0m
+[0;32mI (112384) example:  Bomba Encendida[0m
+[0;32mI (113384) example: adc raw 355![0m
+[0;32mI (113384) example:  Valor bajo[0m
+[0;32mI (114384) example: adc raw 347![0m
+[0;32mI (114384) example:  Valor bajo[0m
+[0;32mI (114384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (115384) example: adc raw 349![0m
+[0;32mI (115384) example:  Valor bajo[0m
+[0;32mI (116384) example: adc raw 349![0m
+[0;32mI (116384) example:  Valor bajo[0m
+[0;32mI (117384) example: adc raw 343![0m
+[0;32mI (117384) example:  Valor bajo[0m
+[0;32mI (118384) example: adc raw 345![0m
+[0;32mI (118384) example:  Valor bajo[0m
+[0;32mI (119384) example: adc raw 343![0m
+[0;32mI (119384) example:  Valor bajo[0m
+[0;32mI (119384) example:  Tiempo de espera terminado[0m
+[0;32mI (120384) example: adc raw 343![0m
+[0;32mI (120384) example:  Valor bajo[0m
+[0;32mI (120384) example:  Bomba Encendida[0m
+[0;32mI (121384) example: adc raw 342![0m
+[0;32mI (121384) example:  Valor bajo[0m
+[0;32mI (122384) example: adc raw 347![0m
+[0;32mI (122384) example:  Valor bajo[0m
+[0;32mI (122384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (123384) example: adc raw 353![0m
+[0;32mI (123384) example:  Valor bajo[0m
+[0;32mI (124384) example: adc raw 346![0m
+[0;32mI (124384) example:  Valor bajo[0m
+[0;32mI (125384) example: adc raw 352![0m
+[0;32mI (125384) example:  Valor bajo[0m
+[0;32mI (126384) example: adc raw 355![0m
+[0;32mI (126384) example:  Valor bajo[0m
+[0;32mI (127384) example: adc raw 349![0m
+[0;32mI (127384) example:  Valor bajo[0m
+[0;32mI (127384) example:  Tiempo de espera terminado[0m
+[0;32mI (128384) example: adc raw 354![0m
+[0;32mI (128384) example:  Valor bajo[0m
+[0;32mI (128384) example:  Bomba Encendida[0m
+[0;32mI (129384) example: adc raw 348![0m
+[0;32mI (129384) example:  Valor bajo[0m
+[0;32mI (130384) example: adc raw 353![0m
+[0;32mI (130384) example:  Valor bajo[0m
+[0;32mI (130384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (131384) example: adc raw 352![0m
+[0;32mI (131384) example:  Valor bajo[0m
+[0;32mI (132384) example: adc raw 350![0m
+[0;32mI (132384) example:  Valor bajo[0m
+[0;32mI (133384) example: adc raw 353![0m
+[0;32mI (133384) example:  Valor bajo[0m
+[0;32mI (134384) example: adc raw 356![0m
+[0;32mI (134384) example:  Valor bajo[0m
+[0;32mI (135384) example: adc raw 355![0m
+[0;32mI (135384) example:  Valor bajo[0m
+[0;32mI (135384) example:  Tiempo de espera terminado[0m
+[0;32mI (136384) example: adc raw 352![0m
+[0;32mI (136384) example:  Valor bajo[0m
+[0;32mI (136384) example:  Bomba Encendida[0m
+[0;32mI (137384) example: adc raw 356![0m
+[0;32mI (137384) example:  Valor bajo[0m
+[0;32mI (138384) example: adc raw 352![0m
+[0;32mI (138384) example:  Valor bajo[0m
+[0;32mI (138384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (139384) example: adc raw 352![0m
+[0;32mI (139384) example:  Valor bajo[0m
+[0;32mI (140384) example: adc raw 359![0m
+[0;32mI (140384) example:  Valor bajo[0m
+[0;32mI (141384) example: adc raw 362![0m
+[0;32mI (141384) example:  Valor bajo[0m
+[0;32mI (142384) example: adc raw 351![0m
+[0;32mI (142384) example:  Valor bajo[0m
+[0;32mI (143384) example: adc raw 358![0m
+[0;32mI (143384) example:  Valor bajo[0m
+[0;32mI (143384) example:  Tiempo de espera terminado[0m
+[0;32mI (144384) example: adc raw 363![0m
+[0;32mI (144384) example:  Valor bajo[0m
+[0;32mI (144384) example:  Bomba Encendida[0m
+[0;32mI (145384) example: adc raw 358![0m
+[0;32mI (145384) example:  Valor bajo[0m
+[0;32mI (146384) example: adc raw 359![0m
+[0;32mI (146384) example:  Valor bajo[0m
+[0;32mI (146384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (147384) example: adc raw 353![0m
+[0;32mI (147384) example:  Valor bajo[0m
+[0;32mI (148384) example: adc raw 354![0m
+[0;32mI (148384) example:  Valor bajo[0m
+[0;32mI (149384) example: adc raw 358![0m
+[0;32mI (149384) example:  Valor bajo[0m
+[0;32mI (150384) example: adc raw 356![0m
+[0;32mI (150384) example:  Valor bajo[0m
+[0;32mI (151384) example: adc raw 356![0m
+[0;32mI (151384) example:  Valor bajo[0m
+[0;32mI (151384) example:  Tiempo de espera terminado[0m
+[0;32mI (152384) example: adc raw 353![0m
+[0;32mI (152384) example:  Valor bajo[0m
+[0;32mI (152384) example:  Bomba Encendida[0m
+[0;32mI (153384) example: adc raw 359![0m
+[0;32mI (153384) example:  Valor bajo[0m
+[0;32mI (154384) example: adc raw 358![0m
+[0;32mI (154384) example:  Valor bajo[0m
+[0;32mI (154384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (155384) example: adc raw 337![0m
+[0;32mI (155384) example:  Valor bajo[0m
+[0;32mI (156384) example: adc raw 398![0m
+[0;32mI (156384) example:  Valor bajo[0m
+[0;32mI (157384) example: adc raw 357![0m
+[0;32mI (157384) example:  Valor bajo[0m
+[0;32mI (158384) example: adc raw 363![0m
+[0;32mI (158384) example:  Valor bajo[0m
+[0;32mI (159384) example: adc raw 336![0m
+[0;32mI (159384) example:  Valor bajo[0m
+[0;32mI (159384) example:  Tiempo de espera terminado[0m
+[0;32mI (160384) example: adc raw 358![0m
+[0;32mI (160384) example:  Valor bajo[0m
+[0;32mI (160384) example:  Bomba Encendida[0m
+[0;32mI (161384) example: adc raw 351![0m
+[0;32mI (161384) example:  Valor bajo[0m
+[0;32mI (162384) example: adc raw 353![0m
+[0;32mI (162384) example:  Valor bajo[0m
+[0;32mI (162384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (163384) example: adc raw 347![0m
+[0;32mI (163384) example:  Valor bajo[0m
+[0;32mI (164384) example: adc raw 342![0m
+[0;32mI (164384) example:  Valor bajo[0m
+[0;32mI (165384) example: adc raw 358![0m
+[0;32mI (165384) example:  Valor bajo[0m
+[0;32mI (166384) example: adc raw 357![0m
+[0;32mI (166384) example:  Valor bajo[0m
+[0;32mI (167384) example: adc raw 350![0m
+[0;32mI (167384) example:  Valor bajo[0m
+[0;32mI (167384) example:  Tiempo de espera terminado[0m
+[0;32mI (168384) example: adc raw 353![0m
+[0;32mI (168384) example:  Valor bajo[0m
+[0;32mI (168384) example:  Bomba Encendida[0m
+[0;32mI (169384) example: adc raw 358![0m
+[0;32mI (169384) example:  Valor bajo[0m
+[0;32mI (170384) example: adc raw 356![0m
+[0;32mI (170384) example:  Valor bajo[0m
+[0;32mI (170384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (171384) example: adc raw 350![0m
+[0;32mI (171384) example:  Valor bajo[0m
+[0;32mI (172384) example: adc raw 350![0m
+[0;32mI (172384) example:  Valor bajo[0m
+[0;32mI (173384) example: adc raw 338![0m
+[0;32mI (173384) example:  Valor bajo[0m
+[0;32mI (174384) example: adc raw 347![0m
+[0;32mI (174384) example:  Valor bajo[0m
+[0;32mI (175384) example: adc raw 350![0m
+[0;32mI (175384) example:  Valor bajo[0m
+[0;32mI (175384) example:  Tiempo de espera terminado[0m
+[0;32mI (176384) example: adc raw 336![0m
+[0;32mI (176384) example:  Valor bajo[0m
+[0;32mI (176384) example:  Bomba Encendida[0m
+[0;32mI (177384) example: adc raw 353![0m
+[0;32mI (177384) example:  Valor bajo[0m
+[0;32mI (178384) example: adc raw 348![0m
+[0;32mI (178384) example:  Valor bajo[0m
+[0;32mI (178384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (179384) example: adc raw 385![0m
+[0;32mI (179384) example:  Valor bajo[0m
+[0;32mI (180384) example: adc raw 383![0m
+[0;32mI (180384) example:  Valor bajo[0m
+[0;32mI (181384) example: adc raw 432![0m
+[0;32mI (181384) example:  Valor bajo[0m
+[0;32mI (182384) example: adc raw 363![0m
+[0;32mI (182384) example:  Valor bajo[0m
+[0;32mI (183384) example: adc raw 355![0m
+[0;32mI (183384) example:  Valor bajo[0m
+[0;32mI (183384) example:  Tiempo de espera terminado[0m
+[0;32mI (184384) example: adc raw 363![0m
+[0;32mI (184384) example:  Valor bajo[0m
+[0;32mI (184384) example:  Bomba Encendida[0m
+[0;32mI (185384) example: adc raw 361![0m
+[0;32mI (185384) example:  Valor bajo[0m
+[0;32mI (186384) example: adc raw 380![0m
+[0;32mI (186384) example:  Valor bajo[0m
+[0;32mI (186384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (187384) example: adc raw 361![0m
+[0;32mI (187384) example:  Valor bajo[0m
+[0;32mI (188384) example: adc raw 368![0m
+[0;32mI (188384) example:  Valor bajo[0m
+[0;32mI (189384) example: adc raw 375![0m
+[0;32mI (189384) example:  Valor bajo[0m
+[0;32mI (190384) example: adc raw 370![0m
+[0;32mI (190384) example:  Valor bajo[0m
+[0;32mI (191384) example: adc raw 362![0m
+[0;32mI (191384) example:  Valor bajo[0m
+[0;32mI (191384) example:  Tiempo de espera terminado[0m
+[0;32mI (192384) example: adc raw 365![0m
+[0;32mI (192384) example:  Valor bajo[0m
+[0;32mI (192384) example:  Bomba Encendida[0m
+[0;32mI (193384) example: adc raw 368![0m
+[0;32mI (193384) example:  Valor bajo[0m
+[0;32mI (194384) example: adc raw 400![0m
+[0;32mI (194384) example:  Valor bajo[0m
+[0;32mI (194384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (195384) example: adc raw 352![0m
+[0;32mI (195384) example:  Valor bajo[0m
+[0;32mI (196384) example: adc raw 342![0m
+[0;32mI (196384) example:  Valor bajo[0m
+[0;32mI (197384) example: adc raw 352![0m
+[0;32mI (197384) example:  Valor bajo[0m
+[0;32mI (198384) example: adc raw 331![0m
+[0;32mI (198384) example:  Valor bajo[0m
+[0;32mI (199384) example: adc raw 346![0m
+[0;32mI (199384) example:  Valor bajo[0m
+[0;32mI (199384) example:  Tiempo de espera terminado[0m
+[0;32mI (200384) example: adc raw 336![0m
+[0;32mI (200384) example:  Valor bajo[0m
+[0;32mI (200384) example:  Bomba Encendida[0m
+[0;32mI (201384) example: adc raw 321![0m
+[0;32mI (201384) example:  Valor bajo[0m
+[0;32mI (202384) example: adc raw 327![0m
+[0;32mI (202384) example:  Valor bajo[0m
+[0;32mI (202384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (203384) example: adc raw 1658![0m
+[0;32mI (203384) example:  Valor medio[0m
+[0;32mI (204384) example: adc raw 2210![0m
+[0;32mI (204384) example:  Valor medio[0m
+[0;32mI (205384) example: adc raw 2160![0m
+[0;32mI (205384) example:  Valor medio[0m
+[0;32mI (206384) example: adc raw 2019![0m
+[0;32mI (206384) example:  Valor medio[0m
+[0;32mI (207384) example: adc raw 1870![0m
+[0;32mI (207384) example:  Valor medio[0m
+[0;32mI (207384) example:  Tiempo de espera terminado[0m
+[0;32mI (208384) example: adc raw 1856![0m
+[0;32mI (208384) example:  Valor medio[0m
+[0;32mI (209384) example: adc raw 1749![0m
+[0;32mI (209384) example:  Valor medio[0m
+[0;32mI (210384) example: adc raw 365![0m
+[0;32mI (210384) example:  Valor bajo[0m
+[0;32mI (210384) example:  Bomba Encendida[0m
+[0;32mI (211384) example: adc raw 355![0m
+[0;32mI (211384) example:  Valor bajo[0m
+[0;32mI (212384) example: adc raw 361![0m
+[0;32mI (212384) example:  Valor bajo[0m
+[0;32mI (212384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (213384) example: adc raw 365![0m
+[0;32mI (213384) example:  Valor bajo[0m
+[0;32mI (214384) example: adc raw 359![0m
+[0;32mI (214384) example:  Valor bajo[0m
+[0;32mI (215384) example: adc raw 378![0m
+[0;32mI (215384) example:  Valor bajo[0m
+[0;32mI (216384) example: adc raw 386![0m
+[0;32mI (216384) example:  Valor bajo[0m
+[0;32mI (217384) example: adc raw 364![0m
+[0;32mI (217384) example:  Valor bajo[0m
+[0;32mI (217384) example:  Tiempo de espera terminado[0m
+[0;32mI (218384) example: adc raw 364![0m
+[0;32mI (218384) example:  Valor bajo[0m
+[0;32mI (218384) example:  Bomba Encendida[0m
+[0;32mI (219384) example: adc raw 342![0m
+[0;32mI (219384) example:  Valor bajo[0m
+[0;32mI (220384) example: adc raw 359![0m
+[0;32mI (220384) example:  Valor bajo[0m
+[0;32mI (220384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (221384) example: adc raw 345![0m
+[0;32mI (221384) example:  Valor bajo[0m
+[0;32mI (222384) example: adc raw 367![0m
+[0;32mI (222384) example:  Valor bajo[0m
+[0;32mI (223384) example: adc raw 352![0m
+[0;32mI (223384) example:  Valor bajo[0m
+[0;32mI (224384) example: adc raw 362![0m
+[0;32mI (224384) example:  Valor bajo[0m
+[0;32mI (225384) example: adc raw 354![0m
+[0;32mI (225384) example:  Valor bajo[0m
+[0;32mI (225384) example:  Tiempo de espera terminado[0m
+[0;32mI (226384) example: adc raw 366![0m
+[0;32mI (226384) example:  Valor bajo[0m
+[0;32mI (226384) example:  Bomba Encendida[0m
+[0;32mI (227384) example: adc raw 357![0m
+[0;32mI (227384) example:  Valor bajo[0m
+[0;32mI (228384) example: adc raw 2358![0m
+[0;32mI (228384) example:  Valor medio[0m
+[0;32mI (228384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (229384) example: adc raw 350![0m
+[0;32mI (229384) example:  Valor bajo[0m
+[0;32mI (230384) example: adc raw 333![0m
+[0;32mI (230384) example:  Valor bajo[0m
+[0;32mI (231384) example: adc raw 363![0m
+[0;32mI (231384) example:  Valor bajo[0m
+[0;32mI (232384) example: adc raw 352![0m
+[0;32mI (232384) example:  Valor bajo[0m
+[0;32mI (233384) example: adc raw 789![0m
+[0;32mI (233384) example:  Valor bajo[0m
+[0;32mI (233384) example:  Tiempo de espera terminado[0m
+[0;32mI (234384) example: adc raw 511![0m
+[0;32mI (234384) example:  Valor bajo[0m
+[0;32mI (234384) example:  Bomba Encendida[0m
+[0;32mI (235384) example: adc raw 368![0m
+[0;32mI (235384) example:  Valor bajo[0m
+[0;32mI (236384) example: adc raw 362![0m
+[0;32mI (236384) example:  Valor bajo[0m
+[0;32mI (236384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (237384) example: adc raw 0![0m
+[0;32mI (237384) example:  Valor bajo[0m
+[0;32mI (238384) example: adc raw 0![0m
+[0;32mI (238384) example:  Valor bajo[0m
+[0;32mI (239384) example: adc raw 0![0m
+[0;32mI (239384) example:  Valor bajo[0m
+[0;32mI (240384) example: adc raw 0![0m
+[0;32mI (240384) example:  Valor bajo[0m
+[0;32mI (241384) example: adc raw 353![0m
+[0;32mI (241384) example:  Valor bajo[0m
+[0;32mI (241384) example:  Tiempo de espera terminado[0m
+[0;32mI (242384) example: adc raw 375![0m
+[0;32mI (242384) example:  Valor bajo[0m
+[0;32mI (242384) example:  Bomba Encendida[0m
+[0;32mI (243384) example: adc raw 1939![0m
+[0;32mI (243384) example:  Valor medio[0m
+[0;32mI (243384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (244384) example: adc raw 1042![0m
+[0;32mI (244384) example:  Valor medio[0m
+[0;32mI (245384) example: adc raw 1049![0m
+[0;32mI (245384) example:  Valor medio[0m
+[0;32mI (246384) example: adc raw 1051![0m
+[0;32mI (246384) example:  Valor medio[0m
+[0;32mI (247384) example: adc raw 1056![0m
+[0;32mI (247384) example:  Valor medio[0m
+[0;32mI (248384) example: adc raw 1088![0m
+[0;32mI (248384) example:  Valor medio[0m
+[0;32mI (248384) example:  Tiempo de espera terminado[0m
+[0;32mI (249384) example: adc raw 1054![0m
+[0;32mI (249384) example:  Valor medio[0m
+[0;32mI (250384) example: adc raw 1023![0m
+[0;32mI (250384) example:  Valor medio[0m
+[0;32mI (251384) example: adc raw 1200![0m
+[0;32mI (251384) example:  Valor medio[0m
+[0;32mI (252384) example: adc raw 1100![0m
+[0;32mI (252384) example:  Valor medio[0m
+[0;32mI (253384) example: adc raw 1054![0m
+[0;32mI (253384) example:  Valor medio[0m
+[0;32mI (254384) example: adc raw 1088![0m
+[0;32mI (254384) example:  Valor medio[0m
+[0;32mI (255384) example: adc raw 1165![0m
+[0;32mI (255384) example:  Valor medio[0m
+[0;32mI (256384) example: adc raw 1136![0m
+[0;32mI (256384) example:  Valor medio[0m
+[0;32mI (257384) example: adc raw 1168![0m
+[0;32mI (257384) example:  Valor medio[0m
+[0;32mI (258384) example: adc raw 1159![0m
+[0;32mI (258384) example:  Valor medio[0m
+[0;32mI (259384) example: adc raw 1131![0m
+[0;32mI (259384) example:  Valor medio[0m
+[0;32mI (260384) example: adc raw 1088![0m
+[0;32mI (260384) example:  Valor medio[0m
+[0;32mI (261384) example: adc raw 1155![0m
+[0;32mI (261384) example:  Valor medio[0m
+[0;32mI (262384) example: adc raw 358![0m
+[0;32mI (262384) example:  Valor bajo[0m
+[0;32mI (262384) example:  Bomba Encendida[0m
+[0;32mI (263384) example: adc raw 358![0m
+[0;32mI (263384) example:  Valor bajo[0m
+[0;32mI (264384) example: adc raw 364![0m
+[0;32mI (264384) example:  Valor bajo[0m
+[0;32mI (264384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (265384) example: adc raw 363![0m
+[0;32mI (265384) example:  Valor bajo[0m
+[0;32mI (266384) example: adc raw 365![0m
+[0;32mI (266384) example:  Valor bajo[0m
+[0;32mI (267384) example: adc raw 363![0m
+[0;32mI (267384) example:  Valor bajo[0m
+[0;32mI (268384) example: adc raw 356![0m
+[0;32mI (268384) example:  Valor bajo[0m
+[0;32mI (269384) example: adc raw 362![0m
+[0;32mI (269384) example:  Valor bajo[0m
+[0;32mI (269384) example:  Tiempo de espera terminado[0m
+[0;32mI (270384) example: adc raw 354![0m
+[0;32mI (270384) example:  Valor bajo[0m
+[0;32mI (270384) example:  Bomba Encendida[0m
+[0;32mI (271384) example: adc raw 358![0m
+[0;32mI (271384) example:  Valor bajo[0m
+[0;32mI (272384) example: adc raw 362![0m
+[0;32mI (272384) example:  Valor bajo[0m
+[0;32mI (272384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (273384) example: adc raw 357![0m
+[0;32mI (273384) example:  Valor bajo[0m
+[0;32mI (274384) example: adc raw 357![0m
+[0;32mI (274384) example:  Valor bajo[0m
+[0;32mI (275384) example: adc raw 356![0m
+[0;32mI (275384) example:  Valor bajo[0m
+[0;32mI (276384) example: adc raw 354![0m
+[0;32mI (276384) example:  Valor bajo[0m
+[0;32mI (277384) example: adc raw 357![0m
+[0;32mI (277384) example:  Valor bajo[0m
+[0;32mI (277384) example:  Tiempo de espera terminado[0m
+[0;32mI (278384) example: adc raw 356![0m
+[0;32mI (278384) example:  Valor bajo[0m
+[0;32mI (278384) example:  Bomba Encendida[0m
+[0;32mI (279384) example: adc raw 351![0m
+[0;32mI (279384) example:  Valor bajo[0m
+[0;32mI (280384) example: adc raw 362![0m
+[0;32mI (280384) example:  Valor bajo[0m
+[0;32mI (280384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (281384) example: adc raw 353![0m
+[0;32mI (281384) example:  Valor bajo[0m
+[0;32mI (282384) example: adc raw 368![0m
+[0;32mI (282384) example:  Valor bajo[0m
+[0;32mI (283384) example: adc raw 382![0m
+[0;32mI (283384) example:  Valor bajo[0m
+[0;32mI (284384) example: adc raw 3791![0m
+[0;32mI (284384) example:  Valor medio[0m
+[0;32mI (285384) example: adc raw 4095![0m
+[0;32mI (285384) example:  Valor medio[0m
+[0;32mI (285384) example:  Tiempo de espera terminado[0m
+[0;32mI (286384) example: adc raw 4095![0m
+[0;32mI (286384) example:  Valor medio[0m
+[0;32mI (287384) example: adc raw 4095![0m
+[0;32mI (287384) example:  Valor medio[0m
+[0;32mI (288384) example: adc raw 364![0m
+[0;32mI (288384) example:  Valor bajo[0m
+[0;32mI (288384) example:  Bomba Encendida[0m
+[0;32mI (289384) example: adc raw 364![0m
+[0;32mI (289384) example:  Valor bajo[0m
+[0;32mI (290384) example: adc raw 1648![0m
+[0;32mI (290384) example:  Valor medio[0m
+[0;32mI (290384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (291384) example: adc raw 1193![0m
+[0;32mI (291384) example:  Valor medio[0m
+[0;32mI (292384) example: adc raw 1283![0m
+[0;32mI (292384) example:  Valor medio[0m
+[0;32mI (293384) example: adc raw 1301![0m
+[0;32mI (293384) example:  Valor medio[0m
+[0;32mI (294384) example: adc raw 401![0m
+[0;32mI (294384) example:  Valor bajo[0m
+[0;32mI (295384) example: adc raw 368![0m
+[0;32mI (295384) example:  Valor bajo[0m
+[0;32mI (295384) example:  Tiempo de espera terminado[0m
+[0;32mI (296384) example: adc raw 366![0m
+[0;32mI (296384) example:  Valor bajo[0m
+[0;32mI (296384) example:  Bomba Encendida[0m
+[0;32mI (297384) example: adc raw 350![0m
+[0;32mI (297384) example:  Valor bajo[0m
+[0;32mI (298384) example: adc raw 355![0m
+[0;32mI (298384) example:  Valor bajo[0m
+[0;32mI (298384) example:  Bomba Apagada - Esperando[0m
+[0;32mI (299384) example: adc raw 365![0m
+[0;32mI (299384) example:  Valor bajo[0m
+[0;32mI (300384) example: adc raw 361![0m
+[0;32mI (300384) example:  Valor bajo[0m
+[0;32mI (301384) example: adc raw 361![0m
+[0;32mI (301384) example:  Valor bajo[0m
+[0;32mI (302384) example: adc raw 357![0m
+[0;32mI (302384) example:  Valor bajo[0m

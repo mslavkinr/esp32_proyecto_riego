@@ -1,0 +1,54 @@
+[0/1] Re-running CMake...
+-- Building ESP-IDF components for target esp32
+NOTICE: Processing 2 dependencies:
+NOTICE: [1/2] espressif/led_strip (2.5.5)
+NOTICE: [2/2] idf (5.1.4)
+-- Project sdkconfig file /home/mslavkin/esp/proyecto_riego/sdkconfig
+-- App "proyecto_riego" version: 4176f3a-dirty
+-- Adding linker script /home/mslavkin/esp/proyecto_riego/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_coex esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump espressif__led_strip esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main_code mbedtls mqtt newlib nvs_flash openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /home/mslavkin/esp/esp-idf/components/app_trace /home/mslavkin/esp/esp-idf/components/app_update /home/mslavkin/esp/esp-idf/components/bootloader /home/mslavkin/esp/esp-idf/components/bootloader_support /home/mslavkin/esp/esp-idf/components/bt /home/mslavkin/esp/esp-idf/components/cmock /home/mslavkin/esp/esp-idf/components/console /home/mslavkin/esp/esp-idf/components/cxx /home/mslavkin/esp/esp-idf/components/driver /home/mslavkin/esp/esp-idf/components/efuse /home/mslavkin/esp/esp-idf/components/esp-tls /home/mslavkin/esp/esp-idf/components/esp_adc /home/mslavkin/esp/esp-idf/components/esp_app_format /home/mslavkin/esp/esp-idf/components/esp_coex /home/mslavkin/esp/esp-idf/components/esp_common /home/mslavkin/esp/esp-idf/components/esp_eth /home/mslavkin/esp/esp-idf/components/esp_event /home/mslavkin/esp/esp-idf/components/esp_gdbstub /home/mslavkin/esp/esp-idf/components/esp_hid /home/mslavkin/esp/esp-idf/components/esp_http_client /home/mslavkin/esp/esp-idf/components/esp_http_server /home/mslavkin/esp/esp-idf/components/esp_https_ota /home/mslavkin/esp/esp-idf/components/esp_https_server /home/mslavkin/esp/esp-idf/components/esp_hw_support /home/mslavkin/esp/esp-idf/components/esp_lcd /home/mslavkin/esp/esp-idf/components/esp_local_ctrl /home/mslavkin/esp/esp-idf/components/esp_mm /home/mslavkin/esp/esp-idf/components/esp_netif /home/mslavkin/esp/esp-idf/components/esp_netif_stack /home/mslavkin/esp/esp-idf/components/esp_partition /home/mslavkin/esp/esp-idf/components/esp_phy /home/mslavkin/esp/esp-idf/components/esp_pm /home/mslavkin/esp/esp-idf/components/esp_psram /home/mslavkin/esp/esp-idf/components/esp_ringbuf /home/mslavkin/esp/esp-idf/components/esp_rom /home/mslavkin/esp/esp-idf/components/esp_system /home/mslavkin/esp/esp-idf/components/esp_timer /home/mslavkin/esp/esp-idf/components/esp_wifi /home/mslavkin/esp/esp-idf/components/espcoredump /home/mslavkin/esp/proyecto_riego/managed_components/espressif__led_strip /home/mslavkin/esp/esp-idf/components/esptool_py /home/mslavkin/esp/esp-idf/components/fatfs /home/mslavkin/esp/esp-idf/components/freertos /home/mslavkin/esp/esp-idf/components/hal /home/mslavkin/esp/esp-idf/components/heap /home/mslavkin/esp/esp-idf/components/http_parser /home/mslavkin/esp/esp-idf/components/idf_test /home/mslavkin/esp/esp-idf/components/ieee802154 /home/mslavkin/esp/esp-idf/components/json /home/mslavkin/esp/esp-idf/components/log /home/mslavkin/esp/esp-idf/components/lwip /home/mslavkin/esp/proyecto_riego/main_code /home/mslavkin/esp/esp-idf/components/mbedtls /home/mslavkin/esp/esp-idf/components/mqtt /home/mslavkin/esp/esp-idf/components/newlib /home/mslavkin/esp/esp-idf/components/nvs_flash /home/mslavkin/esp/esp-idf/components/openthread /home/mslavkin/esp/esp-idf/components/partition_table /home/mslavkin/esp/esp-idf/components/perfmon /home/mslavkin/esp/esp-idf/components/protobuf-c /home/mslavkin/esp/esp-idf/components/protocomm /home/mslavkin/esp/esp-idf/components/pthread /home/mslavkin/esp/esp-idf/components/sdmmc /home/mslavkin/esp/esp-idf/components/soc /home/mslavkin/esp/esp-idf/components/spi_flash /home/mslavkin/esp/esp-idf/components/spiffs /home/mslavkin/esp/esp-idf/components/tcp_transport /home/mslavkin/esp/esp-idf/components/ulp /home/mslavkin/esp/esp-idf/components/unity /home/mslavkin/esp/esp-idf/components/usb /home/mslavkin/esp/esp-idf/components/vfs /home/mslavkin/esp/esp-idf/components/wear_levelling /home/mslavkin/esp/esp-idf/components/wifi_provisioning /home/mslavkin/esp/esp-idf/components/wpa_supplicant /home/mslavkin/esp/esp-idf/components/xtensa
+-- Configuring done (4.2s)
+-- Generating done (0.3s)
+-- Build files have been written to: /home/mslavkin/esp/proyecto_riego/build
+[1/8] Performing build step for 'bootloader'
+[0/1] Re-running CMake...
+-- Building ESP-IDF components for target esp32
+-- Project sdkconfig file /home/mslavkin/esp/proyecto_riego/sdkconfig
+Compiler supported targets: xtensa-esp32-elf
+
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- App "bootloader" version: v5.1.4
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/bootloader/subproject/main/ld/esp32/bootloader.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/bootloader/subproject/main/ld/esp32/bootloader.rom.ld
+-- Components: bootloader bootloader_support efuse esp_app_format esp_common esp_hw_support esp_rom esp_system esptool_py freertos hal log main micro-ecc newlib partition_table soc spi_flash xtensa
+-- Component paths: /home/mslavkin/esp/esp-idf/components/bootloader /home/mslavkin/esp/esp-idf/components/bootloader_support /home/mslavkin/esp/esp-idf/components/efuse /home/mslavkin/esp/esp-idf/components/esp_app_format /home/mslavkin/esp/esp-idf/components/esp_common /home/mslavkin/esp/esp-idf/components/esp_hw_support /home/mslavkin/esp/esp-idf/components/esp_rom /home/mslavkin/esp/esp-idf/components/esp_system /home/mslavkin/esp/esp-idf/components/esptool_py /home/mslavkin/esp/esp-idf/components/freertos /home/mslavkin/esp/esp-idf/components/hal /home/mslavkin/esp/esp-idf/components/log /home/mslavkin/esp/esp-idf/components/bootloader/subproject/main /home/mslavkin/esp/esp-idf/components/bootloader/subproject/components/micro-ecc /home/mslavkin/esp/esp-idf/components/newlib /home/mslavkin/esp/esp-idf/components/partition_table /home/mslavkin/esp/esp-idf/components/soc /home/mslavkin/esp/esp-idf/components/spi_flash /home/mslavkin/esp/esp-idf/components/xtensa
+-- Configuring done (1.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/mslavkin/esp/proyecto_riego/build/bootloader
+[1/2] cd /home/mslavkin/esp/proyecto_riego/build/bootloader/esp-idf/esptool_py && /home/mslavkin/.espressif/python_env/idf5.1_py3.13_env/bin/python /home/mslavkin/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/mslavkin/esp/proyecto_riego/build/bootloader/bootloader.bin
+Bootloader binary size 0x6860 bytes. 0x7a0 bytes (7%) free.
+[2/8] No install step for 'bootloader'
+[3/8] Completed 'bootloader'
+[4/8] Generating ld/sections.ld
+[5/8] Linking CXX executable proyecto_riego.elf
+[6/8] Generating binary image from built executable
+esptool.py v4.10.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/mslavkin/esp/proyecto_riego/build/proyecto_riego.bin
+[7/8] cd /home/mslavkin/esp/proyecto_riego/build/esp-idf/esptool_py && /home/mslavkin/.espressif/python_env/idf5.1_py3.13_env/bin/python /home/mslavkin/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/mslavkin/esp/proyecto_riego/build/partition_table/partition-table.bin /home/mslavkin/esp/proyecto_riego/build/proyecto_riego.bin
+proyecto_riego.bin binary size 0x2dc30 bytes. Smallest app partition is 0x100000 bytes. 0xd23d0 bytes (82%) free.

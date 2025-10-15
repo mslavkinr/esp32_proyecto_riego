@@ -32,7 +32,7 @@
     "APP_PROJECT_VER_FROM_CONFIG": false,
     "APP_REPRODUCIBLE_BUILD": false,
     "APP_RETRIEVE_LEN_ELF_SHA": 16,
-    "BLINK_GPIO": 5,
+    "BLINK_GPIO": 4,
     "BLINK_LED_GPIO": true,
     "BLINK_LED_RMT": false,
     "BLINK_PERIOD": 1000,

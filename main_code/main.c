@@ -11,9 +11,11 @@
 
 
 #define RANGO_HUMEDAD 1000
-#define BLINK_GPIO CONFIG_BLINK_GPIO
-#define CONFIG_PUMP_GPIO 15
-#define CONFIG_BLINK_PERIOD 1000 // 1 segundo
+#define BLINK_GPIO 33
+#define PUMP_GPIO 15
+#define BLINK_PERIOD 1000
+#define WAIT_TIME 5000
+#define RIEGO_TIME 2000
 
 
 static const char *TAG = "example";
@@ -27,113 +29,104 @@ void logi(const char *texto)
 
 void configure_led(void)
 {
-    logi("Example configured to blink GPIO LED!");
-    gpio_reset_pin(BLINK_GPIO);
-    gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
+  logi("Example configured to blink GPIO LED!");
+  gpio_reset_pin(BLINK_GPIO);
+  gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
 }
 
 
 
 void configure_adc(void) {
-    adc2_config_channel_atten(ADC2_CHANNEL_5, ADC_ATTEN_DB_11);  
+  adc2_config_channel_atten(ADC2_CHANNEL_5, ADC_ATTEN_DB_11);  
 }
 
 void configure_pump(void)
 {
   logi("Configurando bomba...");
-  gpio_reset_pin(CONFIG_PUMP_GPIO);
-  gpio_set_direction(CONFIG_PUMP_GPIO, GPIO_MODE_OUTPUT);
-  gpio_set_level(CONFIG_PUMP_GPIO, 0);
+  gpio_reset_pin(PUMP_GPIO);
+  gpio_set_direction(PUMP_GPIO, GPIO_MODE_OUTPUT);
+  gpio_set_level(PUMP_GPIO, 0);
 }
 
 
 int read_adc(void)
 {
-    /* int adc_raw; */
- 
-    char adc_raw[20];
-    printf("\n--- Ingrese nuevo valor para RANGO_HUMEDAD: ");
-    fflush(stdout);
-    
-    if ( fgets(adc_raw, sizeof(adc_raw), stdin)!=NULL)
-    {
-      int rango_humedad = atoi(adc_raw);
-      printf("Nuevo rango establecido: %d\n", rango_humedad);
-
-    /* adc2_get_raw(ADC2_CHANNEL_5, ADC_WIDTH_BIT_12, &adc_raw); */
-    /* ESP_LOGI(TAG, "adc raw %i!", adc_raw); */
-    return rango_humedad;
-    } else
-    {
-        return RANGO_HUMEDAD;
-    }
-
+  int adc_raw;
+  adc2_get_raw(ADC2_CHANNEL_5, ADC_WIDTH_BIT_12, &adc_raw); 
+  ESP_LOGI(TAG, "adc raw %i!", adc_raw);
+  return adc_raw;
 }
 
 bool check_adc(int adc_raw)
 {
-  bool mode = false;
-  if (adc_raw < RANGO_HUMEDAD)  {
-    
+  if (adc_raw < RANGO_HUMEDAD)
+  {
     logi("Valor bajo");
-    gpio_set_level(BLINK_GPIO,0);
-    mode = true;
-    return mode;
-  } else {
-       logi("Valor medio");
-       gpio_set_level(BLINK_GPIO,1);
-       mode = false;
-       return mode;
-   }
+    gpio_set_level(BLINK_GPIO,1);
+    return true;
+  } else
+    {
+      logi("Valor medio");
+      gpio_set_level(BLINK_GPIO,0);
+      return false;
+    }
 }
 
 void control_pump(bool on)
 {
   if (on)
   {
-    gpio_set_level(CONFIG_PUMP_GPIO, 1);
+    gpio_set_level(PUMP_GPIO, 1);
   } else
     {
-      gpio_set_level(CONFIG_PUMP_GPIO, 0);
+      gpio_set_level(PUMP_GPIO, 0);
     }
 }
       
 
 void app_main(void)
 {
-    configure_led();
-    configure_adc();
-    configure_pump();
-    static bool pump_state = false;
-    static TickType_t pump_time = 0;
-
-    
-    while (1) {
+  configure_led();
+  configure_adc();
+  configure_pump();
+  static bool pump_state = false;
+  static TickType_t pump_time = 0;
+  static TickType_t waiting_time = 0;
+  static bool waiting_state = false;
+  
+    while (1)
+    {
       int valor = read_adc();
       bool bajo = check_adc(valor);
-    
-
-      if (bajo && !pump_state)
+      if (bajo && !pump_state && !waiting_state)
       {
-	gpio_set_level(CONFIG_PUMP_GPIO,  1);
 	pump_state = true;
 	control_pump(true);
 	pump_time = xTaskGetTickCount();
 	logi("Bomba Encendida");
-	
       }
-
       if (pump_state)
       {
-	  TickType_t elapsed_ms = (xTaskGetTickCount() - pump_time) * portTICK_PERIOD_MS;
-	  if (!bajo || elapsed_ms >= 5000)
-	  {
-	      control_pump(false);
-	      pump_state = false;
-	      logi ("Bomba Apagada");
-	  }
+	TickType_t elapsed_ms = (xTaskGetTickCount() - pump_time) * portTICK_PERIOD_MS;
+	if (!bajo || elapsed_ms >= RIEGO_TIME)
+	{
+	  control_pump(false);
+	  pump_state = false;
+	  waiting_state = true;
+	  waiting_time = xTaskGetTickCount();
+	  logi ("Bomba Apagada - Esperando");
+	}
       }
-        vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
       
-   }
- }
+      if (waiting_state)
+      {
+	TickType_t elapsed_ms = (xTaskGetTickCount() - waiting_time) * portTICK_PERIOD_MS;
+	if (elapsed_ms >= WAIT_TIME)
+	{
+	  waiting_state = false;
+	  logi("Tiempo de espera terminado");
+	}
+      }	
+      vTaskDelay(BLINK_PERIOD / portTICK_PERIOD_MS);      
+    }
+}
