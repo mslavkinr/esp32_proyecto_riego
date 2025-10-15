@@ -42,7 +42,7 @@ void configure_adc(void) {
 
 void configure_pump(void)
 {
-  logi("Configurando bomba...");
+  printf("Configurando bomba...\n");
   gpio_reset_pin(PUMP_GPIO);
   gpio_set_direction(PUMP_GPIO, GPIO_MODE_OUTPUT);
   gpio_set_level(PUMP_GPIO, 0);
@@ -53,7 +53,7 @@ int read_adc(void)
 {
   int adc_raw;
   adc2_get_raw(ADC2_CHANNEL_5, ADC_WIDTH_BIT_12, &adc_raw); 
-  ESP_LOGI(TAG, "adc raw %i!", adc_raw);
+  printf( "adc raw %i!\n", adc_raw);
   return adc_raw;
 }
 
@@ -61,12 +61,12 @@ bool check_adc(int adc_raw)
 {
   if (adc_raw < RANGO_HUMEDAD)
   {
-    logi("Valor bajo");
+    printf("Valor bajo\n");
     gpio_set_level(BLINK_GPIO,1);
     return true;
   } else
     {
-      logi("Valor medio");
+      printf("Valor medio\n");
       gpio_set_level(BLINK_GPIO,0);
       return false;
     }
@@ -103,7 +103,7 @@ void app_main(void)
 	pump_state = true;
 	control_pump(true);
 	pump_time = xTaskGetTickCount();
-	logi("Bomba Encendida");
+	printf("Bomba Encendida\n");
       }
       if (pump_state)
       {
@@ -114,7 +114,7 @@ void app_main(void)
 	  pump_state = false;
 	  waiting_state = true;
 	  waiting_time = xTaskGetTickCount();
-	  logi ("Bomba Apagada - Esperando");
+	  printf ("Bomba Apagada - Esperando\n");
 	}
       }
       
@@ -124,7 +124,7 @@ void app_main(void)
 	if (elapsed_ms >= WAIT_TIME)
 	{
 	  waiting_state = false;
-	  logi("Tiempo de espera terminado");
+	  printf("Tiempo de espera terminado\n");
 	}
       }	
       vTaskDelay(BLINK_PERIOD / portTICK_PERIOD_MS);      
