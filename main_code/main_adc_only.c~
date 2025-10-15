@@ -19,14 +19,15 @@
 
 void configure_led(void)
 {
-  printf("Example configured to blink GPIO LED!");
+  logi("Example configured to blink GPIO LED!");
   gpio_reset_pin(BLINK_GPIO);
   gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
 }
 
 
 
-void configure_adc(void) {
+void configure_adc(void)
+{
   adc2_config_channel_atten(ADC2_CHANNEL_5, ADC_ATTEN_DB_11);  
 }
 
@@ -52,12 +53,12 @@ bool check_adc(int adc_raw)
   if (adc_raw < RANGO_HUMEDAD)
   {
     printf("Valor bajo\n");
-    gpio_set_level(BLINK_GPIO,0);
+    gpio_set_level(BLINK_GPIO,1);
     return true;
   } else
     {
       printf("Valor medio\n");
-      gpio_set_level(BLINK_GPIO,1);
+      gpio_set_level(BLINK_GPIO,0);
       return false;
     }
 }
@@ -76,18 +77,21 @@ void control_pump(bool on)
 
 void app_main(void)
 {
-  configure_led();
-  configure_adc();
-  configure_pump();
   static bool pump_state = false;
   static TickType_t pump_time = 0;
   static TickType_t waiting_time = 0;
   static bool waiting_state = false;
+  int valor;
+  bool bajo;
   
-    while (1)
+  configure_led();
+  configure_adc();
+  configure_pump();
+  
+    while (true)
     {
-      int valor = read_adc();
-      bool bajo = check_adc(valor);
+      valor = read_adc();
+      bajo = check_adc(valor);
       if (bajo && !pump_state && !waiting_state)
       {
 	pump_state = true;
