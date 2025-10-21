@@ -1,0 +1,117 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/mslavkin/esp/station/build/bootloader/esp-idf/esptool_py && /home/mslavkin/.espressif/python_env/idf5.1_py3.13_env/bin/python /home/mslavkin/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/mslavkin/esp/station/build/bootloader/bootloader.bin
+Bootloader binary size 0x6860 bytes. 0x7a0 bytes (7%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/station_example_main.c.obj
+In file included from /home/mslavkin/esp/station/main/station_example_main.c:22:
+/home/mslavkin/esp/esp-idf/components/driver/deprecated/driver/adc.h:19:2: warning: #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively" [-Wcpp]
+   19 | #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively"
+      |  ^~~~~~~
+In file included from /home/mslavkin/esp/station/main/station_example_main.c:23:
+/home/mslavkin/esp/esp-idf/components/esp_adc/deprecated/include/esp_adc_cal.h:17:2: warning: #warning "legacy adc calibration driver is deprecated, please migrate to use esp_adc/adc_cali.h and esp_adc/adc_cali_scheme.h" [-Wcpp]
+   17 | #warning "legacy adc calibration driver is deprecated, please migrate to use esp_adc/adc_cali.h and esp_adc/adc_cali_scheme.h"
+      |  ^~~~~~~
+/home/mslavkin/esp/station/main/station_example_main.c: In function 'app_main':
+/home/mslavkin/esp/station/main/station_example_main.c:263:13: warning: unused variable 'valor' [-Wunused-variable]
+  263 |         int valor = read_adc();
+      |             ^~~~~
+/home/mslavkin/esp/station/main/station_example_main.c:257:17: warning: unused variable 'waiting_state' [-Wunused-variable]
+  257 |     static bool waiting_state = false;
+      |                 ^~~~~~~~~~~~~
+/home/mslavkin/esp/station/main/station_example_main.c:256:23: warning: unused variable 'waiting_time' [-Wunused-variable]
+  256 |     static TickType_t waiting_time = 0;
+      |                       ^~~~~~~~~~~~
+/home/mslavkin/esp/station/main/station_example_main.c:255:23: warning: unused variable 'pump_time' [-Wunused-variable]
+  255 |     static TickType_t pump_time = 0;
+      |                       ^~~~~~~~~
+/home/mslavkin/esp/station/main/station_example_main.c:254:17: warning: unused variable 'pump_state' [-Wunused-variable]
+  254 |     static bool pump_state = false;
+      |                 ^~~~~~~~~~
+/home/mslavkin/esp/station/main/station_example_main.c: At top level:
+/home/mslavkin/esp/station/main/station_example_main.c:254:17: warning: 'pump_state' defined but not used [-Wunused-variable]
+/home/mslavkin/esp/station/main/station_example_main.c:255:23: warning: 'pump_time' defined but not used [-Wunused-variable]
+  255 |     static TickType_t pump_time = 0;
+      |                       ^~~~~~~~~
+/home/mslavkin/esp/station/main/station_example_main.c:256:23: warning: 'waiting_time' defined but not used [-Wunused-variable]
+  256 |     static TickType_t waiting_time = 0;
+      |                       ^~~~~~~~~~~~
+/home/mslavkin/esp/station/main/station_example_main.c:257:17: warning: 'waiting_state' defined but not used [-Wunused-variable]
+  257 |     static bool waiting_state = false;
+      |                 ^~~~~~~~~~~~~
+[5/10] Linking C static library esp-idf/main/libmain.a
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable wifi_station.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.10.0
+Creating esp32 image...
+Merged 27 ELF sections
+Successfully created esp32 image.
+Generated /home/mslavkin/esp/station/build/wifi_station.bin
+[9/10] cd /home/mslavkin/esp/station/build/esp-idf/esptool_py && /home/mslavkin/.espressif/python_env/idf5.1_py3.13_env/bin/python /home/mslavkin/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/mslavkin/esp/station/build/partition_table/partition-table.bin /home/mslavkin/esp/station/build/wifi_station.bin
+wifi_station.bin binary size 0xbcda0 bytes. Smallest app partition is 0x100000 bytes. 0x43260 bytes (26%) free.
+[9/10] cd /home/mslavkin/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/mslavkin/esp/esp-idf -D "SERIAL_TOOL=/home/mslavkin/.espressif/python_env/idf5.1_py3.13_env/bin/python;;/home/mslavkin/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/mslavkin/esp/station/build -P /home/mslavkin/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 wifi_station.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.10.0
+Serial port /dev/ttyUSB0
+Connecting.....
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: b0:b2:1c:97:36:e0
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000ccfff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26720 bytes to 16731...
+Writing at 0x00001000... (50 %)
+Writing at 0x000076a1... (100 %)
+Wrote 26720 bytes (16731 compressed) at 0x00001000 in 0.5 seconds (effective 390.3 kbit/s)...
+Hash of data verified.
+Compressed 773536 bytes to 498232...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001bc68... (6 %)
+Writing at 0x0002471f... (9 %)
+Writing at 0x00029405... (12 %)
+Writing at 0x000319a3... (16 %)
+Writing at 0x000374a6... (19 %)
+Writing at 0x0003d1dc... (22 %)
+Writing at 0x00042d97... (25 %)
+Writing at 0x00048910... (29 %)
+Writing at 0x0004dc0e... (32 %)
+Writing at 0x0005308b... (35 %)
+Writing at 0x000585f5... (38 %)
+Writing at 0x0005d968... (41 %)
+Writing at 0x000630e7... (45 %)
+Writing at 0x000689e9... (48 %)
+Writing at 0x0006e971... (51 %)
+Writing at 0x00073d7a... (54 %)
+Writing at 0x000795df... (58 %)
+Writing at 0x0007ef60... (61 %)
+Writing at 0x000845c7... (64 %)
+Writing at 0x0008a11e... (67 %)
+Writing at 0x0008fb5d... (70 %)
+Writing at 0x00095d70... (74 %)
+Writing at 0x0009b533... (77 %)
+Writing at 0x000a4272... (80 %)
+Writing at 0x000ac32e... (83 %)
+Writing at 0x000b1c8b... (87 %)
+Writing at 0x000b9eeb... (90 %)
+Writing at 0x000bf8e5... (93 %)
+Writing at 0x000c552b... (96 %)
+Writing at 0x000ca7c6... (100 %)
+Wrote 773536 bytes (498232 compressed) at 0x00010000 in 11.8 seconds (effective 526.5 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 1198.8 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
