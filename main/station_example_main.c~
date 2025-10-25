@@ -18,7 +18,6 @@
 
 #include <stdio.h>
 #include "driver/gpio.h"
-#include "led_strip.h"
 #include "sdkconfig.h"
 #include "driver/adc.h"
 #include "esp_adc_cal.h"
@@ -84,7 +83,7 @@ void configure_led(void)
 
 
 void configure_adc(void) {
-  adc2_config_channel_atten(ADC2_CHANNEL_5, ADC_ATTEN_DB_11);  
+  adc2_config_channel_atten(ADC2_CHANNEL_0, ADC_ATTEN_DB_12);  
 }
 
 void configure_pump(void)
@@ -98,9 +97,10 @@ void configure_pump(void)
 
 int read_adc(void)
 {
+  static int i=0;
   int adc_raw;
-  adc2_get_raw(ADC2_CHANNEL_5, ADC_WIDTH_BIT_12, &adc_raw); 
-  printf( "adc raw %i!\n", adc_raw);
+  adc2_get_raw(ADC2_CHANNEL_0, ADC_WIDTH_BIT_12, &adc_raw); 
+  printf( "adc raw i: %i %d\n", i++,adc_raw);
   return adc_raw;
 }
 
@@ -109,12 +109,12 @@ bool check_adc(int adc_raw)
   if (adc_raw < RANGO_HUMEDAD)
   {
     printf("Valor bajo\n");
-    gpio_set_level(BLINK_GPIO,0);
+    //  gpio_set_level(BLINK_GPIO,0);
     return true;
   } else
     {
       printf("Valor medio\n");
-      gpio_set_level(BLINK_GPIO,1);
+      // gpio_set_level(BLINK_GPIO,1);
       return false;
     }
 }
@@ -236,13 +236,13 @@ void wifi_init_sta(void)
 
 void app_main(void)
 {
-    //Initialize NVS
-    esp_err_t ret = nvs_flash_init();
-    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-      ESP_ERROR_CHECK(nvs_flash_erase());
-      ret = nvs_flash_init();
-    }
-    ESP_ERROR_CHECK(ret);
+  //   Initialize NVS
+  esp_err_t ret = nvs_flash_init();
+  if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+    ESP_ERROR_CHECK(nvs_flash_erase());
+    ret = nvs_flash_init();
+  }
+  ESP_ERROR_CHECK(ret);
 
     ESP_LOGI(TAG, "ESP_WIFI_MODE_STA");
     wifi_init_sta();
@@ -250,49 +250,53 @@ void app_main(void)
 
     configure_led();
     configure_adc();
-    configure_pump();
+    // configure_pump();
     static bool pump_state = false;
     static TickType_t pump_time = 0;
     static TickType_t waiting_time = 0;
     static bool waiting_state = false;
+    int i = 0;
 
     while (1)
       {
+	configure_adc();
 	int valor = read_adc();
-	bool bajo = check_adc(valor);
-	if (bajo && !pump_state && !waiting_state)
-	  {
-	    pump_state = true;
-	    control_pump(true);
-	    pump_time = xTaskGetTickCount();
-	    printf("Bomba Encendida\n");
-	  }
-	if (pump_state)
-	  {
-	    TickType_t elapsed_ms = (xTaskGetTickCount() - pump_time) * portTICK_PERIOD_MS;
-	    if (!bajo || elapsed_ms >= RIEGO_TIME)
-	      {
-		control_pump(false);
-		pump_state = false;
-		waiting_state = true;
-		waiting_time = xTaskGetTickCount();
-		printf ("Bomba Apagada - Esperando\n");
-	      }
-	  }
+	/* bool bajo = check_adc(valor); */
+	/* if (bajo && !pump_state && !waiting_state) */
+	/*   { */
+	/*     pump_state = true; */
+	/*     control_pump(true); */
+	/*     pump_time = xTaskGetTickCount(); */
+	/*     printf("Bomba Encendida\n"); */
+	/*   } */
+	/* if (pump_state) */
+	/*   { */
+	/*     TickType_t elapsed_ms = (xTaskGetTickCount() - pump_time) * portTICK_PERIOD_MS; */
+	/*     if (!bajo || elapsed_ms >= RIEGO_TIME) */
+	/*       { */
+	/* 	control_pump(false); */
+	/* 	pump_state = false; */
+	/* 	waiting_state = true; */
+	/* 	waiting_time = xTaskGetTickCount(); */
+	/* 	printf ("Bomba Apagada - Esperando\n"); */
+	/*       } */
+	/*   } */
       
-	if (waiting_state)
-	  {
-	    TickType_t elapsed_ms = (xTaskGetTickCount() - waiting_time) * portTICK_PERIOD_MS;
-	    if (elapsed_ms >= WAIT_TIME)
-	      {
-		waiting_state = false;
-		printf("Tiempo de espera terminado\n");
-	      }
-	  }	
-	vTaskDelay(BLINK_PERIOD / portTICK_PERIOD_MS);      
+	/* if (waiting_state) */
+	/*   { */
+	/*     TickType_t elapsed_ms = (xTaskGetTickCount() - waiting_time) * portTICK_PERIOD_MS; */
+	/*     if (elapsed_ms >= WAIT_TIME) */
+	/*       { */
+	/* 	waiting_state = false; */
+	/* 	printf("Tiempo de espera terminado\n"); */
+	/*       } */
+	/*   }	 */
+
+	i=!i;
+	gpio_set_level(BLINK_GPIO,i);
+
+
+	vTaskDelay(BLINK_PERIOD / portTICK_PERIOD_MS);
       }
-
-
-
 }
 
