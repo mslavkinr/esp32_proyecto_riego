@@ -1,0 +1,2716 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7116
+ho 0 tail 12 room 4
+load:0x40078000,len:15624
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (33) boot: ESP-IDF v5.1.4-dirty 2nd stage bootloader[0m
+[0;32mI (33) boot: compile time Oct 20 2025 22:13:53[0m
+[0;32mI (33) boot: Multicore bootloader[0m
+[0;32mI (38) boot: chip revision: v3.1[0m
+[0;32mI (42) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (46) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (51) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (61) boot: Partition Table:[0m
+[0;32mI (64) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (72) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (79) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (86) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (94) boot: End of partition table[0m
+[0;32mI (98) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20474h (132212) map[0m
+[0;32mI (154) esp_image: segment 1: paddr=0003049c vaddr=3ffb0000 size=03bach ( 15276) load[0m
+[0;32mI (161) esp_image: segment 2: paddr=00034050 vaddr=40080000 size=0bfc8h ( 49096) load[0m
+[0;32mI (181) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=845c0h (542144) map[0m
+[0;32mI (377) esp_image: segment 4: paddr=000c45e8 vaddr=4008bfc8 size=0a16ch ( 41324) load[0m
+[0;32mI (406) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (406) boot: Disabling RNG early entropy source...[0m
+[0;32mI (417) cpu_start: Multicore app[0m
+[0;32mI (418) cpu_start: Pro cpu up.[0m
+[0;32mI (418) cpu_start: Starting app cpu, entry point is 0x40081390[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (436) cpu_start: Pro cpu start user code[0m
+[0;32mI (436) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (436) cpu_start: Application information:[0m
+[0;32mI (440) cpu_start: Project name:     wifi_station[0m
+[0;32mI (446) cpu_start: App version:      1[0m
+[0;32mI (450) cpu_start: Compile time:     Oct 20 2025 23:44:01[0m
+[0;32mI (456) cpu_start: ELF file SHA256:  a043c4a4e1fa2ecb...[0m
+[0;32mI (462) cpu_start: ESP-IDF:          v5.1.4-dirty[0m
+[0;32mI (468) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (472) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (477) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (482) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (489) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (495) heap_init: At 3FFB7C60 len 000283A0 (160 KiB): DRAM[0m
+[0;32mI (501) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (508) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (514) heap_init: At 40096134 len 00009ECC (39 KiB): IRAM[0m
+[0;32mI (522) spi_flash: detected chip: generic[0m
+[0;32mI (525) spi_flash: flash io: dio[0m
+[0;33mW (529) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (542) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (551) app_start: Starting scheduler on CPU0[0m
+[0;32mI (556) app_start: Starting scheduler on CPU1[0m
+[0;32mI (556) main_task: Started on CPU0[0m
+[0;32mI (566) main_task: Calling app_main()[0m
+[0;32mI (616) wifi:wifi driver task: 3ffbfc00, prio:23, stack:6656, core=0[0m
+[0;32mI (626) wifi:wifi firmware version: 3ce09e5[0m
+[0;32mI (636) wifi:wifi certification version: v7.0[0m
+[0;32mI (636) wifi:config NVS flash: enabled[0m
+[0;32mI (636) wifi:config nano formating: disabled[0m
+[0;32mI (636) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (636) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (646) wifi:Init management short buffer num: 32[0m
+[0;32mI (646) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (656) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (656) wifi:Init static rx buffer num: 10[0m
+[0;32mI (656) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (666) wifi_init: rx ba win: 6[0m
+[0;32mI (666) wifi_init: tcpip mbox: 32[0m
+[0;32mI (676) wifi_init: udp mbox: 6[0m
+[0;32mI (676) wifi_init: tcp mbox: 6[0m
+[0;32mI (676) wifi_init: tcp tx win: 5760[0m
+[0;32mI (686) wifi_init: tcp rx win: 5760[0m
+[0;32mI (686) wifi_init: tcp mss: 1440[0m
+[0;32mI (696) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (696) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (706) phy_init: phy_version 4791,2c4672b,Dec 20 2023,16:06:06[0m
+[0;32mI (786) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (786) wifi:enable tsf[0m
+[0;32mI (786) irrigation_system: wifi_init_sta finished.[0m
+Configurando LED
+[0;32mI (786) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (796) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1[0m
+[0;32mI (806) wifi:state: init -> auth (b0)[0m
+Configurando ADC water sensor
+Configurando ADC 1
+[0;32mI (806) wifi:state: auth -> assoc (0)[0m
+Configurando bomba 1
+[0;32mI (816) gpio: GPIO[15]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (816) wifi:state: assoc -> run (10)[0m
+[0;33mW (826) wifi:[ADDBA]rx delba, code:39, delete tid:0[0m
+[0;33mW (836) wifi:[ADDBA]rx delba, code:39, delete tid:0[0m
+Configurando ADC 2
+Configurando bomba 2
+[0;32mI (846) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+[0;32mI (926) wifi:connected with pyj, aid = 23, channel 1, 40U, bssid = 50:0f:f5:12:ce:41[0m
+[0;32mI (936) wifi:security: WPA2-PSK, phy: bgn, rssi: -72[0m
+[0;32mI (936) wifi:pm start, type: 1[0m
+
+[0;32mI (936) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (956) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+[0;32mI (1016) wifi:<ba-add>idx:0 (ifx:0, 50:0f:f5:12:ce:41), tid:0, ssn:12, winSize:64[0m
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+[0;32mI (1946) esp_netif_handlers: sta ip: 192.168.1.137, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (1946) irrigation_system: got ip:192.168.1.137[0m
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+Configurando ADC 1
+adc raw 1-2146098098
+Valor del adc 1 bajo
+Configurando ADC 2
+adc raw 2-2146098098
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw -2146098098
+No hay agua disponible
+adc water raw -2146098098
+No hay agua disponible
+INICIANDO WIFI
+[0;32mI (5566) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (5566) irrigation_system: Connected to AP[0m
+Socket created, connecting to 192.168.1.110:23000
+Socket unable to connect: errno 104
+[0;32mI (6086) irrigation_system: Stopping WiFi...[0m
+[0;32mI (6096) wifi:state: run -> init (0)[0m
+[0;32mI (6096) wifi:pm stop, total sleep time: 3835577 us / 5154163 us[0m
+
+[0;32mI (6096) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (6096) wifi:new:<1,0>, old:<1,1>, ap:<255,255>, sta:<1,1>, prof:1[0m
+[1;31mE (6106) wifi:NAN WiFi stop[0m
+[0;32mI (6106) irrigation_system: retry to connect to the AP[0m
+[0;32mI (6116) irrigation_system: connect to the AP fail[0m
+[0;32mI (6116) wifi:flush txq[0m
+[0;32mI (6126) wifi:stop sw txq[0m
+[0;32mI (6126) wifi:lmac stop hw txq[0m
+[0;32mI (6126) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+INICIANDO WIFI
+[0;32mI (11136) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (11136) wifi:enable tsf[0m
+[0;32mI (11136) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (11146) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1[0m
+[0;32mI (11156) wifi:state: init -> auth (b0)[0m
+[0;32mI (11156) wifi:state: auth -> assoc (0)[0m
+[0;32mI (11166) wifi:state: assoc -> run (10)[0m
+[0;32mI (11296) wifi:connected with pyj, aid = 23, channel 1, 40U, bssid = 50:0f:f5:12:ce:41[0m
+[0;32mI (11296) wifi:security: WPA2-PSK, phy: bgn, rssi: -73[0m
+[0;32mI (11306) wifi:pm start, type: 1[0m
+
+[0;32mI (11306) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (11336) wifi:<ba-add>idx:0 (ifx:0, 50:0f:f5:12:ce:41), tid:0, ssn:4, winSize:64[0m
+[0;32mI (12316) esp_netif_handlers: sta ip: 192.168.1.137, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (12316) irrigation_system: got ip:192.168.1.137[0m
+[0;32mI (12316) irrigation_system: Connected to AP[0m
+Socket created, connecting to 192.168.1.110:23000
+Successfully connected
+Shutting down socket
+[0;32mI (13936) irrigation_system: Stopping WiFi...[0m
+[0;32mI (13936) wifi:state: run -> init (0)[0m
+[0;32mI (13936) wifi:pm stop, total sleep time: 1810418 us / 2626704 us[0m
+
+[0;32mI (13936) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (13936) wifi:new:<1,0>, old:<1,1>, ap:<255,255>, sta:<1,1>, prof:1[0m
+[1;31mE (13946) wifi:NAN WiFi stop[0m
+[0;32mI (13946) irrigation_system: retry to connect to the AP[0m
+[0;32mI (13956) irrigation_system: connect to the AP fail[0m
+[0;32mI (13986) wifi:flush txq[0m
+[0;32mI (13986) wifi:stop sw txq[0m
+[0;32mI (13986) wifi:lmac stop hw txq[0m
+[0;32mI (13986) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+INICIANDO WIFI
+[0;32mI (18986) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (18986) wifi:enable tsf[0m
+[0;32mI (18986) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (18996) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1[0m
+[0;32mI (19006) wifi:state: init -> auth (b0)[0m
+[0;32mI (19006) wifi:state: auth -> assoc (0)[0m
+[0;32mI (19016) wifi:state: assoc -> run (10)[0m
+[0;32mI (19146) wifi:connected with pyj, aid = 23, channel 1, 40U, bssid = 50:0f:f5:12:ce:41[0m
+[0;32mI (19146) wifi:security: WPA2-PSK, phy: bgn, rssi: -74[0m
+[0;32mI (19146) wifi:pm start, type: 1[0m
+
+[0;32mI (19186) wifi:<ba-add>idx:0 (ifx:0, 50:0f:f5:12:ce:41), tid:0, ssn:3, winSize:64[0m
+[0;32mI (19186) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (20156) esp_netif_handlers: sta ip: 192.168.1.137, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (20156) irrigation_system: got ip:192.168.1.137[0m
+[0;32mI (20156) irrigation_system: Connected to AP[0m
+Socket created, connecting to 192.168.1.110:23000
+Successfully connected
+Shutting down socket
+[0;32mI (21786) irrigation_system: Stopping WiFi...[0m
+[0;32mI (21786) wifi:state: run -> init (0)[0m
+[0;32mI (21786) wifi:pm stop, total sleep time: 1617699 us / 2633695 us[0m
+
+[0;32mI (21786) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (21786) wifi:new:<1,0>, old:<1,1>, ap:<255,255>, sta:<1,1>, prof:1[0m
+[1;31mE (21796) wifi:NAN WiFi stop[0m
+[0;32mI (21796) irrigation_system: retry to connect to the AP[0m
+[0;32mI (21806) irrigation_system: connect to the AP fail[0m
+[0;32mI (21806) wifi:flush txq[0m
+[0;32mI (21806) wifi:stop sw txq[0m
+[0;32mI (21816) wifi:lmac stop hw txq[0m
+[0;32mI (21816) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 13583
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 13515
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 13879
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 13398
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12769
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12478
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12342
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12266
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12229
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12198
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12185
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12172
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12162
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12150
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12144
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12135
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12125
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12115
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12105
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12096
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12097
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12108
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12113
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12133
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12155
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+INICIANDO WIFI
+[0;32mI (26826) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (26826) wifi:enable tsf[0m
+[0;32mI (26826) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (26836) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1[0m
+[0;32mI (26846) wifi:state: init -> auth (b0)[0m
+[0;32mI (26846) wifi:state: auth -> assoc (0)[0m
+[0;32mI (26856) wifi:state: assoc -> run (10)[0m
+[0;32mI (26996) wifi:connected with pyj, aid = 23, channel 1, 40U, bssid = 50:0f:f5:12:ce:41[0m
+[0;32mI (26996) wifi:security: WPA2-PSK, phy: bgn, rssi: -74[0m
+[0;32mI (26996) wifi:pm start, type: 1[0m
+
+[0;32mI (27036) wifi:<ba-add>idx:0 (ifx:0, 50:0f:f5:12:ce:41), tid:0, ssn:4, winSize:64[0m
+[0;32mI (27076) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (28006) esp_netif_handlers: sta ip: 192.168.1.137, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (28006) irrigation_system: got ip:192.168.1.137[0m
+[0;32mI (28006) irrigation_system: Connected to AP[0m
+Socket created, connecting to 192.168.1.110:23000
+Successfully connected
+Shutting down socket
+[0;32mI (29626) irrigation_system: Stopping WiFi...[0m
+[0;32mI (29626) wifi:state: run -> init (0)[0m
+[0;32mI (29626) wifi:pm stop, total sleep time: 1636879 us / 2622450 us[0m
+
+[0;32mI (29626) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (29626) wifi:new:<1,0>, old:<1,1>, ap:<255,255>, sta:<1,1>, prof:1[0m
+[1;31mE (29636) wifi:NAN WiFi stop[0m
+[0;32mI (29636) irrigation_system: retry to connect to the AP[0m
+[0;32mI (29646) irrigation_system: connect to the AP fail[0m
+[0;32mI (29646) wifi:flush txq[0m
+[0;32mI (29646) wifi:stop sw txq[0m
+[0;32mI (29656) wifi:lmac stop hw txq[0m
+[0;32mI (29656) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+Configurando ADC 1
+adc raw 12144
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23018
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12122
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23022
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12112
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23024
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12107
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23024
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12090
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23023
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12058
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23024
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12033
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23021
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12023
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23014
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12013
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23008
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12003
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23006
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11997
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22999
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11989
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22993
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11983
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22990
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11974
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22985
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11969
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22982
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11962
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22978
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11954
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22974
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11952
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22970
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11950
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22968
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11942
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22960
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11937
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22960
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11936
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22958
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11982
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22950
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12094
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23280
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12190
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12180
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12167
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12160
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12149
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12131
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11969
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11855
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23139
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11815
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23033
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11776
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22997
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11741
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22978
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11721
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22975
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11711
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22972
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11699
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22971
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11696
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22970
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11685
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22969
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11683
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22965
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11679
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22962
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11680
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22960
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11685
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22965
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11686
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23197
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11757
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23883
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11830
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24020
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11780
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11797
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23974
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11839
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23837
+Valor del adc 2 medio
+INICIANDO WIFI
+[0;32mI (34666) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (34666) wifi:enable tsf[0m
+[0;32mI (34666) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (34676) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1[0m
+[0;32mI (34686) wifi:state: init -> auth (b0)[0m
+[0;32mI (34686) wifi:state: auth -> assoc (0)[0m
+[0;32mI (34706) wifi:state: assoc -> run (10)[0m
+[0;32mI (34836) wifi:connected with pyj, aid = 23, channel 1, 40U, bssid = 50:0f:f5:12:ce:41[0m
+[0;32mI (34836) wifi:security: WPA2-PSK, phy: bgn, rssi: -73[0m
+[0;32mI (34836) wifi:pm start, type: 1[0m
+
+[0;32mI (34856) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (34866) wifi:<ba-add>idx:0 (ifx:0, 50:0f:f5:12:ce:41), tid:0, ssn:5, winSize:64[0m
+[0;32mI (35836) esp_netif_handlers: sta ip: 192.168.1.137, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (35836) irrigation_system: got ip:192.168.1.137[0m
+[0;32mI (35836) irrigation_system: Connected to AP[0m
+Socket created, connecting to 192.168.1.110:23000
+Successfully connected
+Shutting down socket
+[0;32mI (37456) irrigation_system: Stopping WiFi...[0m
+[0;32mI (37456) wifi:state: run -> init (0)[0m
+[0;32mI (37456) wifi:pm stop, total sleep time: 1671295 us / 2614878 us[0m
+
+[0;32mI (37456) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (37456) wifi:new:<1,0>, old:<1,1>, ap:<255,255>, sta:<1,1>, prof:1[0m
+[1;31mE (37466) wifi:NAN WiFi stop[0m
+[0;32mI (37466) irrigation_system: retry to connect to the AP[0m
+[0;32mI (37476) irrigation_system: connect to the AP fail[0m
+[0;32mI (37496) wifi:flush txq[0m
+[0;32mI (37496) wifi:stop sw txq[0m
+[0;32mI (37496) wifi:lmac stop hw txq[0m
+[0;32mI (37496) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23455
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14089
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23354
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23342
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23506
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23765
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23831
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23641
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23610
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23857
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14054
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 13536
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 13696
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 13788
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+INICIANDO WIFI
+[0;32mI (42496) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (42496) wifi:enable tsf[0m
+[0;32mI (42496) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (42506) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1[0m
+[0;32mI (42516) wifi:state: init -> auth (b0)[0m
+[0;32mI (42516) wifi:state: auth -> assoc (0)[0m
+[0;32mI (42526) wifi:state: assoc -> run (10)[0m
+[0;32mI (42646) wifi:connected with pyj, aid = 23, channel 1, 40U, bssid = 50:0f:f5:12:ce:41[0m
+[0;32mI (42646) wifi:security: WPA2-PSK, phy: bgn, rssi: -74[0m
+[0;32mI (42656) wifi:pm start, type: 1[0m
+
+[0;32mI (42686) wifi:<ba-add>idx:0 (ifx:0, 50:0f:f5:12:ce:41), tid:0, ssn:3, winSize:64[0m
+[0;32mI (42736) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (43656) esp_netif_handlers: sta ip: 192.168.1.137, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (43656) irrigation_system: got ip:192.168.1.137[0m
+[0;32mI (43656) irrigation_system: Connected to AP[0m
+Socket created, connecting to 192.168.1.110:23000
+Successfully connected
+Shutting down socket
+[0;32mI (45276) irrigation_system: Stopping WiFi...[0m
+[0;32mI (45276) wifi:state: run -> init (0)[0m
+[0;32mI (45276) wifi:pm stop, total sleep time: 1818377 us / 2616506 us[0m
+
+[0;32mI (45276) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (45276) wifi:new:<1,0>, old:<1,1>, ap:<255,255>, sta:<1,1>, prof:1[0m
+[1;31mE (45286) wifi:NAN WiFi stop[0m
+[0;32mI (45286) irrigation_system: retry to connect to the AP[0m
+[0;32mI (45296) irrigation_system: connect to the AP fail[0m
+[0;32mI (45296) wifi:flush txq[0m
+[0;32mI (45296) wifi:stop sw txq[0m
+[0;32mI (45306) wifi:lmac stop hw txq[0m
+[0;32mI (45306) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+Configurando ADC 1
+adc raw 11601
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23997
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11605
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24000
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11606
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23991
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11621
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23993
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11710
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12006
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12255
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23990
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12367
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23728
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12261
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11801
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11438
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24003
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11329
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23827
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11311
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23717
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11307
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23647
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11303
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23644
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11296
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23666
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11295
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23676
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11295
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23675
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11294
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23672
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11293
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23661
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11287
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23642
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11285
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23619
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11287
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23583
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11297
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23472
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11344
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23330
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11447
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23249
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11507
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23239
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11535
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23264
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11770
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23369
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11835
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23619
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11923
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23717
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12462
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 13120
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12838
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 12141
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11746
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11499
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23973
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11437
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23676
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11429
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23563
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11372
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23856
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11353
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11499
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23483
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11565
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 23033
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11568
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22963
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11566
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22941
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11569
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22924
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11573
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22913
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11568
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22906
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11564
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22902
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 11566
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 22902
+Valor del adc 2 medio
+INICIANDO WIFI
+[0;32mI (50316) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (50316) wifi:enable tsf[0m
+[0;32mI (50316) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (50326) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1[0m
+[0;32mI (50336) wifi:state: init -> auth (b0)[0m
+[0;32mI (50336) wifi:state: auth -> assoc (0)[0m
+[0;32mI (50346) wifi:state: assoc -> run (10)[0m
+[0;32mI (50486) wifi:connected with pyj, aid = 23, channel 1, 40U, bssid = 50:0f:f5:12:ce:41[0m
+[0;32mI (50486) wifi:security: WPA2-PSK, phy: bgn, rssi: -74[0m
+[0;32mI (50486) wifi:pm start, type: 1[0m
+
+[0;32mI (50516) wifi:<ba-add>idx:0 (ifx:0, 50:0f:f5:12:ce:41), tid:0, ssn:4, winSize:64[0m
+[0;32mI (50526) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (51496) esp_netif_handlers: sta ip: 192.168.1.137, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (51496) irrigation_system: got ip:192.168.1.137[0m
+[0;32mI (51496) irrigation_system: Connected to AP[0m
+Socket created, connecting to 192.168.1.110:23000
+Successfully connected
+Shutting down socket
+[0;32mI (53116) irrigation_system: Stopping WiFi...[0m
+[0;32mI (53116) wifi:state: run -> init (0)[0m
+[0;32mI (53116) wifi:pm stop, total sleep time: 1799378 us / 2623853 us[0m
+
+[0;32mI (53116) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (53116) wifi:new:<1,0>, old:<1,1>, ap:<255,255>, sta:<1,1>, prof:1[0m
+[1;31mE (53126) wifi:NAN WiFi stop[0m
+[0;32mI (53126) irrigation_system: retry to connect to the AP[0m
+[0;32mI (53136) irrigation_system: connect to the AP fail[0m
+[0;32mI (53156) wifi:flush txq[0m
+[0;32mI (53156) wifi:stop sw txq[0m
+[0;32mI (53156) wifi:lmac stop hw txq[0m
+[0;32mI (53156) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+Configurando ADC 1
+adc raw 14095
+Valor del adc 1 medio
+Configurando ADC 2
+adc raw 24095
+Valor del adc 2 medio
+INICIANDO WIFI
+[0;32mI (58156) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (58156) wifi:enable tsf[0m
+[0;32mI (58156) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (58166) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1[0m
+[0;32mI (58176) wifi:state: init -> auth (b0)[0m
+[0;32mI (58176) wifi:state: auth -> assoc (0)[0m
+[0;32mI (58186) wifi:state: assoc -> run (10)[0m
+[0;32mI (58306) wifi:connected with pyj, aid = 23, channel 1, 40U, bssid = 50:0f:f5:12:ce:41[0m
+[0;32mI (58306) wifi:security: WPA2-PSK, phy: bgn, rssi: -69[0m
+[0;32mI (58316) wifi:pm start, type: 1[0m
+
+[0;32mI (58346) wifi:<ba-add>idx:0 (ifx:0, 50:0f:f5:12:ce:41), tid:0, ssn:3, winSize:64[0m
+[0;32mI (58406) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (59316) esp_netif_handlers: sta ip: 192.168.1.137, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (59316) irrigation_system: got ip:192.168.1.137[0m
+[0;32mI (59316) irrigation_system: Connected to AP[0m

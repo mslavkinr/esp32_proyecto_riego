@@ -177,33 +177,31 @@ static bool telnet_management(int adc1, int adc2, int water_level)
 
   sock = socket(AF_INET, SOCK_STREAM, IPPROTO_IP);
   if (sock < 0)
-  {
-    printf("Unable to create socket: errno %d\r\n", errno);
-    return false;
-  }
+    {
+      printf("Unable to create socket: errno %d\r\n", errno);
+      return false;
+    }
   printf( "Socket created, connecting to %s:%d\r\n", SERVER_IP, SERVER_PORT);
 
   int err = connect(sock, (struct sockaddr *)&dest_addr, sizeof(dest_addr));
   if (err != 0)
-  {
-    printf("Socket unable to connect: errno %d\r\n", errno);
-    close(sock);
-    return false;
-  }
+    {
+      printf("Socket unable to connect: errno %d\r\n", errno);
+      close(sock);
+      return false;
+    }
   printf("Successfully connected\r\n");
 
  
-  char message[100];
-  static int i=1000;
-  sprintf(message, "{\"humedad1\":%d,\"humedad2\":%d,\"nivel\":%d}\r\n", adc1, adc2, i);//water_level);
-  i += 1000;
-  i %= 5000;
+  char message[150]; 
+  uint32_t uptime_ms = xTaskGetTickCount() * portTICK_PERIOD_MS;
+  sprintf(message, "{\"humedad1\":%d,\"humedad2\":%d,\"nivel\":%d,\"uptime_ms\":%lu}\r\n",
+	  adc1, adc2, water_level, uptime_ms);
   send(sock, message, strlen(message), 0);
-  vTaskDelay(5000 / portTICK_PERIOD_MS);
+  vTaskDelay(100 / portTICK_PERIOD_MS);
   printf("Shutting down socket\r\n");
   shutdown(sock, 0);
   close(sock);
-  vTaskDelay(1000 / portTICK_PERIOD_MS);
   return true;
 }
 
@@ -216,9 +214,9 @@ static bool telnet_management(int adc1, int adc2, int water_level)
 #define PUMP_GPIO 15
 #define PUMP_GPIO2 2
 
-#define BLINK_PERIOD 1000
-#define WAIT_TIME 5000
-#define RIEGO_TIME 2000
+#define BLINK_PERIOD 100
+#define WAIT_TIME 1000
+#define RIEGO_TIME 500
 #define DATA_UPLOAD_INTERVAL 5000
 
 #define ADC_PIN ADC2_CHANNEL_5
@@ -275,12 +273,12 @@ int read_adc(void)
 {
   int adc_raw;
   adc2_get_raw(ADC_PIN, ADC_WIDTH_BIT_12, &adc_raw); 
-  printf( "adc raw 1%d\r\n",adc_raw);
+  printf( "adc raw 1 %d\r\n",adc_raw);
   return adc_raw;
 }
 bool check_adc(int adc_raw)
 {
-  if (adc_raw < RANGO_HUMEDAD)
+  if (adc_raw > RANGO_HUMEDAD)
     {
       printf("Valor del adc 1 bajo\r\n");
       return true;
@@ -322,12 +320,12 @@ int read_adc2(void)
 {
   int adc_raw2;
   adc2_get_raw(ADC_PIN2, ADC_WIDTH_BIT_12, &adc_raw2); 
-  printf( "adc raw 2%d\r\n",adc_raw2);
+  printf( "adc raw 2 %d\r\n",adc_raw2);
   return adc_raw2;
 }
 bool check_adc2(int adc_raw2)
 {
-  if (adc_raw2 < RANGO_HUMEDAD2)
+  if (adc_raw2 > RANGO_HUMEDAD2)
     {
       printf("Valor del adc 2 bajo\r\n");
       return true;
@@ -382,7 +380,6 @@ void app_main(void)
   TickType_t pump_elapsed_ms2 = 0;
   TickType_t riego_elapsed_ms2 = 0;
 
-  static TickType_t last_upload_time = 0;
 
   int adc_measure = 0;
   bool adc_state = false;
@@ -406,6 +403,8 @@ void app_main(void)
     {
       switch (currentState) {
       case STATE_MIDIENDO:
+	configure_adc();
+	vTaskDelay(10 / portTICK_PERIOD_MS);
 	adc_measure = read_adc();
 	adc_state = check_adc(adc_measure);
 	if (adc_state)
@@ -415,6 +414,8 @@ void app_main(void)
 	break;
 
       case STATE_WNIVEL:
+	configure_adc_water();
+	vTaskDelay(10 / portTICK_PERIOD_MS);
 	water_measure = read_water_adc();
 	water_state = check_water_adc(water_measure);
 	if (water_state)
@@ -422,9 +423,14 @@ void app_main(void)
 	    pump_start_time = xTaskGetTickCount();
 	    currentState = STATE_REGANDO;
 	  }
+	else
+	  {
+	    currentState = STATE_MIDIENDO;
+	  }
 	break;
 
       case STATE_REGANDO:
+	configure_adc();
 	control_pump(true);
 	printf("Bomba Encendida\r\n");
 	pump_elapsed_ms = (xTaskGetTickCount() - pump_start_time) * portTICK_PERIOD_MS;
@@ -452,6 +458,8 @@ void app_main(void)
 
       switch (currentState2) {
       case STATE_MIDIENDO:
+	configure_adc2();
+	vTaskDelay(10 / portTICK_PERIOD_MS);
 	adc_measure2 = read_adc2();
 	adc_state2 = check_adc2(adc_measure2);
 	if (adc_state2)
@@ -461,16 +469,23 @@ void app_main(void)
 	break;
 
       case STATE_WNIVEL:
+	configure_adc_water();
+	vTaskDelay(10 / portTICK_PERIOD_MS);
 	water_measure = read_water_adc();
 	water_state = check_water_adc(water_measure);
 	if (water_state)
 	  {
 	    pump_start_time2 = xTaskGetTickCount();
 	    currentState2 = STATE_REGANDO;
-	  }
+	  }else
+	  {
+	    currentState2 = STATE_MIDIENDO;
+	  }	
 	break;
 
       case STATE_REGANDO:
+	configure_adc2();
+	vTaskDelay(10 / portTICK_PERIOD_MS);
 	control_pump2(true);
 	printf("Bomba 2 Encendida\r\n");
 	adc_measure2 = read_adc2();
@@ -496,24 +511,12 @@ void app_main(void)
       }
 
       
-      TickType_t current_time = xTaskGetTickCount();
-      TickType_t time_since_upload = (current_time - last_upload_time) * portTICK_PERIOD_MS;
-        
-      if (time_since_upload >= DATA_UPLOAD_INTERVAL) {
-	printf("INICIANDO WIFI\r\n");
-	wifi_start_and_connect();
-	vTaskDelay(3000 / portTICK_PERIOD_MS);
-
-
-	telnet_management(adc_measure, adc_measure2, water_measure);
-
-	wifi_stop_completely();
-	printf("Desconectando WIFI\r\n");
-                
-	last_upload_time = xTaskGetTickCount();
-                
-      }
-      vTaskDelay(BLINK_PERIOD / portTICK_PERIOD_MS);
+      printf("INICIANDO WIFI\r\n");
+      wifi_start_and_connect();
+      telnet_management(adc_measure, adc_measure2, water_measure);
+      vTaskDelay(100 / portTICK_PERIOD_MS);
+      wifi_stop_completely();
+      printf("Desconectando WIFI\r\n");
     } 
 }
 
