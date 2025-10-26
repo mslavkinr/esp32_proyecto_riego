@@ -1,0 +1,90 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/mslavkin/esp/station/build/bootloader/esp-idf/esptool_py && /home/mslavkin/.espressif/python_env/idf5.1_py3.13_env/bin/python /home/mslavkin/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/mslavkin/esp/station/build/bootloader/bootloader.bin
+Bootloader binary size 0x6860 bytes. 0x7a0 bytes (7%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/station_example_main.c.obj
+In file included from /home/mslavkin/esp/station/main/station_example_main.c:14:
+/home/mslavkin/esp/esp-idf/components/driver/deprecated/driver/adc.h:19:2: warning: #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively" [-Wcpp]
+   19 | #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively"
+      |  ^~~~~~~
+In file included from /home/mslavkin/esp/station/main/station_example_main.c:15:
+/home/mslavkin/esp/esp-idf/components/esp_adc/deprecated/include/esp_adc_cal.h:17:2: warning: #warning "legacy adc calibration driver is deprecated, please migrate to use esp_adc/adc_cali.h and esp_adc/adc_cali_scheme.h" [-Wcpp]
+   17 | #warning "legacy adc calibration driver is deprecated, please migrate to use esp_adc/adc_cali.h and esp_adc/adc_cali_scheme.h"
+      |  ^~~~~~~
+[5/10] Linking C static library esp-idf/main/libmain.a
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable wifi_station.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.10.0
+Creating esp32 image...
+Merged 27 ELF sections
+Successfully created esp32 image.
+Generated /home/mslavkin/esp/station/build/wifi_station.bin
+[9/10] cd /home/mslavkin/esp/station/build/esp-idf/esptool_py && /home/mslavkin/.espressif/python_env/idf5.1_py3.13_env/bin/python /home/mslavkin/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/mslavkin/esp/station/build/partition_table/partition-table.bin /home/mslavkin/esp/station/build/wifi_station.bin
+wifi_station.bin binary size 0xbe6e0 bytes. Smallest app partition is 0x100000 bytes. 0x41920 bytes (26%) free.
+[9/10] cd /home/mslavkin/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/mslavkin/esp/esp-idf -D "SERIAL_TOOL=/home/mslavkin/.espressif/python_env/idf5.1_py3.13_env/bin/python;;/home/mslavkin/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/mslavkin/esp/station/build -P /home/mslavkin/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 wifi_station.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.10.0
+Serial port /dev/ttyUSB0
+Connecting.........
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: b0:b2:1c:97:36:e0
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000cefff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26720 bytes to 16731...
+Writing at 0x00001000... (50 %)
+Writing at 0x000076a1... (100 %)
+Wrote 26720 bytes (16731 compressed) at 0x00001000 in 0.6 seconds (effective 387.8 kbit/s)...
+Hash of data verified.
+Compressed 780000 bytes to 502602...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001c4e2... (6 %)
+Writing at 0x000247b7... (9 %)
+Writing at 0x0002961d... (12 %)
+Writing at 0x00033ccd... (16 %)
+Writing at 0x00039c20... (19 %)
+Writing at 0x0003f510... (22 %)
+Writing at 0x00044f69... (25 %)
+Writing at 0x0004ad6d... (29 %)
+Writing at 0x000507c7... (32 %)
+Writing at 0x00055cfd... (35 %)
+Writing at 0x0005b4a8... (38 %)
+Writing at 0x00060e88... (41 %)
+Writing at 0x00066948... (45 %)
+Writing at 0x0006c639... (48 %)
+Writing at 0x000719d9... (51 %)
+Writing at 0x00076dbf... (54 %)
+Writing at 0x0007c34c... (58 %)
+Writing at 0x000816ef... (61 %)
+Writing at 0x00086f1c... (64 %)
+Writing at 0x0008c805... (67 %)
+Writing at 0x00092418... (70 %)
+Writing at 0x00097a76... (74 %)
+Writing at 0x0009d426... (77 %)
+Writing at 0x000a3a9a... (80 %)
+Writing at 0x000a90bf... (83 %)
+Writing at 0x000aea32... (87 %)
+Writing at 0x000b721d... (90 %)
+Writing at 0x000bf7be... (93 %)
+Writing at 0x000c5439... (96 %)
+Writing at 0x000caa50... (100 %)
+Wrote 780000 bytes (502602 compressed) at 0x00010000 in 11.9 seconds (effective 523.5 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 1455.6 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

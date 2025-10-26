@@ -15,13 +15,20 @@
 #include "esp_adc_cal.h"
 #include <stdbool.h>
 
-
 #include "lwip/err.h"
 #include "lwip/sys.h"
+#include "lwip/sockets.h"
+#include <lwip/netdb.h>
 
 #define EXAMPLE_ESP_WIFI_SSID      CONFIG_ESP_WIFI_SSID
 #define EXAMPLE_ESP_WIFI_PASS      CONFIG_ESP_WIFI_PASSWORD
 #define EXAMPLE_ESP_MAXIMUM_RETRY  CONFIG_ESP_MAXIMUM_RETRY
+
+#define SERVER_IP      "192.168.1.110"  // Your PC's IP
+#define SERVER_PORT    23000
+
+static const char *TAG = "irrigation_system";
+static int s_retry_num = 0;
 
 #if CONFIG_ESP_WPA3_SAE_PWE_HUNT_AND_PECK
 #define ESP_WIFI_SAE_MODE WPA3_SAE_PWE_HUNT_AND_PECK
@@ -56,9 +63,7 @@ static EventGroupHandle_t s_wifi_event_group;
 #define WIFI_CONNECTED_BIT BIT0
 #define WIFI_FAIL_BIT      BIT1
 
-static const char *TAG = "wifi station";
 
-static int s_retry_num = 0;
 
 
 static void event_handler(void* arg, esp_event_base_t event_base,
@@ -83,7 +88,7 @@ static void event_handler(void* arg, esp_event_base_t event_base,
   }
 }
 
-void wifi_init_sta(void)
+void wifi_init_once(void)
 {
   s_wifi_event_group = xEventGroupCreate();
 
@@ -117,27 +122,89 @@ void wifi_init_sta(void)
       .sae_h2e_identifier = EXAMPLE_H2E_IDENTIFIER,
     },
   };
+
+
+
+  
   ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA) );
   ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config) );
   ESP_ERROR_CHECK(esp_wifi_start() );
 
   ESP_LOGI(TAG, "wifi_init_sta finished.");
+}
 
+bool wifi_start_and_connect(void)
+{
+  s_retry_num = 0;
+  
+  // Iniciar WiFi (bloquea ADC2)
+  ESP_ERROR_CHECK(esp_wifi_start());
+  ESP_LOGI(TAG, "WiFi started, connecting...");
+
+  // Esperar conexión
   EventBits_t bits = xEventGroupWaitBits(s_wifi_event_group,
-					 WIFI_CONNECTED_BIT | WIFI_FAIL_BIT,
-					 pdFALSE,
-					 pdFALSE,
-					 portMAX_DELAY);
+                                         WIFI_CONNECTED_BIT | WIFI_FAIL_BIT,
+                                         pdTRUE,  // Clear bits
+                                         pdFALSE,
+                                         pdMS_TO_TICKS(15000));
 
   if (bits & WIFI_CONNECTED_BIT) {
-    ESP_LOGI(TAG, "connected to ap SSID:%s password:%s",
-	     EXAMPLE_ESP_WIFI_SSID, EXAMPLE_ESP_WIFI_PASS);
-  } else if (bits & WIFI_FAIL_BIT) {
-    ESP_LOGI(TAG, "Failed to connect to SSID:%s, password:%s",
-	     EXAMPLE_ESP_WIFI_SSID, EXAMPLE_ESP_WIFI_PASS);
+    ESP_LOGI(TAG, "Connected to AP");
+    return true;
   } else {
-    ESP_LOGE(TAG, "UNEXPECTED EVENT");
+    ESP_LOGI(TAG, "Failed to connect");
+    return false;
   }
+}
+
+void wifi_stop_completely(void)
+{
+  ESP_LOGI(TAG, "Stopping WiFi...");
+  esp_wifi_disconnect();
+  esp_wifi_stop();
+  ESP_LOGI(TAG, "WiFi stopped - ADC2 available");
+}
+
+
+static int sock = -1;
+
+static bool telnet_management(int adc1, int adc2, int water_level)
+{
+  struct sockaddr_in dest_addr;
+  dest_addr.sin_addr.s_addr = inet_addr(SERVER_IP);
+  dest_addr.sin_family = AF_INET;
+  dest_addr.sin_port = htons(SERVER_PORT);
+
+  sock = socket(AF_INET, SOCK_STREAM, IPPROTO_IP);
+  if (sock < 0)
+  {
+    printf("Unable to create socket: errno %d\r\n", errno);
+    return false;
+  }
+  printf( "Socket created, connecting to %s:%d\r\n", SERVER_IP, SERVER_PORT);
+
+  int err = connect(sock, (struct sockaddr *)&dest_addr, sizeof(dest_addr));
+  if (err != 0)
+  {
+    printf("Socket unable to connect: errno %d\r\n", errno);
+    close(sock);
+    return false;
+  }
+  printf("Successfully connected\r\n");
+
+ 
+  char message[100];
+  static int i=1000;
+  sprintf(message, "{\"humedad1\":%d,\"humedad2\":%d,\"nivel\":%d}\r\n", adc1, adc2, i);//water_level);
+  i += 1000;
+  i %= 5000;
+  send(sock, message, strlen(message), 0);
+  vTaskDelay(5000 / portTICK_PERIOD_MS);
+  printf("Shutting down socket\r\n");
+  shutdown(sock, 0);
+  close(sock);
+  vTaskDelay(1000 / portTICK_PERIOD_MS);
+  return true;
 }
 
 
@@ -152,6 +219,7 @@ void wifi_init_sta(void)
 #define BLINK_PERIOD 1000
 #define WAIT_TIME 5000
 #define RIEGO_TIME 2000
+#define DATA_UPLOAD_INTERVAL 5000
 
 #define ADC_PIN ADC2_CHANNEL_5
 #define ADC_PIN2 ADC2_CHANNEL_4
@@ -160,25 +228,25 @@ void wifi_init_sta(void)
 
 void configure_led(void)
 {
-  printf("Configurando LED");
+  printf("Configurando LED\r\n");
   gpio_reset_pin(BLINK_GPIO);
   gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
 }
 void configure_adc(void)
 {
-  printf("Configurando ADC 1\n");
+  printf("Configurando ADC 1\r\n");
   adc2_config_channel_atten(ADC_PIN, ADC_ATTEN_DB_12);   
 }
 void configure_pump(void)
 {
-  printf("Configurando bomba 1\n");
+  printf("Configurando bomba 1\r\n");
   gpio_reset_pin(PUMP_GPIO);
   gpio_set_direction(PUMP_GPIO, GPIO_MODE_OUTPUT);
   gpio_set_level(PUMP_GPIO, 0);
 }
 void configure_adc_water(void)
 {
-  printf("Configurando ADC water sensor\n");
+  printf("Configurando ADC water sensor\r\n");
   adc2_config_channel_atten(ADC_WATER_PIN, ADC_ATTEN_DB_12);   
 }
 
@@ -187,18 +255,18 @@ int read_water_adc(void)
 {
   int adc_water_raw;
   adc2_get_raw(ADC_WATER_PIN, ADC_WIDTH_BIT_12, &adc_water_raw); 
-  printf( "adc water raw %d\n",adc_water_raw);
+  printf( "adc water raw %d\r\n",adc_water_raw);
   return adc_water_raw;
 }
 bool check_water_adc(int adc_water_raw)
 {
   if (adc_water_raw > RANGO_NIVEL_AGUA)
-  {
-    printf("Nivel de agua normal\n");
-    return true;
-  } else
     {
-      printf("No hay agua disponible\n");
+      printf("Nivel de agua normal\r\n");
+      return true;
+    } else
+    {
+      printf("No hay agua disponible\r\n");
       return false;
     }
 }
@@ -207,18 +275,18 @@ int read_adc(void)
 {
   int adc_raw;
   adc2_get_raw(ADC_PIN, ADC_WIDTH_BIT_12, &adc_raw); 
-  printf( "adc raw 1%d\n",adc_raw);
+  printf( "adc raw 1%d\r\n",adc_raw);
   return adc_raw;
 }
 bool check_adc(int adc_raw)
 {
   if (adc_raw < RANGO_HUMEDAD)
-  {
-    printf("Valor del adc 1 bajo\n");
-    return true;
-  } else
     {
-      printf("Valor del adc 1 medio\n");
+      printf("Valor del adc 1 bajo\r\n");
+      return true;
+    } else
+    {
+      printf("Valor del adc 1 medio\r\n");
       return false;
     }
 }
@@ -226,9 +294,9 @@ bool check_adc(int adc_raw)
 void control_pump(bool pump_on)
 {
   if (pump_on)
-  {
-    gpio_set_level(PUMP_GPIO, 1);
-  } else
+    {
+      gpio_set_level(PUMP_GPIO, 1);
+    } else
     {
       gpio_set_level(PUMP_GPIO, 0);
     }
@@ -239,12 +307,12 @@ void control_pump(bool pump_on)
 
 void configure_adc2(void)
 {
-  printf("Configurando ADC 2\n");
+  printf("Configurando ADC 2\r\n");
   adc2_config_channel_atten(ADC_PIN2, ADC_ATTEN_DB_12);   
 }
 void configure_pump2(void)
 {
-  printf("Configurando bomba 2\n");
+  printf("Configurando bomba 2\r\n");
   gpio_reset_pin(PUMP_GPIO2);
   gpio_set_direction(PUMP_GPIO2, GPIO_MODE_OUTPUT);
   gpio_set_level(PUMP_GPIO2, 0);
@@ -254,18 +322,18 @@ int read_adc2(void)
 {
   int adc_raw2;
   adc2_get_raw(ADC_PIN2, ADC_WIDTH_BIT_12, &adc_raw2); 
-  printf( "adc raw 2%d\n",adc_raw2);
+  printf( "adc raw 2%d\r\n",adc_raw2);
   return adc_raw2;
 }
 bool check_adc2(int adc_raw2)
 {
   if (adc_raw2 < RANGO_HUMEDAD2)
-  {
-    printf("Valor del adc 2 bajo\n");
-    return true;
-  } else
     {
-      printf("Valor del adc 2 medio\n");
+      printf("Valor del adc 2 bajo\r\n");
+      return true;
+    } else
+    {
+      printf("Valor del adc 2 medio\r\n");
       return false;
     }
 }
@@ -273,9 +341,9 @@ bool check_adc2(int adc_raw2)
 void control_pump2(bool pump_on2)
 {
   if (pump_on2)
-  {
-    gpio_set_level(PUMP_GPIO2, 1);
-  } else
+    {
+      gpio_set_level(PUMP_GPIO2, 1);
+    } else
     {
       gpio_set_level(PUMP_GPIO2, 0);
     }
@@ -286,16 +354,14 @@ void control_pump2(bool pump_on2)
 
 void app_main(void)
 {
-  //   Initialize NVS
-  /* esp_err_t ret = nvs_flash_init(); */
-  /* if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) { */
-  /*   ESP_ERROR_CHECK(nvs_flash_erase()); */
-  /*   ret = nvs_flash_init(); */
-  /* } */
-  /* ESP_ERROR_CHECK(ret); */
+  esp_err_t ret = nvs_flash_init();
+  if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+    ESP_ERROR_CHECK(nvs_flash_erase());
+    ret = nvs_flash_init();
+  }
+  ESP_ERROR_CHECK(ret);
 
-  /*   ESP_LOGI(TAG, "ESP_WIFI_MODE_STA"); */
-  /*   wifi_init_sta(); */
+  wifi_init_once();
 
 
   configure_led();
@@ -316,13 +382,15 @@ void app_main(void)
   TickType_t pump_elapsed_ms2 = 0;
   TickType_t riego_elapsed_ms2 = 0;
 
-  int adc_measure;
-  bool adc_state;
-  int water_measure;
-  bool water_state;
+  static TickType_t last_upload_time = 0;
 
-  int adc_measure2;
-  bool adc_state2;
+  int adc_measure = 0;
+  bool adc_state = false;
+  int water_measure = 0;
+  bool water_state = false;
+
+  int adc_measure2 = 0;
+  bool adc_state2 = false;
 
   typedef enum {
     STATE_MIDIENDO,
@@ -350,15 +418,15 @@ void app_main(void)
 	water_measure = read_water_adc();
 	water_state = check_water_adc(water_measure);
 	if (water_state)
-        {
-	  pump_start_time = xTaskGetTickCount();
-	  currentState = STATE_REGANDO;
-	}
+	  {
+	    pump_start_time = xTaskGetTickCount();
+	    currentState = STATE_REGANDO;
+	  }
 	break;
 
       case STATE_REGANDO:
 	control_pump(true);
-	printf("Bomba Encendida\n");
+	printf("Bomba Encendida\r\n");
 	pump_elapsed_ms = (xTaskGetTickCount() - pump_start_time) * portTICK_PERIOD_MS;
 	adc_measure = read_adc();
 	adc_state = check_adc(adc_measure);
@@ -371,11 +439,11 @@ void app_main(void)
 	break;
 
       case STATE_ESPERANDO:
-	printf ("Bomba Apagada - Esperando\n");
+	printf ("Bomba Apagada - Esperando\r\n");
 	riego_elapsed_ms = (xTaskGetTickCount() - waiting_start_time) * portTICK_PERIOD_MS;
 	if (riego_elapsed_ms > WAIT_TIME)
 	  {
-	    printf("Tiempo de espera terminado\n");
+	    printf("Tiempo de espera terminado\r\n");
 	    currentState = STATE_MIDIENDO;
 	  }
 	break;
@@ -404,7 +472,7 @@ void app_main(void)
 
       case STATE_REGANDO:
 	control_pump2(true);
-	printf("Bomba 2 Encendida\n");
+	printf("Bomba 2 Encendida\r\n");
 	adc_measure2 = read_adc2();
 	adc_state2 = check_adc2(adc_measure2);
 	pump_elapsed_ms2 = (xTaskGetTickCount() - pump_start_time2) * portTICK_PERIOD_MS;
@@ -417,16 +485,35 @@ void app_main(void)
 	break;
 
       case STATE_ESPERANDO:
-	printf ("Bomba 2 Apagada - Esperando\n");
+	printf ("Bomba 2 Apagada - Esperando\r\n");
 	riego_elapsed_ms2 = (xTaskGetTickCount() - waiting_start_time2)  * portTICK_PERIOD_MS;
 	if (riego_elapsed_ms2 > WAIT_TIME)
 	  {
-	    printf("Tiempo de espera terminado\n");
+	    printf("Tiempo de espera terminado\r\n");
 	    currentState2 = STATE_MIDIENDO;
 	  }
 	break;
       }
+
       
+      TickType_t current_time = xTaskGetTickCount();
+      TickType_t time_since_upload = (current_time - last_upload_time) * portTICK_PERIOD_MS;
+        
+      if (time_since_upload >= DATA_UPLOAD_INTERVAL) {
+	printf("INICIANDO WIFI\r\n");
+	wifi_start_and_connect();
+	vTaskDelay(3000 / portTICK_PERIOD_MS);
+
+
+	telnet_management(adc_measure, adc_measure2, water_measure);
+
+	wifi_stop_completely();
+	printf("Desconectando WIFI\r\n");
+                
+	last_upload_time = xTaskGetTickCount();
+                
+      }
       vTaskDelay(BLINK_PERIOD / portTICK_PERIOD_MS);
-    }
+    } 
 }
+
