@@ -24,11 +24,64 @@
 #define EXAMPLE_ESP_WIFI_PASS      CONFIG_ESP_WIFI_PASSWORD
 #define EXAMPLE_ESP_MAXIMUM_RETRY  CONFIG_ESP_MAXIMUM_RETRY
 
-#define SERVER_IP      "192.168.1.110"  // Your PC's IP
-#define SERVER_PORT    23000
+#define SERVER_IP      "172.20.10.2"  // Your PC's IP
+#define SERVER_PORT    23001
+
+
+
+#define RANGO_HUMEDAD 1000
+#define RANGO_HUMEDAD2 1000
+#define RANGO_NIVEL_AGUA 1000
+
+#define BLINK_GPIO 4
+#define PUMP_GPIO 15
+#define PUMP_GPIO2 2
+
+#define BLINK_PERIOD 100
+#define WAIT_TIME 1000
+#define RIEGO_TIME 500
+
+#define ADC_PIN ADC2_CHANNEL_5
+#define ADC_PIN2 ADC2_CHANNEL_4
+#define ADC_WATER_PIN  ADC2_CHANNEL_6
 
 static const char *TAG = "irrigation_system";
 static int s_retry_num = 0;
+
+void blink_led (int repes, int delay)
+{
+  for(int i = 0; i < repes; i++)
+    {
+      gpio_set_level(BLINK_GPIO, 1);
+      vTaskDelay(delay / portTICK_PERIOD_MS);
+      gpio_set_level(BLINK_GPIO, 0);
+      vTaskDelay(delay / portTICK_PERIOD_MS);
+    }
+}
+
+void blink_led_bomba1(void)
+{
+  blink_led(1, 300);
+}
+
+
+void blink_led_bomba2(void)
+{
+  blink_led(1, 600);
+}
+
+
+void blink_led_net(void)
+{
+  blink_led(1, 30);
+}
+
+void blink_led_error(void)
+{
+  blink_led(4, 30);
+}
+
+
 
 #if CONFIG_ESP_WPA3_SAE_PWE_HUNT_AND_PECK
 #define ESP_WIFI_SAE_MODE WPA3_SAE_PWE_HUNT_AND_PECK
@@ -133,7 +186,7 @@ void wifi_init_once(void)
   ESP_LOGI(TAG, "wifi_init_sta finished.");
 }
 
-bool wifi_start_and_connect(void)
+bool wifi_start_and_connect(char* ip_str)
 {
   s_retry_num = 0;
   
@@ -150,9 +203,15 @@ bool wifi_start_and_connect(void)
 
   if (bits & WIFI_CONNECTED_BIT) {
     ESP_LOGI(TAG, "Connected to AP");
+
+    esp_netif_t *netif = esp_netif_get_handle_from_ifkey("WIFI_STA_DEF");
+    esp_netif_ip_info_t ip_info;
+    esp_netif_get_ip_info(netif, &ip_info);
+    sprintf(ip_str, IPSTR, IP2STR(&ip_info.ip));
     return true;
   } else {
     ESP_LOGI(TAG, "Failed to connect");
+    strcpy(ip_str, "0.0.0.0");
     return false;
   }
 }
@@ -168,7 +227,7 @@ void wifi_stop_completely(void)
 
 static int sock = -1;
 
-static bool telnet_management(int adc1, int adc2, int water_level)
+static bool telnet_management(int adc1, int adc2, int water_level, const char* ip_address)
 {
   struct sockaddr_in dest_addr;
   dest_addr.sin_addr.s_addr = inet_addr(SERVER_IP);
@@ -179,6 +238,7 @@ static bool telnet_management(int adc1, int adc2, int water_level)
   if (sock < 0)
     {
       printf("Unable to create socket: errno %d\r\n", errno);
+      blink_led_error();
       return false;
     }
   printf( "Socket created, connecting to %s:%d\r\n", SERVER_IP, SERVER_PORT);
@@ -188,15 +248,17 @@ static bool telnet_management(int adc1, int adc2, int water_level)
     {
       printf("Socket unable to connect: errno %d\r\n", errno);
       close(sock);
+      blink_led_error();
       return false;
     }
+  blink_led_net();
   printf("Successfully connected\r\n");
 
  
-  char message[150]; 
-  uint32_t uptime_ms = xTaskGetTickCount() * portTICK_PERIOD_MS;
-  sprintf(message, "{\"humedad1\":%d,\"humedad2\":%d,\"nivel\":%d,\"uptime_ms\":%lu}\r\n",
-	  adc1, adc2, water_level, uptime_ms);
+  char message[200]; 
+  uint32_t uptime_ms = (xTaskGetTickCount() * portTICK_PERIOD_MS) / 1000;
+  sprintf(message, "{\"humedad1\":%d,\"humedad2\":%d,\"nivel\":%d,\"uptime_ms\":%lu,\"ip\":\"%s\"}\r\n",
+	  adc1, adc2, water_level, uptime_ms, ip_address);
   send(sock, message, strlen(message), 0);
   vTaskDelay(100 / portTICK_PERIOD_MS);
   printf("Shutting down socket\r\n");
@@ -205,23 +267,6 @@ static bool telnet_management(int adc1, int adc2, int water_level)
   return true;
 }
 
-
-#define RANGO_HUMEDAD 1000
-#define RANGO_HUMEDAD2 1000
-#define RANGO_NIVEL_AGUA 1000
-
-#define BLINK_GPIO 4
-#define PUMP_GPIO 15
-#define PUMP_GPIO2 2
-
-#define BLINK_PERIOD 100
-#define WAIT_TIME 1000
-#define RIEGO_TIME 500
-#define DATA_UPLOAD_INTERVAL 5000
-
-#define ADC_PIN ADC2_CHANNEL_5
-#define ADC_PIN2 ADC2_CHANNEL_4
-#define ADC_WATER_PIN  ADC2_CHANNEL_6
 
 
 void configure_led(void)
@@ -245,8 +290,9 @@ void configure_pump(void)
 void configure_adc_water(void)
 {
   printf("Configurando ADC water sensor\r\n");
-  adc2_config_channel_atten(ADC_WATER_PIN, ADC_ATTEN_DB_12);   
+  adc2_config_channel_atten(ADC_WATER_PIN, ADC_ATTEN_DB_12);
 }
+
 
 
 int read_water_adc(void)
@@ -414,6 +460,10 @@ void app_main(void)
 	break;
 
       case STATE_WNIVEL:
+	configure_adc();
+	vTaskDelay(10 / portTICK_PERIOD_MS);
+	adc_measure = read_adc();
+	adc_state = check_adc(adc_measure);
 	configure_adc_water();
 	vTaskDelay(10 / portTICK_PERIOD_MS);
 	water_measure = read_water_adc();
@@ -431,11 +481,13 @@ void app_main(void)
 
       case STATE_REGANDO:
 	configure_adc();
-	control_pump(true);
-	printf("Bomba Encendida\r\n");
-	pump_elapsed_ms = (xTaskGetTickCount() - pump_start_time) * portTICK_PERIOD_MS;
+	vTaskDelay(10 / portTICK_PERIOD_MS);
 	adc_measure = read_adc();
 	adc_state = check_adc(adc_measure);
+	control_pump(true);
+	blink_led_bomba1();
+	printf("Bomba Encendida\r\n");
+	pump_elapsed_ms = (xTaskGetTickCount() - pump_start_time) * portTICK_PERIOD_MS;
 	if (!adc_state || pump_elapsed_ms > RIEGO_TIME)
 	  {
 	    control_pump(false);
@@ -445,6 +497,10 @@ void app_main(void)
 	break;
 
       case STATE_ESPERANDO:
+	configure_adc();
+	vTaskDelay(10 / portTICK_PERIOD_MS);
+	adc_measure = read_adc();
+	adc_state = check_adc(adc_measure);
 	printf ("Bomba Apagada - Esperando\r\n");
 	riego_elapsed_ms = (xTaskGetTickCount() - waiting_start_time) * portTICK_PERIOD_MS;
 	if (riego_elapsed_ms > WAIT_TIME)
@@ -469,6 +525,10 @@ void app_main(void)
 	break;
 
       case STATE_WNIVEL:
+	configure_adc2();
+	vTaskDelay(10 / portTICK_PERIOD_MS);
+	adc_measure2 = read_adc2();
+	adc_state2 = check_adc2(adc_measure2);
 	configure_adc_water();
 	vTaskDelay(10 / portTICK_PERIOD_MS);
 	water_measure = read_water_adc();
@@ -484,12 +544,14 @@ void app_main(void)
 	break;
 
       case STATE_REGANDO:
+       
 	configure_adc2();
 	vTaskDelay(10 / portTICK_PERIOD_MS);
-	control_pump2(true);
-	printf("Bomba 2 Encendida\r\n");
 	adc_measure2 = read_adc2();
 	adc_state2 = check_adc2(adc_measure2);
+	control_pump2(true);
+	blink_led_bomba2();
+	printf("Bomba 2 Encendida\r\n");
 	pump_elapsed_ms2 = (xTaskGetTickCount() - pump_start_time2) * portTICK_PERIOD_MS;
 	if (!adc_state2 || pump_elapsed_ms2 > RIEGO_TIME)
 	  {
@@ -500,6 +562,10 @@ void app_main(void)
 	break;
 
       case STATE_ESPERANDO:
+	configure_adc2();
+	vTaskDelay(10 / portTICK_PERIOD_MS);
+	adc_measure2 = read_adc2();
+	adc_state2 = check_adc2(adc_measure2);
 	printf ("Bomba 2 Apagada - Esperando\r\n");
 	riego_elapsed_ms2 = (xTaskGetTickCount() - waiting_start_time2)  * portTICK_PERIOD_MS;
 	if (riego_elapsed_ms2 > WAIT_TIME)
@@ -512,11 +578,11 @@ void app_main(void)
 
       
       printf("INICIANDO WIFI\r\n");
-      wifi_start_and_connect();
-      telnet_management(adc_measure, adc_measure2, water_measure);
+      char esp_ip[16];
+      wifi_start_and_connect(esp_ip);
+      telnet_management(adc_measure, adc_measure2, water_measure, esp_ip);
       vTaskDelay(100 / portTICK_PERIOD_MS);
       wifi_stop_completely();
       printf("Desconectando WIFI\r\n");
     } 
 }
-
