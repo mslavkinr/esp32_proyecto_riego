@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "wifi_station",
-    "project_version":    "05965d4-dirty",
+    "project_version":    "01cf2c2-dirty",
     "project_path":       "/home/mslavkin/esp/station",
     "idf_path":           "/home/mslavkin/esp/esp-idf",
     "build_dir":          "/home/mslavkin/esp/station/build",

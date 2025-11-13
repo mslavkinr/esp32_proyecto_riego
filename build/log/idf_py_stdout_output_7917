@@ -1,0 +1,35 @@
+[0/1] Re-running CMake...
+-- Building ESP-IDF components for target esp32
+-- Project sdkconfig file /home/mslavkin/esp/station/sdkconfig
+-- App "wifi_station" version: 01cf2c2-dirty
+-- Adding linker script /home/mslavkin/esp/station/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /home/mslavkin/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_coex esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /home/mslavkin/esp/esp-idf/components/app_trace /home/mslavkin/esp/esp-idf/components/app_update /home/mslavkin/esp/esp-idf/components/bootloader /home/mslavkin/esp/esp-idf/components/bootloader_support /home/mslavkin/esp/esp-idf/components/bt /home/mslavkin/esp/esp-idf/components/cmock /home/mslavkin/esp/esp-idf/components/console /home/mslavkin/esp/esp-idf/components/cxx /home/mslavkin/esp/esp-idf/components/driver /home/mslavkin/esp/esp-idf/components/efuse /home/mslavkin/esp/esp-idf/components/esp-tls /home/mslavkin/esp/esp-idf/components/esp_adc /home/mslavkin/esp/esp-idf/components/esp_app_format /home/mslavkin/esp/esp-idf/components/esp_coex /home/mslavkin/esp/esp-idf/components/esp_common /home/mslavkin/esp/esp-idf/components/esp_eth /home/mslavkin/esp/esp-idf/components/esp_event /home/mslavkin/esp/esp-idf/components/esp_gdbstub /home/mslavkin/esp/esp-idf/components/esp_hid /home/mslavkin/esp/esp-idf/components/esp_http_client /home/mslavkin/esp/esp-idf/components/esp_http_server /home/mslavkin/esp/esp-idf/components/esp_https_ota /home/mslavkin/esp/esp-idf/components/esp_https_server /home/mslavkin/esp/esp-idf/components/esp_hw_support /home/mslavkin/esp/esp-idf/components/esp_lcd /home/mslavkin/esp/esp-idf/components/esp_local_ctrl /home/mslavkin/esp/esp-idf/components/esp_mm /home/mslavkin/esp/esp-idf/components/esp_netif /home/mslavkin/esp/esp-idf/components/esp_netif_stack /home/mslavkin/esp/esp-idf/components/esp_partition /home/mslavkin/esp/esp-idf/components/esp_phy /home/mslavkin/esp/esp-idf/components/esp_pm /home/mslavkin/esp/esp-idf/components/esp_psram /home/mslavkin/esp/esp-idf/components/esp_ringbuf /home/mslavkin/esp/esp-idf/components/esp_rom /home/mslavkin/esp/esp-idf/components/esp_system /home/mslavkin/esp/esp-idf/components/esp_timer /home/mslavkin/esp/esp-idf/components/esp_wifi /home/mslavkin/esp/esp-idf/components/espcoredump /home/mslavkin/esp/esp-idf/components/esptool_py /home/mslavkin/esp/esp-idf/components/fatfs /home/mslavkin/esp/esp-idf/components/freertos /home/mslavkin/esp/esp-idf/components/hal /home/mslavkin/esp/esp-idf/components/heap /home/mslavkin/esp/esp-idf/components/http_parser /home/mslavkin/esp/esp-idf/components/idf_test /home/mslavkin/esp/esp-idf/components/ieee802154 /home/mslavkin/esp/esp-idf/components/json /home/mslavkin/esp/esp-idf/components/log /home/mslavkin/esp/esp-idf/components/lwip /home/mslavkin/esp/station/main /home/mslavkin/esp/esp-idf/components/mbedtls /home/mslavkin/esp/esp-idf/components/mqtt /home/mslavkin/esp/esp-idf/components/newlib /home/mslavkin/esp/esp-idf/components/nvs_flash /home/mslavkin/esp/esp-idf/components/openthread /home/mslavkin/esp/esp-idf/components/partition_table /home/mslavkin/esp/esp-idf/components/perfmon /home/mslavkin/esp/esp-idf/components/protobuf-c /home/mslavkin/esp/esp-idf/components/protocomm /home/mslavkin/esp/esp-idf/components/pthread /home/mslavkin/esp/esp-idf/components/sdmmc /home/mslavkin/esp/esp-idf/components/soc /home/mslavkin/esp/esp-idf/components/spi_flash /home/mslavkin/esp/esp-idf/components/spiffs /home/mslavkin/esp/esp-idf/components/tcp_transport /home/mslavkin/esp/esp-idf/components/ulp /home/mslavkin/esp/esp-idf/components/unity /home/mslavkin/esp/esp-idf/components/usb /home/mslavkin/esp/esp-idf/components/vfs /home/mslavkin/esp/esp-idf/components/wear_levelling /home/mslavkin/esp/esp-idf/components/wifi_provisioning /home/mslavkin/esp/esp-idf/components/wpa_supplicant /home/mslavkin/esp/esp-idf/components/xtensa
+-- Configuring done (3.1s)
+-- Generating done (0.3s)
+-- Build files have been written to: /home/mslavkin/esp/station/build
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/mslavkin/esp/station/build/bootloader/esp-idf/esptool_py && /home/mslavkin/.espressif/python_env/idf5.1_py3.13_env/bin/python /home/mslavkin/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/mslavkin/esp/station/build/bootloader/bootloader.bin
+Bootloader binary size 0x6860 bytes. 0x7a0 bytes (7%) free.
+[2/10] Building C object esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj
+[3/10] No install step for 'bootloader'
+[4/10] Linking C static library esp-idf/esp_app_format/libesp_app_format.a
+[5/10] Completed 'bootloader'
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable wifi_station.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.10.0
+Creating esp32 image...
+Merged 27 ELF sections
+Successfully created esp32 image.
+Generated /home/mslavkin/esp/station/build/wifi_station.bin
+[9/10] cd /home/mslavkin/esp/station/build/esp-idf/esptool_py && /home/mslavkin/.espressif/python_env/idf5.1_py3.13_env/bin/python /home/mslavkin/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/mslavkin/esp/station/build/partition_table/partition-table.bin /home/mslavkin/esp/station/build/wifi_station.bin
+wifi_station.bin binary size 0xbe8d0 bytes. Smallest app partition is 0x100000 bytes. 0x41730 bytes (26%) free.

@@ -29,8 +29,8 @@
 
 
 
-#define RANGO_HUMEDAD 1000
-#define RANGO_HUMEDAD2 1000
+#define RANGO_HUMEDAD 1500
+#define RANGO_HUMEDAD2 1500
 #define RANGO_NIVEL_AGUA 1000
 
 #define BLINK_GPIO 4
@@ -38,8 +38,10 @@
 #define PUMP_GPIO2 2
 
 #define BLINK_PERIOD 100
-#define WAIT_TIME 1000
-#define RIEGO_TIME 500
+#define WAIT_TIME 5000
+#define WAIT_TIME2 10000
+#define RIEGO_TIME 5000
+#define RIEGO_TIME2 10000
 
 #define ADC_PIN ADC2_CHANNEL_5
 #define ADC_PIN2 ADC2_CHANNEL_4
@@ -398,6 +400,7 @@ void control_pump2(bool pump_on2)
 
 void app_main(void)
 {
+  blink_led(5, 100);
   esp_err_t ret = nvs_flash_init();
   if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
     ESP_ERROR_CHECK(nvs_flash_erase());
@@ -449,6 +452,7 @@ void app_main(void)
     {
       switch (currentState) {
       case STATE_MIDIENDO:
+	printf("stado midiendo \r\n");
 	configure_adc();
 	vTaskDelay(10 / portTICK_PERIOD_MS);
 	adc_measure = read_adc();
@@ -460,6 +464,7 @@ void app_main(void)
 	break;
 
       case STATE_WNIVEL:
+	printf("stado wnivel \r\n");
 	configure_adc();
 	vTaskDelay(10 / portTICK_PERIOD_MS);
 	adc_measure = read_adc();
@@ -470,8 +475,11 @@ void app_main(void)
 	water_state = check_water_adc(water_measure);
 	if (water_state)
 	  {
+	    blink_led_bomba1();
 	    pump_start_time = xTaskGetTickCount();
 	    currentState = STATE_REGANDO;
+	    control_pump(true);
+
 	  }
 	else
 	  {
@@ -480,16 +488,16 @@ void app_main(void)
 	break;
 
       case STATE_REGANDO:
+	printf("stado regando \r\n");
 	configure_adc();
 	vTaskDelay(10 / portTICK_PERIOD_MS);
 	adc_measure = read_adc();
 	adc_state = check_adc(adc_measure);
-	control_pump(true);
-	blink_led_bomba1();
 	printf("Bomba Encendida\r\n");
 	pump_elapsed_ms = (xTaskGetTickCount() - pump_start_time) * portTICK_PERIOD_MS;
-	if (!adc_state || pump_elapsed_ms > RIEGO_TIME)
+	if ( pump_elapsed_ms > RIEGO_TIME)
 	  {
+	   
 	    control_pump(false);
 	    waiting_start_time = xTaskGetTickCount();
 	    currentState = STATE_ESPERANDO;
@@ -497,6 +505,7 @@ void app_main(void)
 	break;
 
       case STATE_ESPERANDO:
+	printf("stado esperando \r\n");
 	configure_adc();
 	vTaskDelay(10 / portTICK_PERIOD_MS);
 	adc_measure = read_adc();
@@ -510,7 +519,6 @@ void app_main(void)
 	  }
 	break;
       }
-
 
       switch (currentState2) {
       case STATE_MIDIENDO:
@@ -535,8 +543,10 @@ void app_main(void)
 	water_state = check_water_adc(water_measure);
 	if (water_state)
 	  {
+	    blink_led_bomba2();
 	    pump_start_time2 = xTaskGetTickCount();
 	    currentState2 = STATE_REGANDO;
+	    control_pump2(true);
 	  }else
 	  {
 	    currentState2 = STATE_MIDIENDO;
@@ -544,16 +554,13 @@ void app_main(void)
 	break;
 
       case STATE_REGANDO:
-       
 	configure_adc2();
 	vTaskDelay(10 / portTICK_PERIOD_MS);
 	adc_measure2 = read_adc2();
 	adc_state2 = check_adc2(adc_measure2);
-	control_pump2(true);
-	blink_led_bomba2();
 	printf("Bomba 2 Encendida\r\n");
 	pump_elapsed_ms2 = (xTaskGetTickCount() - pump_start_time2) * portTICK_PERIOD_MS;
-	if (!adc_state2 || pump_elapsed_ms2 > RIEGO_TIME)
+	if (pump_elapsed_ms2 > RIEGO_TIME2)
 	  {
 	    control_pump2(false);
 	    waiting_start_time2 = xTaskGetTickCount();
@@ -568,15 +575,14 @@ void app_main(void)
 	adc_state2 = check_adc2(adc_measure2);
 	printf ("Bomba 2 Apagada - Esperando\r\n");
 	riego_elapsed_ms2 = (xTaskGetTickCount() - waiting_start_time2)  * portTICK_PERIOD_MS;
-	if (riego_elapsed_ms2 > WAIT_TIME)
+	
+	if (riego_elapsed_ms2 > WAIT_TIME2)
 	  {
 	    printf("Tiempo de espera terminado\r\n");
 	    currentState2 = STATE_MIDIENDO;
 	  }
 	break;
       }
-
-      
       printf("INICIANDO WIFI\r\n");
       char esp_ip[16];
       wifi_start_and_connect(esp_ip);
@@ -584,5 +590,7 @@ void app_main(void)
       vTaskDelay(100 / portTICK_PERIOD_MS);
       wifi_stop_completely();
       printf("Desconectando WIFI\r\n");
+      printf ("portick %ld \r\n" ,portTICK_PERIOD_MS);
+      vTaskDelay(100 / portTICK_PERIOD_MS);
     } 
 }

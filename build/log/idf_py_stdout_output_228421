@@ -1,0 +1,3891 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7116
+ho 0 tail 12 room 4
+load:0x40078000,len:15624
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (33) boot: ESP-IDF v5.1.4-dirty 2nd stage bootloader[0m
+[0;32mI (33) boot: compile time Oct 20 2025 22:13:53[0m
+[0;32mI (33) boot: Multicore bootloader[0m
+[0;32mI (38) boot: chip revision: v3.1[0m
+[0;32mI (42) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (46) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (51) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (61) boot: Partition Table:[0m
+[0;32mI (64) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (72) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (79) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (86) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (94) boot: End of partition table[0m
+[0;32mI (98) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2045ch (132188) map[0m
+[0;32mI (154) esp_image: segment 1: paddr=00030484 vaddr=3ffb0000 size=03b9ch ( 15260) load[0m
+[0;32mI (161) esp_image: segment 2: paddr=00034028 vaddr=40080000 size=0bff0h ( 49136) load[0m
+[0;32mI (181) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=84548h (542024) map[0m
+[0;32mI (377) esp_image: segment 4: paddr=000c4570 vaddr=4008bff0 size=0a144h ( 41284) load[0m
+[0;32mI (406) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (406) boot: Disabling RNG early entropy source...[0m
+[0;32mI (417) cpu_start: Multicore app[0m
+[0;32mI (418) cpu_start: Pro cpu up.[0m
+[0;32mI (418) cpu_start: Starting app cpu, entry point is 0x40081390[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (436) cpu_start: Pro cpu start user code[0m
+[0;32mI (436) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (436) cpu_start: Application information:[0m
+[0;32mI (440) cpu_start: Project name:     wifi_station[0m
+[0;32mI (446) cpu_start: App version:      01cf2c2-dirty[0m
+[0;32mI (451) cpu_start: Compile time:     Oct 29 2025 11:27:39[0m
+[0;32mI (457) cpu_start: ELF file SHA256:  e3900272d79fdd0d...[0m
+[0;32mI (463) cpu_start: ESP-IDF:          v5.1.4-dirty[0m
+[0;32mI (469) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (473) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (478) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (483) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (496) heap_init: At 3FFB7C48 len 000283B8 (160 KiB): DRAM[0m
+[0;32mI (502) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (509) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (515) heap_init: At 40096134 len 00009ECC (39 KiB): IRAM[0m
+[0;32mI (523) spi_flash: detected chip: generic[0m
+[0;32mI (526) spi_flash: flash io: dio[0m
+[0;33mW (530) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (543) ADC: legacy driver is deprecated, please migrate to `esp_adc/adc_oneshot.h`[0m
+[0;32mI (552) app_start: Starting scheduler on CPU0[0m
+[0;32mI (557) app_start: Starting scheduler on CPU1[0m
+[0;32mI (557) main_task: Started on CPU0[0m
+[0;32mI (567) main_task: Calling app_main()[0m
+[0;32mI (1607) wifi:wifi driver task: 3ffbfbe8, prio:23, stack:6656, core=0[0m
+[0;32mI (1617) wifi:wifi firmware version: 3ce09e5[0m
+[0;32mI (1617) wifi:wifi certification version: v7.0[0m
+[0;32mI (1617) wifi:config NVS flash: enabled[0m
+[0;32mI (1627) wifi:config nano formating: disabled[0m
+[0;32mI (1627) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1627) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1637) wifi:Init management short buffer num: 32[0m
+[0;32mI (1637) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1647) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1647) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1657) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1657) wifi_init: rx ba win: 6[0m
+[0;32mI (1657) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1667) wifi_init: udp mbox: 6[0m
+[0;32mI (1667) wifi_init: tcp mbox: 6[0m
+[0;32mI (1667) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1677) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1677) wifi_init: tcp mss: 1440[0m
+[0;32mI (1687) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1687) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1697) phy_init: phy_version 4791,2c4672b,Dec 20 2023,16:06:06[0m
+[0;32mI (1777) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (1777) wifi:enable tsf[0m
+[0;32mI (1787) irrigation_system: wifi_init_sta finished.[0m
+Configurando LED
+[0;32mI (1787) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1797) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (1797) wifi:state: init -> auth (b0)[0m
+Configurando ADC water sensor
+Configurando ADC 1
+Configurando bomba 1
+[0;32mI (1807) gpio: GPIO[15]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1807) wifi:state: auth -> assoc (0)[0m
+Configurando ADC 2
+Configurando bomba 2
+[0;32mI (1827) gpio: GPIO[2]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1827) wifi:state: assoc -> run (10)[0m
+Configurando ADC 2
+adc raw 2 -2146098218
+Valor del adc 2 medio
+INICIANDO WIFI
+[0;32mI (1847) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (1857) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (1857) wifi:security: WPA2-PSK, phy: bgn, rssi: -39[0m
+[0;32mI (1867) wifi:pm start, type: 1[0m
+
+[0;32mI (1867) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1917) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (2877) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (2877) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (2877) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (3457) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (3857) irrigation_system: Stopping WiFi...[0m
+[0;32mI (3857) wifi:state: run -> init (0)[0m
+[0;32mI (3857) wifi:pm stop, total sleep time: 1288751 us / 1986657 us[0m
+
+[0;32mI (3857) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (3857) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (3867) wifi:NAN WiFi stop[0m
+[0;32mI (3867) irrigation_system: retry to connect to the AP[0m
+[0;32mI (3877) irrigation_system: connect to the AP fail[0m
+[0;32mI (3877) wifi:flush txq[0m
+[0;32mI (3877) wifi:stop sw txq[0m
+[0;32mI (3887) wifi:lmac stop hw txq[0m
+[0;32mI (3887) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+INICIANDO WIFI
+[0;32mI (4007) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (4007) wifi:enable tsf[0m
+[0;32mI (4007) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (4017) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (4017) wifi:state: init -> auth (b0)[0m
+[0;32mI (4027) wifi:state: auth -> assoc (0)[0m
+[0;32mI (4027) wifi:state: assoc -> run (10)[0m
+[0;32mI (4077) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (4077) wifi:security: WPA2-PSK, phy: bgn, rssi: -40[0m
+[0;32mI (4077) wifi:pm start, type: 1[0m
+
+[0;32mI (4267) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (5077) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (5077) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (5077) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (5617) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (6397) irrigation_system: Stopping WiFi...[0m
+[0;32mI (6397) wifi:state: run -> init (0)[0m
+[0;32mI (6397) wifi:pm stop, total sleep time: 1457659 us / 2314414 us[0m
+
+[0;32mI (6397) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (6397) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (6407) wifi:NAN WiFi stop[0m
+[0;32mI (6407) irrigation_system: retry to connect to the AP[0m
+[0;32mI (6417) irrigation_system: connect to the AP fail[0m
+[0;32mI (6417) wifi:flush txq[0m
+[0;32mI (6417) wifi:stop sw txq[0m
+[0;32mI (6427) wifi:lmac stop hw txq[0m
+[0;32mI (6427) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw 3735
+Nivel de agua normal
+INICIANDO WIFI
+[0;32mI (7757) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (7757) wifi:enable tsf[0m
+[0;32mI (7757) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (7767) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (7767) wifi:state: init -> auth (b0)[0m
+[0;32mI (7777) wifi:state: auth -> assoc (0)[0m
+[0;32mI (7777) wifi:state: assoc -> run (10)[0m
+[0;32mI (7817) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (7817) wifi:security: WPA2-PSK, phy: bgn, rssi: -48[0m
+[0;32mI (7817) wifi:pm start, type: 1[0m
+
+[0;32mI (7857) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (8827) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (8827) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (8827) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (9397) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (9857) irrigation_system: Stopping WiFi...[0m
+[0;32mI (9857) wifi:state: run -> init (0)[0m
+[0;32mI (9857) wifi:pm stop, total sleep time: 1279062 us / 2033149 us[0m
+
+[0;32mI (9857) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (9857) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (9867) wifi:NAN WiFi stop[0m
+[0;32mI (9867) irrigation_system: retry to connect to the AP[0m
+[0;32mI (9877) irrigation_system: connect to the AP fail[0m
+[0;32mI (9877) wifi:flush txq[0m
+[0;32mI (9877) wifi:stop sw txq[0m
+[0;32mI (9887) wifi:lmac stop hw txq[0m
+[0;32mI (9887) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (10007) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (10007) wifi:enable tsf[0m
+[0;32mI (10007) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (10017) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (10017) wifi:state: init -> auth (b0)[0m
+[0;32mI (10027) wifi:state: auth -> assoc (0)[0m
+[0;32mI (10027) wifi:state: assoc -> run (10)[0m
+[0;32mI (10097) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (10097) wifi:security: WPA2-PSK, phy: bgn, rssi: -48[0m
+[0;32mI (10097) wifi:pm start, type: 1[0m
+
+[0;32mI (10207) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (10527) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+[0;32mI (11107) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (11107) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (11107) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+Successfully connected
+Shutting down socket
+[0;32mI (11407) irrigation_system: Stopping WiFi...[0m
+[0;32mI (11407) wifi:state: run -> init (0)[0m
+[0;32mI (11407) wifi:pm stop, total sleep time: 728200 us / 1304750 us[0m
+
+[0;32mI (11407) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (11407) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (11417) wifi:NAN WiFi stop[0m
+[0;32mI (11417) irrigation_system: retry to connect to the AP[0m
+[0;32mI (11427) irrigation_system: connect to the AP fail[0m
+[0;32mI (11427) wifi:flush txq[0m
+[0;32mI (11427) wifi:stop sw txq[0m
+[0;32mI (11437) wifi:lmac stop hw txq[0m
+[0;32mI (11437) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (11557) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (11557) wifi:enable tsf[0m
+[0;32mI (11557) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (11567) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (11567) wifi:state: init -> auth (b0)[0m
+[0;32mI (11577) wifi:state: auth -> assoc (0)[0m
+[0;32mI (11577) wifi:state: assoc -> run (10)[0m
+[0;32mI (11637) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (11637) wifi:security: WPA2-PSK, phy: bgn, rssi: -48[0m
+[0;32mI (11637) wifi:pm start, type: 1[0m
+
+[0;32mI (11647) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (11737) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+[0;32mI (12647) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (12647) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (12647) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+Successfully connected
+Shutting down socket
+[0;32mI (12947) irrigation_system: Stopping WiFi...[0m
+[0;32mI (12947) wifi:state: run -> init (0)[0m
+[0;32mI (12947) wifi:pm stop, total sleep time: 681383 us / 1303071 us[0m
+
+[0;32mI (12947) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (12947) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (12957) wifi:NAN WiFi stop[0m
+[0;32mI (12957) irrigation_system: retry to connect to the AP[0m
+[0;32mI (12967) irrigation_system: connect to the AP fail[0m
+[0;32mI (12967) wifi:flush txq[0m
+[0;32mI (12967) wifi:stop sw txq[0m
+[0;32mI (12977) wifi:lmac stop hw txq[0m
+[0;32mI (12977) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (13097) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (13097) wifi:enable tsf[0m
+[0;32mI (13097) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (13157) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (13157) wifi:state: init -> auth (b0)[0m
+[0;32mI (13167) wifi:state: auth -> assoc (0)[0m
+[0;32mI (13177) wifi:state: assoc -> run (10)[0m
+[0;32mI (13207) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (13207) wifi:security: WPA2-PSK, phy: bgn, rssi: -48[0m
+[0;32mI (13217) wifi:pm start, type: 1[0m
+
+[0;32mI (13277) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (14217) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (14217) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (14217) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (14237) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (14517) irrigation_system: Stopping WiFi...[0m
+[0;32mI (14517) wifi:state: run -> init (0)[0m
+[0;32mI (14517) wifi:pm stop, total sleep time: 795121 us / 1299412 us[0m
+
+[0;32mI (14517) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (14517) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (14527) wifi:NAN WiFi stop[0m
+[0;32mI (14527) irrigation_system: retry to connect to the AP[0m
+[0;32mI (14537) irrigation_system: connect to the AP fail[0m
+[0;32mI (14537) wifi:flush txq[0m
+[0;32mI (14537) wifi:stop sw txq[0m
+[0;32mI (14547) wifi:lmac stop hw txq[0m
+[0;32mI (14547) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (14667) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (14667) wifi:enable tsf[0m
+[0;32mI (14667) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (14677) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (14677) wifi:state: init -> auth (b0)[0m
+[0;32mI (14687) wifi:state: auth -> assoc (0)[0m
+[0;32mI (14687) wifi:state: assoc -> run (10)[0m
+[0;32mI (14737) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (14737) wifi:security: WPA2-PSK, phy: bgn, rssi: -45[0m
+[0;32mI (14737) wifi:pm start, type: 1[0m
+
+[0;32mI (14817) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (15747) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (15747) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (15747) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (16357) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (16857) irrigation_system: Stopping WiFi...[0m
+[0;32mI (16857) wifi:state: run -> init (0)[0m
+[0;32mI (16857) wifi:pm stop, total sleep time: 1452085 us / 2112979 us[0m
+
+[0;32mI (16857) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (16857) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (16867) wifi:NAN WiFi stop[0m
+[0;32mI (16867) irrigation_system: retry to connect to the AP[0m
+[0;32mI (16877) irrigation_system: connect to the AP fail[0m
+[0;32mI (16907) wifi:flush txq[0m
+[0;32mI (16907) wifi:stop sw txq[0m
+[0;32mI (16907) wifi:lmac stop hw txq[0m
+[0;32mI (16907) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (17017) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (17017) wifi:enable tsf[0m
+[0;32mI (17017) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (17067) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (17077) wifi:state: init -> auth (b0)[0m
+[0;32mI (17077) wifi:state: auth -> assoc (0)[0m
+[0;32mI (17087) wifi:state: assoc -> run (10)[0m
+[0;32mI (17117) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (17117) wifi:security: WPA2-PSK, phy: bgn, rssi: -44[0m
+[0;32mI (17127) wifi:pm start, type: 1[0m
+
+[0;32mI (17167) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (18127) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (18127) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (18127) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (18517) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (18877) irrigation_system: Stopping WiFi...[0m
+[0;32mI (18877) wifi:state: run -> init (0)[0m
+[0;32mI (18877) wifi:pm stop, total sleep time: 1097677 us / 1747132 us[0m
+
+[0;32mI (18877) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (18877) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (18887) irrigation_system: retry to connect to the AP[0m
+[0;32mI (18887) irrigation_system: connect to the AP fail[0m
+[0;32mI (18897) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (18907) wifi:state: init -> auth (b0)[0m
+[0;32mI (18907) wifi:state: auth -> init (0)[0m
+[0;32mI (18907) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (18917) wifi:NAN WiFi stop[0m
+[0;32mI (18917) irrigation_system: retry to connect to the AP[0m
+[0;32mI (18927) irrigation_system: connect to the AP fail[0m
+[0;32mI (18927) wifi:flush txq[0m
+[0;32mI (18937) wifi:stop sw txq[0m
+[0;32mI (18937) wifi:lmac stop hw txq[0m
+[0;32mI (18937) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (19057) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (19057) wifi:enable tsf[0m
+[0;32mI (19057) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (19067) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (19077) wifi:state: init -> auth (b0)[0m
+[0;32mI (19087) wifi:state: auth -> assoc (0)[0m
+[0;32mI (19087) wifi:state: assoc -> run (10)[0m
+[0;32mI (19147) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (19147) wifi:security: WPA2-PSK, phy: bgn, rssi: -42[0m
+[0;32mI (19157) wifi:pm start, type: 1[0m
+
+[0;32mI (19217) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (20157) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (20157) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (20157) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (20597) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (20927) irrigation_system: Stopping WiFi...[0m
+[0;32mI (20927) wifi:state: run -> init (0)[0m
+[0;32mI (20927) wifi:pm stop, total sleep time: 944529 us / 1770875 us[0m
+
+[0;32mI (20927) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (20927) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (20937) wifi:NAN WiFi stop[0m
+[0;32mI (20937) irrigation_system: retry to connect to the AP[0m
+[0;32mI (20947) irrigation_system: connect to the AP fail[0m
+[0;32mI (20947) wifi:flush txq[0m
+[0;32mI (20947) wifi:stop sw txq[0m
+[0;32mI (20957) wifi:lmac stop hw txq[0m
+[0;32mI (20957) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (21077) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (21077) wifi:enable tsf[0m
+[0;32mI (21077) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (21097) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (21097) wifi:state: init -> auth (b0)[0m
+[0;32mI (21107) wifi:state: auth -> assoc (0)[0m
+[0;32mI (21117) wifi:state: assoc -> run (10)[0m
+[0;32mI (21147) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (21157) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (21157) wifi:pm start, type: 1[0m
+
+[0;32mI (21167) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (22157) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (22157) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (22157) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (22197) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (22467) irrigation_system: Stopping WiFi...[0m
+[0;32mI (22467) wifi:state: run -> init (0)[0m
+[0;32mI (22467) wifi:pm stop, total sleep time: 773628 us / 1305312 us[0m
+
+[0;32mI (22467) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (22467) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (22477) wifi:NAN WiFi stop[0m
+[0;32mI (22477) irrigation_system: retry to connect to the AP[0m
+[0;32mI (22487) irrigation_system: connect to the AP fail[0m
+[0;32mI (22487) wifi:flush txq[0m
+[0;32mI (22487) wifi:stop sw txq[0m
+[0;32mI (22497) wifi:lmac stop hw txq[0m
+[0;32mI (22497) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (22617) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (22617) wifi:enable tsf[0m
+[0;32mI (22617) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (22627) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (22627) wifi:state: init -> auth (b0)[0m
+[0;32mI (22637) wifi:state: auth -> assoc (0)[0m
+[0;32mI (22647) wifi:state: assoc -> run (10)[0m
+[0;32mI (22677) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (22677) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (22687) wifi:pm start, type: 1[0m
+
+[0;32mI (22697) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (23687) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (23687) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (23687) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (23737) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (23997) irrigation_system: Stopping WiFi...[0m
+[0;32mI (23997) wifi:state: run -> init (0)[0m
+[0;32mI (23997) wifi:pm stop, total sleep time: 752678 us / 1308333 us[0m
+
+[0;32mI (23997) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (23997) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (24007) wifi:NAN WiFi stop[0m
+[0;32mI (24007) irrigation_system: retry to connect to the AP[0m
+[0;32mI (24017) irrigation_system: connect to the AP fail[0m
+[0;32mI (24017) wifi:flush txq[0m
+[0;32mI (24017) wifi:stop sw txq[0m
+[0;32mI (24027) wifi:lmac stop hw txq[0m
+[0;32mI (24027) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (24147) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (24147) wifi:enable tsf[0m
+[0;32mI (24147) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (24157) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (24157) wifi:state: init -> auth (b0)[0m
+[0;32mI (24167) wifi:state: auth -> assoc (0)[0m
+[0;32mI (24167) wifi:state: assoc -> run (10)[0m
+[0;32mI (24217) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (24217) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (24227) wifi:pm start, type: 1[0m
+
+[0;32mI (24237) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (25227) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (25227) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (25227) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (25267) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (25537) irrigation_system: Stopping WiFi...[0m
+[0;32mI (25537) wifi:state: run -> init (0)[0m
+[0;32mI (25537) wifi:pm stop, total sleep time: 700231 us / 1311734 us[0m
+
+[0;32mI (25537) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (25537) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (25547) wifi:NAN WiFi stop[0m
+[0;32mI (25547) irrigation_system: retry to connect to the AP[0m
+[0;32mI (25557) irrigation_system: connect to the AP fail[0m
+[0;32mI (25557) wifi:flush txq[0m
+[0;32mI (25557) wifi:stop sw txq[0m
+[0;32mI (25567) wifi:lmac stop hw txq[0m
+[0;32mI (25567) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (25687) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (25687) wifi:enable tsf[0m
+[0;32mI (25687) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (25697) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (25697) wifi:state: init -> auth (b0)[0m
+[0;32mI (25717) wifi:state: auth -> assoc (0)[0m
+[0;32mI (25747) wifi:state: assoc -> run (10)[0m
+[0;32mI (25777) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (25777) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (25787) wifi:pm start, type: 1[0m
+
+[0;32mI (25877) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (26787) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (26787) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (26787) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (27417) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (27857) irrigation_system: Stopping WiFi...[0m
+[0;32mI (27857) wifi:state: run -> init (0)[0m
+[0;32mI (27857) wifi:pm stop, total sleep time: 1428926 us / 2066649 us[0m
+
+[0;32mI (27857) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (27857) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (27867) wifi:NAN WiFi stop[0m
+[0;32mI (27867) irrigation_system: retry to connect to the AP[0m
+[0;32mI (27877) irrigation_system: connect to the AP fail[0m
+[0;32mI (27877) wifi:flush txq[0m
+[0;32mI (27877) wifi:stop sw txq[0m
+[0;32mI (27887) wifi:lmac stop hw txq[0m
+[0;32mI (27887) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (28007) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (28007) wifi:enable tsf[0m
+[0;32mI (28007) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (28027) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (28027) wifi:state: init -> auth (b0)[0m
+[0;32mI (28037) wifi:state: auth -> assoc (0)[0m
+[0;32mI (28047) wifi:state: assoc -> run (10)[0m
+[0;32mI (28087) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (28087) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (28087) wifi:pm start, type: 1[0m
+
+[0;32mI (28127) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (29097) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (29097) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (29097) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (29567) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (30137) irrigation_system: Stopping WiFi...[0m
+[0;32mI (30137) wifi:state: run -> init (0)[0m
+[0;32mI (30137) wifi:pm stop, total sleep time: 1300709 us / 2042905 us[0m
+
+[0;32mI (30137) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (30137) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (30147) irrigation_system: retry to connect to the AP[0m
+[0;32mI (30157) irrigation_system: connect to the AP fail[0m
+[0;32mI (30157) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (30167) wifi:state: init -> auth (b0)[0m
+[0;32mI (30167) wifi:state: auth -> init (0)[0m
+[0;32mI (30167) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (30177) wifi:NAN WiFi stop[0m
+[0;32mI (30177) irrigation_system: retry to connect to the AP[0m
+[0;32mI (30187) irrigation_system: connect to the AP fail[0m
+[0;32mI (30187) wifi:flush txq[0m
+[0;32mI (30197) wifi:stop sw txq[0m
+[0;32mI (30197) wifi:lmac stop hw txq[0m
+[0;32mI (30197) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (30317) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (30317) wifi:enable tsf[0m
+[0;32mI (30317) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (30327) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (30327) wifi:state: init -> auth (b0)[0m
+[0;32mI (30337) wifi:state: auth -> assoc (0)[0m
+[0;32mI (30337) wifi:state: assoc -> run (10)[0m
+[0;32mI (30377) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (30377) wifi:security: WPA2-PSK, phy: bgn, rssi: -44[0m
+[0;32mI (30387) wifi:pm start, type: 1[0m
+
+[0;32mI (30387) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (31387) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (31387) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (31387) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (31447) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (31727) irrigation_system: Stopping WiFi...[0m
+[0;32mI (31727) wifi:state: run -> init (0)[0m
+[0;32mI (31727) wifi:pm stop, total sleep time: 726760 us / 1340920 us[0m
+
+[0;32mI (31727) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (31727) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (31737) wifi:NAN WiFi stop[0m
+[0;32mI (31737) irrigation_system: retry to connect to the AP[0m
+[0;32mI (31747) irrigation_system: connect to the AP fail[0m
+[0;32mI (31747) wifi:flush txq[0m
+[0;32mI (31747) wifi:stop sw txq[0m
+[0;32mI (31757) wifi:lmac stop hw txq[0m
+[0;32mI (31757) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (31877) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (31877) wifi:enable tsf[0m
+[0;32mI (31877) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (31887) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (31887) wifi:state: init -> auth (b0)[0m
+[0;32mI (31897) wifi:state: auth -> assoc (0)[0m
+[0;32mI (31897) wifi:state: assoc -> run (10)[0m
+[0;32mI (31957) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (31957) wifi:security: WPA2-PSK, phy: bgn, rssi: -42[0m
+[0;32mI (31967) wifi:pm start, type: 1[0m
+
+[0;32mI (32017) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (32967) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (32967) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (32967) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (33567) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (34137) irrigation_system: Stopping WiFi...[0m
+[0;32mI (34137) wifi:state: run -> init (0)[0m
+[0;32mI (34137) wifi:pm stop, total sleep time: 1348570 us / 2170032 us[0m
+
+[0;32mI (34137) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (34137) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (34147) wifi:NAN WiFi stop[0m
+[0;32mI (34147) irrigation_system: retry to connect to the AP[0m
+[0;32mI (34157) irrigation_system: connect to the AP fail[0m
+[0;32mI (34157) wifi:flush txq[0m
+[0;32mI (34157) wifi:stop sw txq[0m
+[0;32mI (34167) wifi:lmac stop hw txq[0m
+[0;32mI (34167) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+Tiempo de espera terminado
+INICIANDO WIFI
+[0;32mI (34287) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (34287) wifi:enable tsf[0m
+[0;32mI (34287) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (34297) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (34297) wifi:state: init -> auth (b0)[0m
+[0;32mI (34307) wifi:state: auth -> assoc (0)[0m
+[0;32mI (34317) wifi:state: assoc -> run (10)[0m
+[0;32mI (34347) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (34347) wifi:security: WPA2-PSK, phy: bgn, rssi: -39[0m
+[0;32mI (34357) wifi:pm start, type: 1[0m
+
+[0;32mI (34377) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (35357) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (35357) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (35357) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (35407) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (35677) irrigation_system: Stopping WiFi...[0m
+[0;32mI (35677) wifi:state: run -> init (0)[0m
+[0;32mI (35677) wifi:pm stop, total sleep time: 757750 us / 1318562 us[0m
+
+[0;32mI (35677) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (35677) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (35687) wifi:NAN WiFi stop[0m
+[0;32mI (35687) irrigation_system: retry to connect to the AP[0m
+[0;32mI (35697) irrigation_system: connect to the AP fail[0m
+[0;32mI (35697) wifi:flush txq[0m
+[0;32mI (35697) wifi:stop sw txq[0m
+[0;32mI (35707) wifi:lmac stop hw txq[0m
+[0;32mI (35707) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+INICIANDO WIFI
+[0;32mI (35827) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (35827) wifi:enable tsf[0m
+[0;32mI (35827) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (35837) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (35837) wifi:state: init -> auth (b0)[0m
+[0;32mI (35847) wifi:state: auth -> assoc (0)[0m
+[0;32mI (35857) wifi:state: assoc -> run (10)[0m
+[0;32mI (35887) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (35887) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (35897) wifi:pm start, type: 1[0m
+
+[0;32mI (36017) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (36897) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (36897) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (36897) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (36947) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (37217) irrigation_system: Stopping WiFi...[0m
+[0;32mI (37217) wifi:state: run -> init (0)[0m
+[0;32mI (37217) wifi:pm stop, total sleep time: 795368 us / 1319485 us[0m
+
+[0;32mI (37217) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (37217) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (37227) wifi:NAN WiFi stop[0m
+[0;32mI (37227) irrigation_system: retry to connect to the AP[0m
+[0;32mI (37237) irrigation_system: connect to the AP fail[0m
+[0;32mI (37237) wifi:flush txq[0m
+[0;32mI (37237) wifi:stop sw txq[0m
+[0;32mI (37247) wifi:lmac stop hw txq[0m
+[0;32mI (37247) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw 3711
+Nivel de agua normal
+INICIANDO WIFI
+[0;32mI (38577) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (38577) wifi:enable tsf[0m
+[0;32mI (38577) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (38587) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (38587) wifi:state: init -> auth (b0)[0m
+[0;32mI (38597) wifi:state: auth -> assoc (0)[0m
+[0;32mI (38617) wifi:state: assoc -> run (10)[0m
+[0;32mI (38637) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (38637) wifi:security: WPA2-PSK, phy: bgn, rssi: -42[0m
+[0;32mI (38647) wifi:pm start, type: 1[0m
+
+[0;32mI (38677) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (39647) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (39647) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (39647) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (40217) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (40687) irrigation_system: Stopping WiFi...[0m
+[0;32mI (40687) wifi:state: run -> init (0)[0m
+[0;32mI (40687) wifi:pm stop, total sleep time: 1045224 us / 2035865 us[0m
+
+[0;32mI (40687) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (40687) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (40697) wifi:NAN WiFi stop[0m
+[0;32mI (40697) irrigation_system: retry to connect to the AP[0m
+[0;32mI (40707) irrigation_system: connect to the AP fail[0m
+[0;32mI (40707) wifi:flush txq[0m
+[0;32mI (40707) wifi:stop sw txq[0m
+[0;32mI (40717) wifi:lmac stop hw txq[0m
+[0;32mI (40717) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (40837) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (40837) wifi:enable tsf[0m
+[0;32mI (40837) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (40847) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (40847) wifi:state: init -> auth (b0)[0m
+[0;32mI (40857) wifi:state: auth -> assoc (0)[0m
+[0;32mI (40857) wifi:state: assoc -> run (10)[0m
+[0;32mI (40897) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (40897) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (40907) wifi:pm start, type: 1[0m
+
+[0;32mI (40927) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (41907) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (41907) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (41907) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (42477) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (43037) irrigation_system: Stopping WiFi...[0m
+[0;32mI (43037) wifi:state: run -> init (0)[0m
+[0;32mI (43037) wifi:pm stop, total sleep time: 1366299 us / 2130059 us[0m
+
+[0;32mI (43037) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (43037) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (43047) wifi:NAN WiFi stop[0m
+[0;32mI (43047) irrigation_system: retry to connect to the AP[0m
+[0;32mI (43057) irrigation_system: connect to the AP fail[0m
+[0;32mI (43057) wifi:flush txq[0m
+[0;32mI (43067) wifi:stop sw txq[0m
+[0;32mI (43067) wifi:lmac stop hw txq[0m
+[0;32mI (43067) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (43187) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (43187) wifi:enable tsf[0m
+[0;32mI (43187) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (43197) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (43197) wifi:state: init -> auth (b0)[0m
+[0;32mI (43207) wifi:state: auth -> assoc (0)[0m
+[0;32mI (43207) wifi:state: assoc -> run (10)[0m
+[0;32mI (43247) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (43247) wifi:security: WPA2-PSK, phy: bgn, rssi: -48[0m
+[0;32mI (43257) wifi:pm start, type: 1[0m
+
+[0;32mI (43287) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (43757) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+[0;32mI (44257) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (44257) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (44257) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+Successfully connected
+Shutting down socket
+[0;32mI (44587) irrigation_system: Stopping WiFi...[0m
+[0;32mI (44587) wifi:state: run -> init (0)[0m
+[0;32mI (44587) wifi:pm stop, total sleep time: 689468 us / 1330427 us[0m
+
+[0;32mI (44587) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (44587) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (44597) irrigation_system: retry to connect to the AP[0m
+[0;32mI (44597) irrigation_system: connect to the AP fail[0m
+[1;31mE (44607) wifi:NAN WiFi stop[0m
+[0;32mI (44607) wifi:flush txq[0m
+[0;32mI (44607) wifi:stop sw txq[0m
+[0;32mI (44617) wifi:lmac stop hw txq[0m
+[0;32mI (44617) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (44737) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (44737) wifi:enable tsf[0m
+[0;32mI (44737) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (44747) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (44747) wifi:state: init -> auth (b0)[0m
+[0;32mI (44757) wifi:state: auth -> assoc (0)[0m
+[0;32mI (44767) wifi:state: assoc -> run (10)[0m
+[0;32mI (44797) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (44797) wifi:security: WPA2-PSK, phy: bgn, rssi: -47[0m
+[0;32mI (44807) wifi:pm start, type: 1[0m
+
+[0;32mI (44817) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (45237) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+[0;32mI (45807) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (45807) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (45807) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+Successfully connected
+Shutting down socket
+[0;32mI (46117) irrigation_system: Stopping WiFi...[0m
+[0;32mI (46117) wifi:state: run -> init (0)[0m
+[0;32mI (46117) wifi:pm stop, total sleep time: 717611 us / 1311421 us[0m
+
+[0;32mI (46117) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (46117) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (46127) wifi:NAN WiFi stop[0m
+[0;32mI (46127) irrigation_system: retry to connect to the AP[0m
+[0;32mI (46137) irrigation_system: connect to the AP fail[0m
+[0;32mI (46137) wifi:flush txq[0m
+[0;32mI (46137) wifi:stop sw txq[0m
+[0;32mI (46147) wifi:lmac stop hw txq[0m
+[0;32mI (46147) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (46267) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (46267) wifi:enable tsf[0m
+[0;32mI (46267) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (46277) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (46277) wifi:state: init -> auth (b0)[0m
+[0;32mI (46287) wifi:state: auth -> assoc (0)[0m
+[0;32mI (46287) wifi:state: assoc -> run (10)[0m
+[0;32mI (46327) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (46327) wifi:security: WPA2-PSK, phy: bgn, rssi: -48[0m
+[0;32mI (46337) wifi:pm start, type: 1[0m
+
+[0;32mI (46357) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (47337) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (47337) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (47337) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (47387) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (47657) irrigation_system: Stopping WiFi...[0m
+[0;32mI (47657) wifi:state: run -> init (0)[0m
+[0;32mI (47657) wifi:pm stop, total sleep time: 776703 us / 1320949 us[0m
+
+[0;32mI (47657) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (47657) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (47667) wifi:NAN WiFi stop[0m
+[0;32mI (47667) irrigation_system: retry to connect to the AP[0m
+[0;32mI (47677) irrigation_system: connect to the AP fail[0m
+[0;32mI (47717) wifi:flush txq[0m
+[0;32mI (47717) wifi:stop sw txq[0m
+[0;32mI (47717) wifi:lmac stop hw txq[0m
+[0;32mI (47717) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (47827) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (47827) wifi:enable tsf[0m
+[0;32mI (47827) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (47847) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (47847) wifi:state: init -> auth (b0)[0m
+[0;32mI (47857) wifi:state: auth -> assoc (0)[0m
+[0;32mI (47857) wifi:state: assoc -> run (10)[0m
+[0;32mI (47907) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (47907) wifi:security: WPA2-PSK, phy: bgn, rssi: -47[0m
+[0;32mI (47917) wifi:pm start, type: 1[0m
+
+[0;32mI (47997) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (48917) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (48917) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (48917) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (49537) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (49907) irrigation_system: Stopping WiFi...[0m
+[0;32mI (49907) wifi:state: run -> init (0)[0m
+[0;32mI (49907) wifi:pm stop, total sleep time: 1267390 us / 1992507 us[0m
+
+[0;32mI (49907) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (49907) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (49917) wifi:NAN WiFi stop[0m
+[0;32mI (49917) irrigation_system: retry to connect to the AP[0m
+[0;32mI (49927) irrigation_system: connect to the AP fail[0m
+[0;32mI (49927) wifi:flush txq[0m
+[0;32mI (49937) wifi:stop sw txq[0m
+[0;32mI (49937) wifi:lmac stop hw txq[0m
+[0;32mI (49937) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (50057) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (50057) wifi:enable tsf[0m
+[0;32mI (50057) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (50067) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (50067) wifi:state: init -> auth (b0)[0m
+[0;32mI (50077) wifi:state: auth -> assoc (0)[0m
+[0;32mI (50077) wifi:state: assoc -> run (10)[0m
+[0;32mI (50117) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (50117) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (50127) wifi:pm start, type: 1[0m
+
+[0;32mI (50147) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (51127) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (51127) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (51127) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (51597) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (52257) irrigation_system: Stopping WiFi...[0m
+[0;32mI (52257) wifi:state: run -> init (0)[0m
+[0;32mI (52257) wifi:pm stop, total sleep time: 1479180 us / 2130357 us[0m
+
+[0;32mI (52257) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (52257) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (52267) wifi:NAN WiFi stop[0m
+[0;32mI (52267) irrigation_system: retry to connect to the AP[0m
+[0;32mI (52277) irrigation_system: connect to the AP fail[0m
+[0;32mI (52277) wifi:flush txq[0m
+[0;32mI (52277) wifi:stop sw txq[0m
+[0;32mI (52287) wifi:lmac stop hw txq[0m
+[0;32mI (52287) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (52407) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (52407) wifi:enable tsf[0m
+[0;32mI (52407) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (52417) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (52427) wifi:state: init -> auth (b0)[0m
+[0;32mI (52427) wifi:state: auth -> assoc (0)[0m
+[0;32mI (52437) wifi:state: assoc -> run (10)[0m
+[0;32mI (52467) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (52467) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (52477) wifi:pm start, type: 1[0m
+
+[0;32mI (52497) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (53477) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (53477) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (53477) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (53537) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (53807) irrigation_system: Stopping WiFi...[0m
+[0;32mI (53807) wifi:state: run -> init (0)[0m
+[0;32mI (53807) wifi:pm stop, total sleep time: 781231 us / 1326972 us[0m
+
+[0;32mI (53807) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (53807) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (53817) wifi:NAN WiFi stop[0m
+[0;32mI (53817) irrigation_system: retry to connect to the AP[0m
+[0;32mI (53827) irrigation_system: connect to the AP fail[0m
+[0;32mI (53827) wifi:flush txq[0m
+[0;32mI (53827) wifi:stop sw txq[0m
+[0;32mI (53837) wifi:lmac stop hw txq[0m
+[0;32mI (53837) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (53957) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (53957) wifi:enable tsf[0m
+[0;32mI (53957) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (53967) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (53967) wifi:state: init -> auth (b0)[0m
+[0;32mI (53977) wifi:state: auth -> assoc (0)[0m
+[0;32mI (53977) wifi:state: assoc -> run (10)[0m
+[0;32mI (54027) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (54027) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (54027) wifi:pm start, type: 1[0m
+
+[0;32mI (54037) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (55037) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (55037) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (55037) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (55067) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (55337) irrigation_system: Stopping WiFi...[0m
+[0;32mI (55337) wifi:state: run -> init (0)[0m
+[0;32mI (55337) wifi:pm stop, total sleep time: 715650 us / 1304163 us[0m
+
+[0;32mI (55337) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (55337) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (55347) wifi:NAN WiFi stop[0m
+[0;32mI (55347) irrigation_system: retry to connect to the AP[0m
+[0;32mI (55357) irrigation_system: connect to the AP fail[0m
+[0;32mI (55397) wifi:flush txq[0m
+[0;32mI (55397) wifi:stop sw txq[0m
+[0;32mI (55397) wifi:lmac stop hw txq[0m
+[0;32mI (55397) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (55507) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (55507) wifi:enable tsf[0m
+[0;32mI (55507) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (55517) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (55517) wifi:state: init -> auth (b0)[0m
+[0;32mI (55527) wifi:state: auth -> assoc (0)[0m
+[0;32mI (55537) wifi:state: assoc -> run (10)[0m
+[0;32mI (55567) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (55567) wifi:security: WPA2-PSK, phy: bgn, rssi: -44[0m
+[0;32mI (55577) wifi:pm start, type: 1[0m
+
+[0;32mI (55577) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (56577) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (56577) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (56577) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (58137) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (58707) irrigation_system: Stopping WiFi...[0m
+[0;32mI (58707) wifi:state: run -> init (0)[0m
+[0;32mI (58707) wifi:pm stop, total sleep time: 2169878 us / 3130092 us[0m
+
+[0;32mI (58707) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (58707) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (58717) wifi:NAN WiFi stop[0m
+[0;32mI (58717) irrigation_system: retry to connect to the AP[0m
+[0;32mI (58727) irrigation_system: connect to the AP fail[0m
+[0;32mI (58727) wifi:flush txq[0m
+[0;32mI (58727) wifi:stop sw txq[0m
+[0;32mI (58737) wifi:lmac stop hw txq[0m
+[0;32mI (58737) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (58857) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (58857) wifi:enable tsf[0m
+[0;32mI (58857) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (58867) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (58867) wifi:state: init -> auth (b0)[0m
+[0;32mI (58877) wifi:state: auth -> assoc (0)[0m
+[0;32mI (58877) wifi:state: assoc -> run (10)[0m
+[0;32mI (58917) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (58917) wifi:security: WPA2-PSK, phy: bgn, rssi: -44[0m
+[0;32mI (58927) wifi:pm start, type: 1[0m
+
+[0;32mI (58947) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (59927) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (59927) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (59927) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (59987) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (60247) irrigation_system: Stopping WiFi...[0m
+[0;32mI (60247) wifi:state: run -> init (0)[0m
+[0;32mI (60247) wifi:pm stop, total sleep time: 789049 us / 1321040 us[0m
+
+[0;32mI (60247) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (60247) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (60257) wifi:NAN WiFi stop[0m
+[0;32mI (60257) irrigation_system: retry to connect to the AP[0m
+[0;32mI (60267) irrigation_system: connect to the AP fail[0m
+[0;32mI (60267) wifi:flush txq[0m
+[0;32mI (60267) wifi:stop sw txq[0m
+[0;32mI (60277) wifi:lmac stop hw txq[0m
+[0;32mI (60277) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (60397) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (60397) wifi:enable tsf[0m
+[0;32mI (60397) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (60407) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (60407) wifi:state: init -> auth (b0)[0m
+[0;32mI (60417) wifi:state: auth -> assoc (0)[0m
+[0;32mI (60417) wifi:state: assoc -> run (10)[0m
+[0;32mI (60457) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (60457) wifi:security: WPA2-PSK, phy: bgn, rssi: -44[0m
+[0;32mI (60467) wifi:pm start, type: 1[0m
+
+[0;32mI (60587) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (61467) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (61467) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (61467) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (61517) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (61787) irrigation_system: Stopping WiFi...[0m
+[0;32mI (61787) wifi:state: run -> init (0)[0m
+[0;32mI (61787) wifi:pm stop, total sleep time: 744749 us / 1322304 us[0m
+
+[0;32mI (61787) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (61787) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (61797) wifi:NAN WiFi stop[0m
+[0;32mI (61797) irrigation_system: retry to connect to the AP[0m
+[0;32mI (61807) irrigation_system: connect to the AP fail[0m
+[0;32mI (61807) wifi:flush txq[0m
+[0;32mI (61807) wifi:stop sw txq[0m
+[0;32mI (61817) wifi:lmac stop hw txq[0m
+[0;32mI (61817) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (61937) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (61937) wifi:enable tsf[0m
+[0;32mI (61937) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (61947) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (61947) wifi:state: init -> auth (b0)[0m
+[0;32mI (61967) wifi:state: auth -> assoc (0)[0m
+[0;32mI (61967) wifi:state: assoc -> run (10)[0m
+[0;32mI (62017) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (62017) wifi:security: WPA2-PSK, phy: bgn, rssi: -48[0m
+[0;32mI (62027) wifi:pm start, type: 1[0m
+
+[0;32mI (62027) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (63027) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (63027) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (63027) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (63977) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (64417) irrigation_system: Stopping WiFi...[0m
+[0;32mI (64417) wifi:state: run -> init (0)[0m
+[0;32mI (64417) wifi:pm stop, total sleep time: 1574531 us / 2390526 us[0m
+
+[0;32mI (64417) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (64417) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (64427) wifi:NAN WiFi stop[0m
+[0;32mI (64427) irrigation_system: retry to connect to the AP[0m
+[0;32mI (64437) irrigation_system: connect to the AP fail[0m
+[0;32mI (64437) wifi:flush txq[0m
+[0;32mI (64437) wifi:stop sw txq[0m
+[0;32mI (64447) wifi:lmac stop hw txq[0m
+[0;32mI (64447) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (64567) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (64567) wifi:enable tsf[0m
+[0;32mI (64567) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (64577) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (64577) wifi:state: init -> auth (b0)[0m
+[0;32mI (64587) wifi:state: auth -> assoc (0)[0m
+[0;32mI (64597) wifi:state: assoc -> run (10)[0m
+[0;32mI (64637) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (64637) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (64647) wifi:pm start, type: 1[0m
+
+[0;32mI (64687) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (65647) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (65647) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (65647) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (66127) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (66697) irrigation_system: Stopping WiFi...[0m
+[0;32mI (66697) wifi:state: run -> init (0)[0m
+[0;32mI (66697) wifi:pm stop, total sleep time: 1364163 us / 2049244 us[0m
+
+[0;32mI (66697) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (66697) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (66707) wifi:NAN WiFi stop[0m
+[0;32mI (66707) irrigation_system: retry to connect to the AP[0m
+[0;32mI (66717) irrigation_system: connect to the AP fail[0m
+[0;32mI (66717) wifi:flush txq[0m
+[0;32mI (66717) wifi:stop sw txq[0m
+[0;32mI (66727) wifi:lmac stop hw txq[0m
+[0;32mI (66727) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+Tiempo de espera terminado
+INICIANDO WIFI
+[0;32mI (66847) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (66847) wifi:enable tsf[0m
+[0;32mI (66847) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (66857) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (66857) wifi:state: init -> auth (b0)[0m
+[0;32mI (66887) wifi:state: auth -> assoc (0)[0m
+[0;32mI (66897) wifi:state: assoc -> run (10)[0m
+[0;32mI (66947) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (66947) wifi:security: WPA2-PSK, phy: bgn, rssi: -47[0m
+[0;32mI (66957) wifi:pm start, type: 1[0m
+
+[0;32mI (67037) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (67957) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (67957) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (67957) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (68587) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (69157) irrigation_system: Stopping WiFi...[0m
+[0;32mI (69157) wifi:state: run -> init (0)[0m
+[0;32mI (69157) wifi:pm stop, total sleep time: 1483364 us / 2196083 us[0m
+
+[0;32mI (69157) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (69157) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (69167) wifi:NAN WiFi stop[0m
+[0;32mI (69167) irrigation_system: retry to connect to the AP[0m
+[0;32mI (69177) irrigation_system: connect to the AP fail[0m
+[0;32mI (69177) wifi:flush txq[0m
+[0;32mI (69177) wifi:stop sw txq[0m
+[0;32mI (69187) wifi:lmac stop hw txq[0m
+[0;32mI (69187) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+INICIANDO WIFI
+[0;32mI (69307) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (69307) wifi:enable tsf[0m
+[0;32mI (69307) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (69317) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (69317) wifi:state: init -> auth (b0)[0m
+[0;32mI (69327) wifi:state: auth -> assoc (0)[0m
+[0;32mI (69327) wifi:state: assoc -> run (10)[0m
+[0;32mI (69367) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (69367) wifi:security: WPA2-PSK, phy: bgn, rssi: -47[0m
+[0;32mI (69377) wifi:pm start, type: 1[0m
+
+[0;32mI (69397) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (70377) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (70377) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (70377) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (70427) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (70697) irrigation_system: Stopping WiFi...[0m
+[0;32mI (70697) wifi:state: run -> init (0)[0m
+[0;32mI (70697) wifi:pm stop, total sleep time: 627874 us / 1320622 us[0m
+
+[0;32mI (70697) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (70697) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (70707) wifi:NAN WiFi stop[0m
+[0;32mI (70707) irrigation_system: retry to connect to the AP[0m
+[0;32mI (70717) irrigation_system: connect to the AP fail[0m
+[0;32mI (70737) wifi:flush txq[0m
+[0;32mI (70737) wifi:stop sw txq[0m
+[0;32mI (70737) wifi:lmac stop hw txq[0m
+[0;32mI (70737) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw 3727
+Nivel de agua normal
+INICIANDO WIFI
+[0;32mI (72057) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (72057) wifi:enable tsf[0m
+[0;32mI (72057) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (72067) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (72077) wifi:state: init -> auth (b0)[0m
+[0;32mI (72097) wifi:state: auth -> assoc (0)[0m
+[0;32mI (72107) wifi:state: assoc -> run (10)[0m
+[0;32mI (72147) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (72147) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (72157) wifi:pm start, type: 1[0m
+
+[0;32mI (72157) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (73157) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (73157) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (73157) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (74107) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (74677) irrigation_system: Stopping WiFi...[0m
+[0;32mI (74677) wifi:state: run -> init (0)[0m
+[0;32mI (74677) wifi:pm stop, total sleep time: 1712451 us / 2517978 us[0m
+
+[0;32mI (74677) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (74677) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (74687) wifi:NAN WiFi stop[0m
+[0;32mI (74687) irrigation_system: retry to connect to the AP[0m
+[0;32mI (74697) irrigation_system: connect to the AP fail[0m
+[0;32mI (74697) wifi:flush txq[0m
+[0;32mI (74697) wifi:stop sw txq[0m
+[0;32mI (74707) wifi:lmac stop hw txq[0m
+[0;32mI (74707) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (74827) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (74827) wifi:enable tsf[0m
+[0;32mI (74827) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (74837) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (74837) wifi:state: init -> auth (b0)[0m
+[0;32mI (74847) wifi:state: auth -> assoc (0)[0m
+[0;32mI (74847) wifi:state: assoc -> run (10)[0m
+[0;32mI (74887) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (74887) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (74897) wifi:pm start, type: 1[0m
+
+[0;32mI (74927) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (75897) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (75897) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (75897) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (75957) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (76227) irrigation_system: Stopping WiFi...[0m
+[0;32mI (76227) wifi:state: run -> init (0)[0m
+[0;32mI (76227) wifi:pm stop, total sleep time: 789189 us / 1326845 us[0m
+
+[0;32mI (76227) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (76227) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (76237) wifi:NAN WiFi stop[0m
+[0;32mI (76237) irrigation_system: retry to connect to the AP[0m
+[0;32mI (76247) irrigation_system: connect to the AP fail[0m
+[0;32mI (76247) wifi:flush txq[0m
+[0;32mI (76247) wifi:stop sw txq[0m
+[0;32mI (76257) wifi:lmac stop hw txq[0m
+[0;32mI (76257) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (76377) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (76377) wifi:enable tsf[0m
+[0;32mI (76377) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (76387) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (76387) wifi:state: init -> auth (b0)[0m
+[0;32mI (76397) wifi:state: auth -> assoc (0)[0m
+[0;32mI (76397) wifi:state: assoc -> run (10)[0m
+[0;32mI (78447) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (78447) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (78447) wifi:pm start, type: 1[0m
+
+[0;32mI (78607) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (79947) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (79947) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (79947) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (80567) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:4, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (81137) irrigation_system: Stopping WiFi...[0m
+[0;32mI (81137) wifi:state: run -> init (0)[0m
+[0;32mI (81137) wifi:pm stop, total sleep time: 1848169 us / 2684164 us[0m
+
+[0;32mI (81137) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (81137) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (81147) wifi:NAN WiFi stop[0m
+[0;32mI (81147) irrigation_system: retry to connect to the AP[0m
+[0;32mI (81157) irrigation_system: connect to the AP fail[0m
+[0;32mI (81157) wifi:flush txq[0m
+[0;32mI (81157) wifi:stop sw txq[0m
+[0;32mI (81167) wifi:lmac stop hw txq[0m
+[0;32mI (81167) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (81287) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (81287) wifi:enable tsf[0m
+[0;32mI (81287) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (81297) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (81297) wifi:state: init -> auth (b0)[0m
+[0;32mI (81307) wifi:state: auth -> assoc (0)[0m
+[0;32mI (81307) wifi:state: assoc -> run (10)[0m
+[0;32mI (81347) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (81347) wifi:security: WPA2-PSK, phy: bgn, rssi: -44[0m
+[0;32mI (81357) wifi:pm start, type: 1[0m
+
+[0;32mI (81377) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (82357) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (82357) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (82357) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (82597) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (83287) irrigation_system: Stopping WiFi...[0m
+[0;32mI (83287) wifi:state: run -> init (0)[0m
+[0;32mI (83287) wifi:pm stop, total sleep time: 1109723 us / 1927978 us[0m
+
+[0;32mI (83287) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (83287) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (83297) wifi:NAN WiFi stop[0m
+[0;32mI (83297) irrigation_system: retry to connect to the AP[0m
+[0;32mI (83307) irrigation_system: connect to the AP fail[0m
+[0;32mI (83307) wifi:flush txq[0m
+[0;32mI (83307) wifi:stop sw txq[0m
+[0;32mI (83317) wifi:lmac stop hw txq[0m
+[0;32mI (83317) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (83437) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (83437) wifi:enable tsf[0m
+[0;32mI (83437) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (83447) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (83447) wifi:state: init -> auth (b0)[0m
+[0;32mI (83457) wifi:state: auth -> assoc (0)[0m
+[0;32mI (83457) wifi:state: assoc -> run (10)[0m
+[0;32mI (83497) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (83497) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (83507) wifi:pm start, type: 1[0m
+
+[0;32mI (83627) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (84507) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (84507) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (84507) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (84547) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (85737) irrigation_system: Stopping WiFi...[0m
+[0;32mI (85737) wifi:state: run -> init (0)[0m
+[0;32mI (85737) wifi:pm stop, total sleep time: 1467212 us / 2230523 us[0m
+
+[0;32mI (85737) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (85737) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (85747) wifi:NAN WiFi stop[0m
+[0;32mI (85747) irrigation_system: retry to connect to the AP[0m
+[0;32mI (85757) irrigation_system: connect to the AP fail[0m
+[0;32mI (85757) wifi:flush txq[0m
+[0;32mI (85757) wifi:stop sw txq[0m
+[0;32mI (85767) wifi:lmac stop hw txq[0m
+[0;32mI (85767) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (85887) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (85887) wifi:enable tsf[0m
+[0;32mI (85887) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (85897) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (85897) wifi:state: init -> auth (b0)[0m
+[0;32mI (85907) wifi:state: auth -> assoc (0)[0m
+[0;32mI (85917) wifi:state: assoc -> run (10)[0m
+[0;32mI (85947) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (85957) wifi:security: WPA2-PSK, phy: bgn, rssi: -44[0m
+[0;32mI (85957) wifi:pm start, type: 1[0m
+
+[0;32mI (85987) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (86957) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (86957) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (86957) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (87017) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (87287) irrigation_system: Stopping WiFi...[0m
+[0;32mI (87287) wifi:state: run -> init (0)[0m
+[0;32mI (87287) wifi:pm stop, total sleep time: 653454 us / 1325829 us[0m
+
+[0;32mI (87287) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (87287) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (87297) wifi:NAN WiFi stop[0m
+[0;32mI (87297) irrigation_system: retry to connect to the AP[0m
+[0;32mI (87307) irrigation_system: connect to the AP fail[0m
+[0;32mI (87347) wifi:flush txq[0m
+[0;32mI (87347) wifi:stop sw txq[0m
+[0;32mI (87347) wifi:lmac stop hw txq[0m
+[0;32mI (87347) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (87457) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (87457) wifi:enable tsf[0m
+[0;32mI (87457) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (87467) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (87467) wifi:state: init -> auth (b0)[0m
+[0;32mI (87477) wifi:state: auth -> assoc (0)[0m
+[0;32mI (87477) wifi:state: assoc -> run (10)[0m
+[0;32mI (87547) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (87547) wifi:security: WPA2-PSK, phy: bgn, rssi: -44[0m
+[0;32mI (87557) wifi:pm start, type: 1[0m
+
+[0;32mI (87627) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (88557) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (88557) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (88557) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (89167) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (89757) irrigation_system: Stopping WiFi...[0m
+[0;32mI (89757) wifi:state: run -> init (0)[0m
+[0;32mI (89757) wifi:pm stop, total sleep time: 1558378 us / 2200017 us[0m
+
+[0;32mI (89757) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (89757) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (89767) wifi:NAN WiFi stop[0m
+[0;32mI (89767) irrigation_system: retry to connect to the AP[0m
+[0;32mI (89777) irrigation_system: connect to the AP fail[0m
+[0;32mI (89777) wifi:flush txq[0m
+[0;32mI (89777) wifi:stop sw txq[0m
+[0;32mI (89787) wifi:lmac stop hw txq[0m
+[0;32mI (89787) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (89907) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (89907) wifi:enable tsf[0m
+[0;32mI (89907) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (89937) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (89937) wifi:state: init -> auth (b0)[0m
+[0;32mI (89947) wifi:state: auth -> assoc (0)[0m
+[0;32mI (89957) wifi:state: assoc -> run (10)[0m
+[0;32mI (89987) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (89997) wifi:security: WPA2-PSK, phy: bgn, rssi: -42[0m
+[0;32mI (89997) wifi:pm start, type: 1[0m
+
+[0;32mI (90077) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (90397) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+[0;32mI (90997) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (90997) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (90997) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+Successfully connected
+Shutting down socket
+[0;32mI (91907) irrigation_system: Stopping WiFi...[0m
+[0;32mI (91907) wifi:state: run -> init (0)[0m
+[0;32mI (91907) wifi:pm stop, total sleep time: 1176748 us / 1905281 us[0m
+
+[0;32mI (91907) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (91907) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (91917) wifi:NAN WiFi stop[0m
+[0;32mI (91917) irrigation_system: retry to connect to the AP[0m
+[0;32mI (91927) irrigation_system: connect to the AP fail[0m
+[0;32mI (91997) wifi:flush txq[0m
+[0;32mI (91997) wifi:stop sw txq[0m
+[0;32mI (91997) wifi:lmac stop hw txq[0m
+[0;32mI (91997) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (92107) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (92107) wifi:enable tsf[0m
+[0;32mI (92107) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (92117) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (92117) wifi:state: init -> auth (b0)[0m
+[0;32mI (92127) wifi:state: auth -> assoc (0)[0m
+[0;32mI (92137) wifi:state: assoc -> run (10)[0m
+[0;32mI (92177) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (92177) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (92187) wifi:pm start, type: 1[0m
+
+[0;32mI (92227) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (93187) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (93187) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (93187) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (93597) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (94137) irrigation_system: Stopping WiFi...[0m
+[0;32mI (94137) wifi:state: run -> init (0)[0m
+[0;32mI (94137) wifi:pm stop, total sleep time: 1149433 us / 1951059 us[0m
+
+[0;32mI (94137) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (94137) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (94147) wifi:NAN WiFi stop[0m
+[0;32mI (94147) irrigation_system: retry to connect to the AP[0m
+[0;32mI (94157) irrigation_system: connect to the AP fail[0m
+[0;32mI (94157) wifi:flush txq[0m
+[0;32mI (94157) wifi:stop sw txq[0m
+[0;32mI (94167) wifi:lmac stop hw txq[0m
+[0;32mI (94167) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (94287) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (94287) wifi:enable tsf[0m
+[0;32mI (94287) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (94297) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (94297) wifi:state: init -> auth (b0)[0m
+[0;32mI (94317) wifi:state: auth -> assoc (0)[0m
+[0;32mI (94317) wifi:state: assoc -> run (10)[0m
+[0;32mI (94357) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (94357) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (94367) wifi:pm start, type: 1[0m
+
+[0;32mI (94377) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (95367) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (95367) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (95367) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (95617) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (95887) irrigation_system: Stopping WiFi...[0m
+[0;32mI (95887) wifi:state: run -> init (0)[0m
+[0;32mI (95887) wifi:pm stop, total sleep time: 925081 us / 1520206 us[0m
+
+[0;32mI (95887) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (95887) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (95897) wifi:NAN WiFi stop[0m
+[0;32mI (95897) irrigation_system: retry to connect to the AP[0m
+[0;32mI (95907) irrigation_system: connect to the AP fail[0m
+[0;32mI (95907) wifi:flush txq[0m
+[0;32mI (95907) wifi:stop sw txq[0m
+[0;32mI (95917) wifi:lmac stop hw txq[0m
+[0;32mI (95917) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (96037) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (96037) wifi:enable tsf[0m
+[0;32mI (96037) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (98457) irrigation_system: retry to connect to the AP[0m
+[0;32mI (98457) irrigation_system: connect to the AP fail[0m
+[0;32mI (98457) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (98467) wifi:state: init -> auth (b0)[0m
+[0;32mI (98467) wifi:state: auth -> assoc (0)[0m
+[0;32mI (98477) wifi:state: assoc -> run (10)[0m
+[0;32mI (98507) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (98507) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (98517) wifi:pm start, type: 1[0m
+
+[0;32mI (98577) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (99517) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (99517) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (99517) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (99617) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (99887) irrigation_system: Stopping WiFi...[0m
+[0;32mI (99887) wifi:state: run -> init (0)[0m
+[0;32mI (99887) wifi:pm stop, total sleep time: 703222 us / 1368030 us[0m
+
+[0;32mI (99887) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (99887) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (99897) wifi:NAN WiFi stop[0m
+[0;32mI (99897) irrigation_system: retry to connect to the AP[0m
+[0;32mI (99907) irrigation_system: connect to the AP fail[0m
+[0;32mI (99937) wifi:flush txq[0m
+[0;32mI (99937) wifi:stop sw txq[0m
+[0;32mI (99937) wifi:lmac stop hw txq[0m
+[0;32mI (99937) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+Tiempo de espera terminado
+INICIANDO WIFI
+[0;32mI (100047) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (100047) wifi:enable tsf[0m
+[0;32mI (100047) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (100057) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (100067) wifi:state: init -> auth (b0)[0m
+[0;32mI (100067) wifi:state: auth -> assoc (0)[0m
+[0;32mI (100077) wifi:state: assoc -> run (10)[0m
+[0;32mI (100127) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (100127) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (100137) wifi:pm start, type: 1[0m
+
+[0;32mI (100217) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (101137) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (101137) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (101137) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (101557) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (101827) irrigation_system: Stopping WiFi...[0m
+[0;32mI (101827) wifi:state: run -> init (0)[0m
+[0;32mI (101827) wifi:pm stop, total sleep time: 959202 us / 1689424 us[0m
+
+[0;32mI (101827) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (101827) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (101837) wifi:NAN WiFi stop[0m
+[0;32mI (101837) irrigation_system: retry to connect to the AP[0m
+[0;32mI (101847) irrigation_system: connect to the AP fail[0m
+[0;32mI (101847) wifi:flush txq[0m
+[0;32mI (101857) wifi:stop sw txq[0m
+[0;32mI (101857) wifi:lmac stop hw txq[0m
+[0;32mI (101857) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+INICIANDO WIFI
+[0;32mI (101977) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (101977) wifi:enable tsf[0m
+[0;32mI (101977) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (101987) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (101987) wifi:state: init -> auth (b0)[0m
+[0;32mI (101997) wifi:state: auth -> assoc (0)[0m
+[0;32mI (101997) wifi:state: assoc -> run (10)[0m
+[0;32mI (102037) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (102037) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (102047) wifi:pm start, type: 1[0m
+
+[0;32mI (102057) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (103047) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (103047) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (103047) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (103607) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (104177) irrigation_system: Stopping WiFi...[0m
+[0;32mI (104177) wifi:state: run -> init (0)[0m
+[0;32mI (104177) wifi:pm stop, total sleep time: 1470733 us / 2126786 us[0m
+
+[0;32mI (104177) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (104177) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (104187) wifi:NAN WiFi stop[0m
+[0;32mI (104187) irrigation_system: retry to connect to the AP[0m
+[0;32mI (104197) irrigation_system: connect to the AP fail[0m
+[0;32mI (104197) wifi:flush txq[0m
+[0;32mI (104207) wifi:stop sw txq[0m
+[0;32mI (104207) wifi:lmac stop hw txq[0m
+[0;32mI (104207) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw 3755
+Nivel de agua normal
+INICIANDO WIFI
+[0;32mI (105537) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (105537) wifi:enable tsf[0m
+[0;32mI (105537) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (105557) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (105557) wifi:state: init -> auth (b0)[0m
+[0;32mI (105557) wifi:state: auth -> assoc (0)[0m
+[0;32mI (105567) wifi:state: assoc -> run (10)[0m
+[0;32mI (105607) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (105607) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (105617) wifi:pm start, type: 1[0m
+
+[0;32mI (105647) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (106617) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (106617) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (106617) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (106677) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (106947) irrigation_system: Stopping WiFi...[0m
+[0;32mI (106947) wifi:state: run -> init (0)[0m
+[0;32mI (106947) wifi:pm stop, total sleep time: 804959 us / 1330101 us[0m
+
+[0;32mI (106947) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (106947) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (106957) wifi:NAN WiFi stop[0m
+[0;32mI (106957) irrigation_system: retry to connect to the AP[0m
+[0;32mI (106967) irrigation_system: connect to the AP fail[0m
+[0;32mI (106967) wifi:flush txq[0m
+[0;32mI (106977) wifi:stop sw txq[0m
+[0;32mI (106977) wifi:lmac stop hw txq[0m
+[0;32mI (106977) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (107097) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (107097) wifi:enable tsf[0m
+[0;32mI (107097) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (107117) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (107117) wifi:state: init -> auth (b0)[0m
+[0;32mI (107117) wifi:state: auth -> assoc (0)[0m
+[0;32mI (107127) wifi:state: assoc -> run (10)[0m
+[0;32mI (107167) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (107167) wifi:security: WPA2-PSK, phy: bgn, rssi: -45[0m
+[0;32mI (107177) wifi:pm start, type: 1[0m
+
+[0;32mI (107177) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (108177) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (108177) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (108177) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (108217) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (108487) irrigation_system: Stopping WiFi...[0m
+[0;32mI (108487) wifi:state: run -> init (0)[0m
+[0;32mI (108487) wifi:pm stop, total sleep time: 786966 us / 1311133 us[0m
+
+[0;32mI (108487) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (108487) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (108497) wifi:NAN WiFi stop[0m
+[0;32mI (108497) irrigation_system: retry to connect to the AP[0m
+[0;32mI (108507) irrigation_system: connect to the AP fail[0m
+[0;32mI (108507) wifi:flush txq[0m
+[0;32mI (108517) wifi:stop sw txq[0m
+[0;32mI (108517) wifi:lmac stop hw txq[0m
+[0;32mI (108517) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (108637) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (108637) wifi:enable tsf[0m
+[0;32mI (108637) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (108647) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (108647) wifi:state: init -> auth (b0)[0m
+[0;32mI (108657) wifi:state: auth -> assoc (0)[0m
+[0;32mI (108667) wifi:state: assoc -> run (10)[0m
+[0;32mI (108697) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (108697) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (108707) wifi:pm start, type: 1[0m
+
+[0;32mI (108717) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (109707) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (109707) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (109707) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (109757) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (110027) irrigation_system: Stopping WiFi...[0m
+[0;32mI (110027) wifi:state: run -> init (0)[0m
+[0;32mI (110027) wifi:pm stop, total sleep time: 703082 us / 1316522 us[0m
+
+[0;32mI (110027) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (110027) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (110037) wifi:NAN WiFi stop[0m
+[0;32mI (110037) irrigation_system: retry to connect to the AP[0m
+[0;32mI (110047) irrigation_system: connect to the AP fail[0m
+[0;32mI (110047) wifi:flush txq[0m
+[0;32mI (110057) wifi:stop sw txq[0m
+[0;32mI (110057) wifi:lmac stop hw txq[0m
+[0;32mI (110057) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (110177) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (110177) wifi:enable tsf[0m
+[0;32mI (110177) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (110257) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (110257) wifi:state: init -> auth (b0)[0m
+[0;32mI (110267) wifi:state: auth -> assoc (0)[0m
+[0;32mI (110267) wifi:state: assoc -> run (10)[0m
+[0;32mI (110317) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (110317) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (110327) wifi:pm start, type: 1[0m
+
+[0;32mI (110357) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (111327) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (111327) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (111327) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (111597) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (111867) irrigation_system: Stopping WiFi...[0m
+[0;32mI (111867) wifi:state: run -> init (0)[0m
+[0;32mI (111867) wifi:pm stop, total sleep time: 924293 us / 1539531 us[0m
+
+[0;32mI (111867) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (111867) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (111877) wifi:NAN WiFi stop[0m
+[0;32mI (111877) irrigation_system: retry to connect to the AP[0m
+[0;32mI (111887) irrigation_system: connect to the AP fail[0m
+[0;32mI (111887) wifi:flush txq[0m
+[0;32mI (111897) wifi:stop sw txq[0m
+[0;32mI (111897) wifi:lmac stop hw txq[0m
+[0;32mI (111897) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (112017) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (112017) wifi:enable tsf[0m
+[0;32mI (112017) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (112027) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (112027) wifi:state: init -> auth (b0)[0m
+[0;32mI (112037) wifi:state: auth -> assoc (0)[0m
+[0;32mI (112047) wifi:state: assoc -> run (10)[0m
+[0;32mI (112077) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (112077) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (112087) wifi:pm start, type: 1[0m
+
+[0;32mI (112097) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (113087) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (113087) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (113087) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (113597) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (113907) irrigation_system: Stopping WiFi...[0m
+[0;32mI (113907) wifi:state: run -> init (0)[0m
+[0;32mI (113907) wifi:pm stop, total sleep time: 1216265 us / 1816892 us[0m
+
+[0;32mI (113907) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (113907) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (113917) wifi:NAN WiFi stop[0m
+[0;32mI (113917) irrigation_system: retry to connect to the AP[0m
+[0;32mI (113927) irrigation_system: connect to the AP fail[0m
+[0;32mI (113927) wifi:flush txq[0m
+[0;32mI (113937) wifi:stop sw txq[0m
+[0;32mI (113937) wifi:lmac stop hw txq[0m
+[0;32mI (113937) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (114057) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (114057) wifi:enable tsf[0m
+[0;32mI (114057) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (114067) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (114067) wifi:state: init -> auth (b0)[0m
+[0;32mI (114077) wifi:state: auth -> assoc (0)[0m
+[0;32mI (114077) wifi:state: assoc -> run (10)[0m
+[0;32mI (114117) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (114117) wifi:security: WPA2-PSK, phy: bgn, rssi: -42[0m
+[0;32mI (114127) wifi:pm start, type: 1[0m
+
+[0;32mI (114147) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (115627) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (115627) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (115627) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (116197) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (116767) irrigation_system: Stopping WiFi...[0m
+[0;32mI (116767) wifi:state: run -> init (0)[0m
+[0;32mI (116767) wifi:pm stop, total sleep time: 1910963 us / 2640277 us[0m
+
+[0;32mI (116767) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (116767) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (116777) wifi:NAN WiFi stop[0m
+[0;32mI (116777) irrigation_system: retry to connect to the AP[0m
+[0;32mI (116787) irrigation_system: connect to the AP fail[0m
+[0;32mI (116787) wifi:flush txq[0m
+[0;32mI (116797) wifi:stop sw txq[0m
+[0;32mI (116797) wifi:lmac stop hw txq[0m
+[0;32mI (116797) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (116917) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (116917) wifi:enable tsf[0m
+[0;32mI (116917) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (116927) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (116927) wifi:state: init -> auth (b0)[0m
+[0;32mI (116937) wifi:state: auth -> assoc (0)[0m
+[0;32mI (116947) wifi:state: assoc -> run (10)[0m
+[0;32mI (116977) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (116977) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (116987) wifi:pm start, type: 1[0m
+
+[0;32mI (117017) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (117987) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (117987) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (117987) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (118047) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (118317) irrigation_system: Stopping WiFi...[0m
+[0;32mI (118317) wifi:state: run -> init (0)[0m
+[0;32mI (118317) wifi:pm stop, total sleep time: 771084 us / 1326889 us[0m
+
+[0;32mI (118317) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (118317) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (118327) wifi:NAN WiFi stop[0m
+[0;32mI (118327) irrigation_system: retry to connect to the AP[0m
+[0;32mI (118337) irrigation_system: connect to the AP fail[0m
+[0;32mI (118337) wifi:flush txq[0m
+[0;32mI (118347) wifi:stop sw txq[0m
+[0;32mI (118347) wifi:lmac stop hw txq[0m
+[0;32mI (118347) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (118467) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (118467) wifi:enable tsf[0m
+[0;32mI (118467) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (118477) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (118477) wifi:state: init -> auth (b0)[0m
+[0;32mI (118487) wifi:state: auth -> assoc (0)[0m
+[0;32mI (118497) wifi:state: assoc -> run (10)[0m
+[0;32mI (118527) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (118527) wifi:security: WPA2-PSK, phy: bgn, rssi: -39[0m
+[0;32mI (118537) wifi:pm start, type: 1[0m
+
+[0;32mI (118547) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (119537) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (119537) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (119537) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (119587) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (119857) irrigation_system: Stopping WiFi...[0m
+[0;32mI (119857) wifi:state: run -> init (0)[0m
+[0;32mI (119857) wifi:pm stop, total sleep time: 826223 us / 1320610 us[0m
+
+[0;32mI (119857) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (119857) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (119867) wifi:NAN WiFi stop[0m
+[0;32mI (119867) irrigation_system: retry to connect to the AP[0m
+[0;32mI (119877) irrigation_system: connect to the AP fail[0m
+[0;32mI (119877) wifi:flush txq[0m
+[0;32mI (119887) wifi:stop sw txq[0m
+[0;32mI (119887) wifi:lmac stop hw txq[0m
+[0;32mI (119887) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (120007) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (120007) wifi:enable tsf[0m
+[0;32mI (120007) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (120017) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (120017) wifi:state: init -> auth (b0)[0m
+[0;32mI (120027) wifi:state: auth -> assoc (0)[0m
+[0;32mI (120037) wifi:state: assoc -> run (10)[0m
+[0;32mI (120077) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (120077) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (120077) wifi:pm start, type: 1[0m
+
+[0;32mI (120087) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (121077) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (121077) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (121077) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (121117) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (121387) irrigation_system: Stopping WiFi...[0m
+[0;32mI (121387) wifi:state: run -> init (0)[0m
+[0;32mI (121387) wifi:pm stop, total sleep time: 795578 us / 1305252 us[0m
+
+[0;32mI (121387) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (121387) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (121397) wifi:NAN WiFi stop[0m
+[0;32mI (121397) irrigation_system: retry to connect to the AP[0m
+[0;32mI (121407) irrigation_system: connect to the AP fail[0m
+[0;32mI (121437) wifi:flush txq[0m
+[0;32mI (121437) wifi:stop sw txq[0m
+[0;32mI (121437) wifi:lmac stop hw txq[0m
+[0;32mI (121437) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (121547) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (121547) wifi:enable tsf[0m
+[0;32mI (121547) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (121557) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (121557) wifi:state: init -> auth (b0)[0m
+[0;32mI (121567) wifi:state: auth -> assoc (0)[0m
+[0;32mI (121567) wifi:state: assoc -> run (10)[0m
+[0;32mI (121607) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (121607) wifi:security: WPA2-PSK, phy: bgn, rssi: -40[0m
+[0;32mI (121617) wifi:pm start, type: 1[0m
+
+[0;32mI (121617) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (122617) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (122617) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (122617) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (122657) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (122947) irrigation_system: Stopping WiFi...[0m
+[0;32mI (122947) wifi:state: run -> init (0)[0m
+[0;32mI (122947) wifi:pm stop, total sleep time: 802551 us / 1331176 us[0m
+
+[0;32mI (122947) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (122947) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (122957) wifi:NAN WiFi stop[0m
+[0;32mI (122957) irrigation_system: retry to connect to the AP[0m
+[0;32mI (122967) irrigation_system: connect to the AP fail[0m
+[0;32mI (122967) wifi:flush txq[0m
+[0;32mI (122977) wifi:stop sw txq[0m
+[0;32mI (122977) wifi:lmac stop hw txq[0m
+[0;32mI (122977) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (123097) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (123097) wifi:enable tsf[0m
+[0;32mI (123097) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (123107) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (123107) wifi:state: init -> auth (b0)[0m
+[0;32mI (123117) wifi:state: auth -> assoc (0)[0m
+[0;32mI (123117) wifi:state: assoc -> run (10)[0m
+[0;32mI (125167) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (125167) wifi:security: WPA2-PSK, phy: bgn, rssi: -40[0m
+[0;32mI (125167) wifi:pm start, type: 1[0m
+
+[0;32mI (125207) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (126667) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (126667) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (126667) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (127257) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:4, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (127827) irrigation_system: Stopping WiFi...[0m
+[0;32mI (127827) wifi:state: run -> init (0)[0m
+[0;32mI (127827) wifi:pm stop, total sleep time: 1895243 us / 2654374 us[0m
+
+[0;32mI (127827) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (127827) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (127837) wifi:NAN WiFi stop[0m
+[0;32mI (127837) irrigation_system: retry to connect to the AP[0m
+[0;32mI (127847) irrigation_system: connect to the AP fail[0m
+[0;32mI (127847) wifi:flush txq[0m
+[0;32mI (127857) wifi:stop sw txq[0m
+[0;32mI (127857) wifi:lmac stop hw txq[0m
+[0;32mI (127857) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (127977) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (127977) wifi:enable tsf[0m
+[0;32mI (127977) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (127987) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (127987) wifi:state: init -> auth (b0)[0m
+[0;32mI (127997) wifi:state: auth -> assoc (0)[0m
+[0;32mI (127997) wifi:state: assoc -> run (10)[0m
+[0;32mI (128037) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (128037) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (128047) wifi:pm start, type: 1[0m
+
+[0;32mI (128067) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (129047) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (129047) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (129047) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+[0;32mI (129057) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+Successfully connected
+Shutting down socket
+[0;32mI (130417) irrigation_system: Stopping WiFi...[0m
+[0;32mI (130417) wifi:state: run -> init (0)[0m
+[0;32mI (130417) wifi:pm stop, total sleep time: 1611982 us / 2366806 us[0m
+
+[0;32mI (130417) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (130417) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (130427) wifi:NAN WiFi stop[0m
+[0;32mI (130427) irrigation_system: retry to connect to the AP[0m
+[0;32mI (130437) irrigation_system: connect to the AP fail[0m
+[0;32mI (130467) wifi:flush txq[0m
+[0;32mI (130467) wifi:stop sw txq[0m
+[0;32mI (130467) wifi:lmac stop hw txq[0m
+[0;32mI (130467) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (130577) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (130577) wifi:enable tsf[0m
+[0;32mI (130577) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (130587) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (130587) wifi:state: init -> auth (b0)[0m
+[0;32mI (130597) wifi:state: auth -> assoc (0)[0m
+[0;32mI (130597) wifi:state: assoc -> run (10)[0m
+[0;32mI (130647) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (130647) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (130657) wifi:pm start, type: 1[0m
+
+[0;32mI (130737) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (131657) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (131657) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (131657) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (131677) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (131947) irrigation_system: Stopping WiFi...[0m
+[0;32mI (131947) wifi:state: run -> init (0)[0m
+[0;32mI (131947) wifi:pm stop, total sleep time: 788374 us / 1291108 us[0m
+
+[0;32mI (131947) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (131947) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (131957) wifi:NAN WiFi stop[0m
+[0;32mI (131957) irrigation_system: retry to connect to the AP[0m
+[0;32mI (131967) irrigation_system: connect to the AP fail[0m
+[0;32mI (131967) wifi:flush txq[0m
+[0;32mI (131977) wifi:stop sw txq[0m
+[0;32mI (131977) wifi:lmac stop hw txq[0m
+[0;32mI (131977) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+Tiempo de espera terminado
+INICIANDO WIFI
+[0;32mI (132097) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (132097) wifi:enable tsf[0m
+[0;32mI (132097) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (132107) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (132107) wifi:state: init -> auth (b0)[0m
+[0;32mI (132117) wifi:state: auth -> assoc (0)[0m
+[0;32mI (132127) wifi:state: assoc -> run (10)[0m
+[0;32mI (132177) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (132177) wifi:security: WPA2-PSK, phy: bgn, rssi: -48[0m
+[0;32mI (132187) wifi:pm start, type: 1[0m
+
+[0;32mI (132267) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (133187) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (133187) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (133187) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (133607) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (134377) irrigation_system: Stopping WiFi...[0m
+[0;32mI (134377) wifi:state: run -> init (0)[0m
+[0;32mI (134377) wifi:pm stop, total sleep time: 1288594 us / 2189100 us[0m
+
+[0;32mI (134377) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (134377) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (134387) wifi:NAN WiFi stop[0m
+[0;32mI (134387) irrigation_system: retry to connect to the AP[0m
+[0;32mI (134397) irrigation_system: connect to the AP fail[0m
+[0;32mI (134397) wifi:flush txq[0m
+[0;32mI (134407) wifi:stop sw txq[0m
+[0;32mI (134407) wifi:lmac stop hw txq[0m
+[0;32mI (134407) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+INICIANDO WIFI
+[0;32mI (134527) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (134527) wifi:enable tsf[0m
+[0;32mI (134527) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (134537) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (134537) wifi:state: init -> auth (b0)[0m
+[0;32mI (134547) wifi:state: auth -> assoc (0)[0m
+[0;32mI (134547) wifi:state: assoc -> run (10)[0m
+[0;32mI (134587) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (134587) wifi:security: WPA2-PSK, phy: bgn, rssi: -45[0m
+[0;32mI (134597) wifi:pm start, type: 1[0m
+
+[0;32mI (134627) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (135597) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (135597) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (135597) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (136187) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (136737) irrigation_system: Stopping WiFi...[0m
+[0;32mI (136737) wifi:state: run -> init (0)[0m
+[0;32mI (136737) wifi:pm stop, total sleep time: 1461290 us / 2140205 us[0m
+
+[0;32mI (136737) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (136737) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (136747) wifi:NAN WiFi stop[0m
+[0;32mI (136747) irrigation_system: retry to connect to the AP[0m
+[0;32mI (136757) irrigation_system: connect to the AP fail[0m
+[0;32mI (136757) wifi:flush txq[0m
+[0;32mI (136767) wifi:stop sw txq[0m
+[0;32mI (136767) wifi:lmac stop hw txq[0m
+[0;32mI (136767) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw 3739
+Nivel de agua normal
+INICIANDO WIFI
+[0;32mI (138097) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (138097) wifi:enable tsf[0m
+[0;32mI (138097) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (140517) irrigation_system: retry to connect to the AP[0m
+[0;32mI (140517) irrigation_system: connect to the AP fail[0m
+[0;32mI (140517) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (140527) wifi:state: init -> auth (b0)[0m
+[0;32mI (140537) wifi:state: auth -> assoc (0)[0m
+[0;32mI (140547) wifi:state: assoc -> run (10)[0m
+[0;32mI (140587) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (140587) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (140587) wifi:pm start, type: 1[0m
+
+[0;32mI (140637) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+[0;32mI (140667) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (141597) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (141597) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (141597) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+Successfully connected
+Shutting down socket
+[0;32mI (142577) irrigation_system: Stopping WiFi...[0m
+[0;32mI (142577) wifi:state: run -> init (0)[0m
+[0;32mI (142577) wifi:pm stop, total sleep time: 1343638 us / 1982009 us[0m
+
+[0;32mI (142577) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (142577) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (142587) wifi:NAN WiFi stop[0m
+[0;32mI (142587) irrigation_system: retry to connect to the AP[0m
+[0;32mI (142597) irrigation_system: connect to the AP fail[0m
+[0;32mI (142597) wifi:flush txq[0m
+[0;32mI (142607) wifi:stop sw txq[0m
+[0;32mI (142607) wifi:lmac stop hw txq[0m
+[0;32mI (142607) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (142727) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (142727) wifi:enable tsf[0m
+[0;32mI (142727) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (142737) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (142737) wifi:state: init -> auth (b0)[0m
+[0;32mI (142747) wifi:state: auth -> assoc (0)[0m
+[0;32mI (142747) wifi:state: assoc -> run (10)[0m
+[0;32mI (142797) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (142797) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (142797) wifi:pm start, type: 1[0m
+
+[0;32mI (142817) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (143807) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (143807) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (143807) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (143847) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (144117) irrigation_system: Stopping WiFi...[0m
+[0;32mI (144117) wifi:state: run -> init (0)[0m
+[0;32mI (144117) wifi:pm stop, total sleep time: 722459 us / 1312964 us[0m
+
+[0;32mI (144117) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (144117) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (144127) wifi:NAN WiFi stop[0m
+[0;32mI (144127) irrigation_system: retry to connect to the AP[0m
+[0;32mI (144137) irrigation_system: connect to the AP fail[0m
+[0;32mI (144137) wifi:flush txq[0m
+[0;32mI (144147) wifi:stop sw txq[0m
+[0;32mI (144147) wifi:lmac stop hw txq[0m
+[0;32mI (144147) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (144267) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (144267) wifi:enable tsf[0m
+[0;32mI (144267) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (144277) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (144277) wifi:state: init -> auth (b0)[0m
+[0;32mI (144287) wifi:state: auth -> assoc (0)[0m
+[0;32mI (144287) wifi:state: assoc -> run (10)[0m
+[0;32mI (144327) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (144327) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (144337) wifi:pm start, type: 1[0m
+
+[0;32mI (144357) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (145337) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (145337) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (145337) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (145387) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (145657) irrigation_system: Stopping WiFi...[0m
+[0;32mI (145657) wifi:state: run -> init (0)[0m
+[0;32mI (145657) wifi:pm stop, total sleep time: 760888 us / 1322140 us[0m
+
+[0;32mI (145657) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (145657) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (145667) wifi:NAN WiFi stop[0m
+[0;32mI (145667) irrigation_system: retry to connect to the AP[0m
+[0;32mI (145677) irrigation_system: connect to the AP fail[0m
+[0;32mI (145677) wifi:flush txq[0m
+[0;32mI (145687) wifi:stop sw txq[0m
+[0;32mI (145687) wifi:lmac stop hw txq[0m
+[0;32mI (145687) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (145807) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (145807) wifi:enable tsf[0m
+[0;32mI (145807) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (145817) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (145817) wifi:state: init -> auth (b0)[0m
+[0;32mI (145827) wifi:state: auth -> assoc (0)[0m
+[0;32mI (145837) wifi:state: assoc -> run (10)[0m
+[0;32mI (145867) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (145867) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (145877) wifi:pm start, type: 1[0m
+
+[0;32mI (145877) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+[0;32mI (145987) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (146887) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (146887) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (146887) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+Successfully connected
+Shutting down socket
+[0;32mI (147857) irrigation_system: Stopping WiFi...[0m
+[0;32mI (147857) wifi:state: run -> init (0)[0m
+[0;32mI (147857) wifi:pm stop, total sleep time: 1206629 us / 1977325 us[0m
+
+[0;32mI (147857) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (147857) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (147867) wifi:NAN WiFi stop[0m
+[0;32mI (147867) irrigation_system: retry to connect to the AP[0m
+[0;32mI (147877) irrigation_system: connect to the AP fail[0m
+[0;32mI (147877) wifi:flush txq[0m
+[0;32mI (147887) wifi:stop sw txq[0m
+[0;32mI (147887) wifi:lmac stop hw txq[0m
+[0;32mI (147887) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (148007) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (148007) wifi:enable tsf[0m
+[0;32mI (148007) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (148017) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (148017) wifi:state: init -> auth (b0)[0m
+[0;32mI (148027) wifi:state: auth -> assoc (0)[0m
+[0;32mI (148027) wifi:state: assoc -> run (10)[0m
+[0;32mI (148077) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (148077) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (148087) wifi:pm start, type: 1[0m
+
+[0;32mI (148137) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (149087) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (149087) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (149087) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (149597) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (150247) irrigation_system: Stopping WiFi...[0m
+[0;32mI (150247) wifi:state: run -> init (0)[0m
+[0;32mI (150247) wifi:pm stop, total sleep time: 1580220 us / 2162621 us[0m
+
+[0;32mI (150247) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (150247) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (150257) wifi:NAN WiFi stop[0m
+[0;32mI (150257) irrigation_system: retry to connect to the AP[0m
+[0;32mI (150267) irrigation_system: connect to the AP fail[0m
+[0;32mI (150267) wifi:flush txq[0m
+[0;32mI (150277) wifi:stop sw txq[0m
+[0;32mI (150277) wifi:lmac stop hw txq[0m
+[0;32mI (150277) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (150397) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (150397) wifi:enable tsf[0m
+[0;32mI (150397) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (150407) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (150407) wifi:state: init -> auth (b0)[0m
+[0;32mI (150417) wifi:state: auth -> assoc (0)[0m
+[0;32mI (150417) wifi:state: assoc -> run (10)[0m
+[0;32mI (150457) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (150457) wifi:security: WPA2-PSK, phy: bgn, rssi: -40[0m
+[0;32mI (150467) wifi:pm start, type: 1[0m
+
+[0;32mI (150497) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (151467) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (151467) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (151467) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (151597) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (151867) irrigation_system: Stopping WiFi...[0m
+[0;32mI (151867) wifi:state: run -> init (0)[0m
+[0;32mI (151867) wifi:pm stop, total sleep time: 839625 us / 1400023 us[0m
+
+[0;32mI (151867) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (151867) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (151877) wifi:NAN WiFi stop[0m
+[0;32mI (151877) irrigation_system: retry to connect to the AP[0m
+[0;32mI (151887) irrigation_system: connect to the AP fail[0m
+[0;32mI (151887) wifi:flush txq[0m
+[0;32mI (151897) wifi:stop sw txq[0m
+[0;32mI (151897) wifi:lmac stop hw txq[0m
+[0;32mI (151897) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (152017) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (152017) wifi:enable tsf[0m
+[0;32mI (152017) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (152027) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (152027) wifi:state: init -> auth (b0)[0m
+[0;32mI (152037) wifi:state: auth -> assoc (0)[0m
+[0;32mI (152037) wifi:state: assoc -> run (10)[0m
+[0;32mI (152077) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (152077) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (152087) wifi:pm start, type: 1[0m
+
+[0;32mI (152137) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (153087) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (153087) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (153087) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (153597) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (154247) irrigation_system: Stopping WiFi...[0m
+[0;32mI (154247) wifi:state: run -> init (0)[0m
+[0;32mI (154247) wifi:pm stop, total sleep time: 1458964 us / 2155455 us[0m
+
+[0;32mI (154247) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (154247) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (154257) wifi:NAN WiFi stop[0m
+[0;32mI (154257) irrigation_system: retry to connect to the AP[0m
+[0;32mI (154267) irrigation_system: connect to the AP fail[0m
+[0;32mI (154267) wifi:flush txq[0m
+[0;32mI (154277) wifi:stop sw txq[0m
+[0;32mI (154277) wifi:lmac stop hw txq[0m
+[0;32mI (154277) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (154397) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (154397) wifi:enable tsf[0m
+[0;32mI (154397) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (154417) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (154417) wifi:state: init -> auth (b0)[0m
+[0;32mI (154427) wifi:state: auth -> assoc (0)[0m
+[0;32mI (154437) wifi:state: assoc -> run (10)[0m
+[0;32mI (154477) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (154477) wifi:security: WPA2-PSK, phy: bgn, rssi: -42[0m
+[0;32mI (154477) wifi:pm start, type: 1[0m
+
+[0;32mI (154487) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (154987) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+[0;32mI (155487) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (155487) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (155487) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+Successfully connected
+Shutting down socket
+[0;32mI (156417) irrigation_system: Stopping WiFi...[0m
+[0;32mI (156417) wifi:state: run -> init (0)[0m
+[0;32mI (156417) wifi:pm stop, total sleep time: 1002913 us / 1933833 us[0m
+
+[0;32mI (156417) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (156417) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (156427) wifi:NAN WiFi stop[0m
+[0;32mI (156427) irrigation_system: retry to connect to the AP[0m
+[0;32mI (156437) irrigation_system: connect to the AP fail[0m
+[0;32mI (156437) wifi:flush txq[0m
+[0;32mI (156447) wifi:stop sw txq[0m
+[0;32mI (156447) wifi:lmac stop hw txq[0m
+[0;32mI (156447) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (156567) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (156567) wifi:enable tsf[0m
+[0;32mI (156567) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (156577) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (156577) wifi:state: init -> auth (b0)[0m
+[0;32mI (156587) wifi:state: auth -> assoc (0)[0m
+[0;32mI (156587) wifi:state: assoc -> run (10)[0m
+[0;32mI (156627) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (156627) wifi:security: WPA2-PSK, phy: bgn, rssi: -42[0m
+[0;32mI (156637) wifi:pm start, type: 1[0m
+
+[0;32mI (156747) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (157637) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (157637) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (157637) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (157677) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (157937) irrigation_system: Stopping WiFi...[0m
+[0;32mI (157937) wifi:state: run -> init (0)[0m
+[0;32mI (157937) wifi:pm stop, total sleep time: 782608 us / 1300455 us[0m
+
+[0;32mI (157937) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (157937) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (157947) wifi:NAN WiFi stop[0m
+[0;32mI (157947) irrigation_system: retry to connect to the AP[0m
+[0;32mI (157957) irrigation_system: connect to the AP fail[0m
+[0;32mI (157997) wifi:flush txq[0m
+[0;32mI (157997) wifi:stop sw txq[0m
+[0;32mI (157997) wifi:lmac stop hw txq[0m
+[0;32mI (157997) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (158107) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (158107) wifi:enable tsf[0m
+[0;32mI (158107) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (158117) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (158117) wifi:state: init -> auth (b0)[0m
+[0;32mI (158127) wifi:state: auth -> assoc (0)[0m
+[0;32mI (158127) wifi:state: assoc -> run (10)[0m
+[0;32mI (158167) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (158167) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (158177) wifi:pm start, type: 1[0m
+
+[0;32mI (158177) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (159177) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (159177) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (159177) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (159597) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (159867) irrigation_system: Stopping WiFi...[0m
+[0;32mI (159867) wifi:state: run -> init (0)[0m
+[0;32mI (159867) wifi:pm stop, total sleep time: 1023823 us / 1689012 us[0m
+
+[0;32mI (159867) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (159867) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (159877) wifi:NAN WiFi stop[0m
+[0;32mI (159877) irrigation_system: retry to connect to the AP[0m
+[0;32mI (159887) irrigation_system: connect to the AP fail[0m
+[0;32mI (159887) wifi:flush txq[0m
+[0;32mI (159897) wifi:stop sw txq[0m
+[0;32mI (159897) wifi:lmac stop hw txq[0m
+[0;32mI (159897) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (160017) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (160017) wifi:enable tsf[0m
+[0;32mI (160017) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (160037) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (160037) wifi:state: init -> auth (b0)[0m
+[0;32mI (160037) wifi:state: auth -> assoc (0)[0m
+[0;32mI (160047) wifi:state: assoc -> run (10)[0m
+[0;32mI (160087) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (160087) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (160097) wifi:pm start, type: 1[0m
+
+[0;32mI (160117) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (161097) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (161097) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (161097) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (161357) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (161627) irrigation_system: Stopping WiFi...[0m
+[0;32mI (161627) wifi:state: run -> init (0)[0m
+[0;32mI (161627) wifi:pm stop, total sleep time: 994188 us / 1529767 us[0m
+
+[0;32mI (161627) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (161627) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (161637) wifi:NAN WiFi stop[0m
+[0;32mI (161637) irrigation_system: retry to connect to the AP[0m
+[0;32mI (161647) irrigation_system: connect to the AP fail[0m
+[0;32mI (161647) wifi:flush txq[0m
+[0;32mI (161657) wifi:stop sw txq[0m
+[0;32mI (161657) wifi:lmac stop hw txq[0m
+[0;32mI (161657) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (161777) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (161777) wifi:enable tsf[0m
+[0;32mI (161777) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (161787) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (161787) wifi:state: init -> auth (b0)[0m
+[0;32mI (161797) wifi:state: auth -> assoc (0)[0m
+[0;32mI (161807) wifi:state: assoc -> run (10)[0m
+[0;32mI (161837) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (161837) wifi:security: WPA2-PSK, phy: bgn, rssi: -40[0m
+[0;32mI (161847) wifi:pm start, type: 1[0m
+
+[0;32mI (161867) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (162847) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (162847) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (162847) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (162897) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (163167) irrigation_system: Stopping WiFi...[0m
+[0;32mI (163167) wifi:state: run -> init (0)[0m
+[0;32mI (163167) wifi:pm stop, total sleep time: 776718 us / 1318857 us[0m
+
+[0;32mI (163167) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (163167) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (163177) wifi:NAN WiFi stop[0m
+[0;32mI (163177) irrigation_system: retry to connect to the AP[0m
+[0;32mI (163187) irrigation_system: connect to the AP fail[0m
+[0;32mI (163187) wifi:flush txq[0m
+[0;32mI (163197) wifi:stop sw txq[0m
+[0;32mI (163197) wifi:lmac stop hw txq[0m
+[0;32mI (163197) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (163317) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (163317) wifi:enable tsf[0m
+[0;32mI (163317) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (163327) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (163327) wifi:state: init -> auth (b0)[0m
+[0;32mI (163337) wifi:state: auth -> assoc (0)[0m
+[0;32mI (163347) wifi:state: assoc -> run (10)[0m
+[0;32mI (163387) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (163387) wifi:security: WPA2-PSK, phy: bgn, rssi: -42[0m
+[0;32mI (163387) wifi:pm start, type: 1[0m
+
+[0;32mI (163397) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (164397) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (164397) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (164397) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (164447) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (164717) irrigation_system: Stopping WiFi...[0m
+[0;32mI (164717) wifi:state: run -> init (0)[0m
+[0;32mI (164717) wifi:pm stop, total sleep time: 714455 us / 1322741 us[0m
+
+[0;32mI (164717) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (164717) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (164727) wifi:NAN WiFi stop[0m
+[0;32mI (164727) irrigation_system: retry to connect to the AP[0m
+[0;32mI (164737) irrigation_system: connect to the AP fail[0m
+[0;32mI (164767) wifi:flush txq[0m
+[0;32mI (164767) wifi:stop sw txq[0m
+[0;32mI (164767) wifi:lmac stop hw txq[0m
+[0;32mI (164767) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (164877) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (164877) wifi:enable tsf[0m
+[0;32mI (164877) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (164887) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (164897) wifi:state: init -> auth (b0)[0m
+[0;32mI (164897) wifi:state: auth -> assoc (0)[0m
+[0;32mI (164917) wifi:state: assoc -> run (10)[0m
+[0;32mI (164947) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (164947) wifi:security: WPA2-PSK, phy: bgn, rssi: -38[0m
+[0;32mI (164947) wifi:pm start, type: 1[0m
+
+[0;32mI (165037) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (165957) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (165957) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (165957) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (166577) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (167147) irrigation_system: Stopping WiFi...[0m
+[0;32mI (167147) wifi:state: run -> init (0)[0m
+[0;32mI (167147) wifi:pm stop, total sleep time: 1494241 us / 2193046 us[0m
+
+[0;32mI (167147) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (167147) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (167157) irrigation_system: retry to connect to the AP[0m
+[0;32mI (167167) irrigation_system: connect to the AP fail[0m
+[0;32mI (167167) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (167177) wifi:state: init -> auth (b0)[0m
+[0;32mI (167177) wifi:state: auth -> init (0)[0m
+[0;32mI (167177) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (167187) wifi:NAN WiFi stop[0m
+[0;32mI (167187) irrigation_system: retry to connect to the AP[0m
+[0;32mI (167197) irrigation_system: connect to the AP fail[0m
+[0;32mI (167197) wifi:flush txq[0m
+[0;32mI (167207) wifi:stop sw txq[0m
+[0;32mI (167207) wifi:lmac stop hw txq[0m
+[0;32mI (167207) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+Tiempo de espera terminado
+INICIANDO WIFI
+[0;32mI (167327) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (167327) wifi:enable tsf[0m
+[0;32mI (167327) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (167397) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (167397) wifi:state: init -> auth (b0)[0m
+[0;32mI (167407) wifi:state: auth -> assoc (0)[0m
+[0;32mI (167407) wifi:state: assoc -> run (10)[0m
+[0;32mI (167437) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (167447) wifi:security: WPA2-PSK, phy: bgn, rssi: -38[0m
+[0;32mI (167447) wifi:pm start, type: 1[0m
+
+[0;32mI (167497) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (168447) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (168447) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (168447) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (169037) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (169607) irrigation_system: Stopping WiFi...[0m
+[0;32mI (169607) wifi:state: run -> init (0)[0m
+[0;32mI (169607) wifi:pm stop, total sleep time: 1400356 us / 2154926 us[0m
+
+[0;32mI (169607) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (169607) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (169617) wifi:NAN WiFi stop[0m
+[0;32mI (169617) irrigation_system: retry to connect to the AP[0m
+[0;32mI (169627) irrigation_system: connect to the AP fail[0m
+[0;32mI (169627) wifi:flush txq[0m
+[0;32mI (169637) wifi:stop sw txq[0m
+[0;32mI (169637) wifi:lmac stop hw txq[0m
+[0;32mI (169637) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+INICIANDO WIFI
+[0;32mI (169757) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (169757) wifi:enable tsf[0m
+[0;32mI (169757) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (169767) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (169767) wifi:state: init -> auth (b0)[0m
+[0;32mI (169777) wifi:state: auth -> assoc (0)[0m
+[0;32mI (169777) wifi:state: assoc -> run (10)[0m
+[0;32mI (169817) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (169817) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (169827) wifi:pm start, type: 1[0m
+
+[0;32mI (169847) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (170827) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (170827) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (170827) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (170887) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (171157) irrigation_system: Stopping WiFi...[0m
+[0;32mI (171157) wifi:state: run -> init (0)[0m
+[0;32mI (171157) wifi:pm stop, total sleep time: 724829 us / 1331259 us[0m
+
+[0;32mI (171157) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (171157) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (171167) irrigation_system: retry to connect to the AP[0m
+[0;32mI (171167) irrigation_system: connect to the AP fail[0m
+[1;31mE (171177) wifi:NAN WiFi stop[0m
+[0;32mI (171177) wifi:flush txq[0m
+[0;32mI (171187) wifi:stop sw txq[0m
+[0;32mI (171187) wifi:lmac stop hw txq[0m
+[0;32mI (171187) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw 3759
+Nivel de agua normal
+INICIANDO WIFI
+[0;32mI (172517) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (172517) wifi:enable tsf[0m
+[0;32mI (172517) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (172527) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (172527) wifi:state: init -> auth (b0)[0m
+[0;32mI (172537) wifi:state: auth -> assoc (0)[0m
+[0;32mI (172537) wifi:state: assoc -> run (10)[0m
+[0;32mI (172577) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (172577) wifi:security: WPA2-PSK, phy: bgn, rssi: -42[0m
+[0;32mI (172587) wifi:pm start, type: 1[0m
+
+[0;32mI (172617) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (173587) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (173587) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (173587) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (173947) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (174827) irrigation_system: Stopping WiFi...[0m
+[0;32mI (174827) wifi:state: run -> init (0)[0m
+[0;32mI (174827) wifi:pm stop, total sleep time: 1584692 us / 2241504 us[0m
+
+[0;32mI (174827) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (174827) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (174837) wifi:NAN WiFi stop[0m
+[0;32mI (174837) irrigation_system: retry to connect to the AP[0m
+[0;32mI (174847) irrigation_system: connect to the AP fail[0m
+[0;32mI (174847) wifi:flush txq[0m
+[0;32mI (174857) wifi:stop sw txq[0m
+[0;32mI (174857) wifi:lmac stop hw txq[0m
+[0;32mI (174857) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (174977) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (174977) wifi:enable tsf[0m
+[0;32mI (174977) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (174987) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (174997) wifi:state: init -> auth (b0)[0m
+[0;32mI (174997) wifi:state: auth -> assoc (0)[0m
+[0;32mI (175007) wifi:state: assoc -> run (10)[0m
+[0;32mI (175037) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (175037) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (175047) wifi:pm start, type: 1[0m
+
+[0;32mI (175077) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (176047) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (176047) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (176047) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (176087) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (176677) irrigation_system: Stopping WiFi...[0m
+[0;32mI (176677) wifi:state: run -> init (0)[0m
+[0;32mI (176677) wifi:pm stop, total sleep time: 1037720 us / 1627657 us[0m
+
+[0;32mI (176677) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (176677) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (176687) wifi:NAN WiFi stop[0m
+[0;32mI (176687) irrigation_system: retry to connect to the AP[0m
+[0;32mI (176697) irrigation_system: connect to the AP fail[0m
+[0;32mI (176697) wifi:flush txq[0m
+[0;32mI (176707) wifi:stop sw txq[0m
+[0;32mI (176707) wifi:lmac stop hw txq[0m
+[0;32mI (176707) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (176827) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (176827) wifi:enable tsf[0m
+[0;32mI (176827) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (176837) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (176837) wifi:state: init -> auth (b0)[0m
+[0;32mI (176847) wifi:state: auth -> assoc (0)[0m
+[0;32mI (176847) wifi:state: assoc -> run (10)[0m
+[0;32mI (176887) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (176887) wifi:security: WPA2-PSK, phy: bgn, rssi: -40[0m
+[0;32mI (176897) wifi:pm start, type: 1[0m
+
+[0;32mI (176917) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (177337) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+[0;32mI (177897) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (177897) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (177897) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+Successfully connected
+Shutting down socket
+[0;32mI (178877) irrigation_system: Stopping WiFi...[0m
+[0;32mI (178877) wifi:state: run -> init (0)[0m
+[0;32mI (178877) wifi:pm stop, total sleep time: 1147972 us / 1977436 us[0m
+
+[0;32mI (178877) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (178877) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (178887) wifi:NAN WiFi stop[0m
+[0;32mI (178887) irrigation_system: retry to connect to the AP[0m
+[0;32mI (178897) irrigation_system: connect to the AP fail[0m
+[0;32mI (178897) wifi:flush txq[0m
+[0;32mI (178907) wifi:stop sw txq[0m
+[0;32mI (178907) wifi:lmac stop hw txq[0m
+[0;32mI (178907) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (179027) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (179027) wifi:enable tsf[0m
+[0;32mI (179027) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (179037) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (179037) wifi:state: init -> auth (b0)[0m
+[0;32mI (179047) wifi:state: auth -> assoc (0)[0m
+[0;32mI (179047) wifi:state: assoc -> run (10)[0m
+[0;32mI (179097) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (179097) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (179097) wifi:pm start, type: 1[0m
+
+[0;32mI (179167) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (180097) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+[0;32mI (180107) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (180107) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (180107) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+Successfully connected
+Shutting down socket
+[0;32mI (180977) irrigation_system: Stopping WiFi...[0m
+[0;32mI (180977) wifi:state: run -> init (0)[0m
+[0;32mI (180977) wifi:pm stop, total sleep time: 1301573 us / 1873331 us[0m
+
+[0;32mI (180977) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (180977) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (180987) wifi:NAN WiFi stop[0m
+[0;32mI (180987) irrigation_system: retry to connect to the AP[0m
+[0;32mI (180997) irrigation_system: connect to the AP fail[0m
+[0;32mI (180997) wifi:flush txq[0m
+[0;32mI (181007) wifi:stop sw txq[0m
+[0;32mI (181007) wifi:lmac stop hw txq[0m
+[0;32mI (181007) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (181127) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (181127) wifi:enable tsf[0m
+[0;32mI (181127) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (181147) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (181147) wifi:state: init -> auth (b0)[0m
+[0;32mI (181147) wifi:state: auth -> assoc (0)[0m
+[0;32mI (181157) wifi:state: assoc -> run (10)[0m
+[0;32mI (181197) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (181197) wifi:security: WPA2-PSK, phy: bgn, rssi: -44[0m
+[0;32mI (181207) wifi:pm start, type: 1[0m
+
+[0;32mI (181217) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (181717) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+[0;32mI (182207) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (182207) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (182207) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+Successfully connected
+Shutting down socket
+[0;32mI (182517) irrigation_system: Stopping WiFi...[0m
+[0;32mI (182517) wifi:state: run -> init (0)[0m
+[0;32mI (182517) wifi:pm stop, total sleep time: 791135 us / 1310146 us[0m
+
+[0;32mI (182517) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (182517) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (182527) wifi:NAN WiFi stop[0m
+[0;32mI (182527) irrigation_system: retry to connect to the AP[0m
+[0;32mI (182537) irrigation_system: connect to the AP fail[0m
+[0;32mI (182537) wifi:flush txq[0m
+[0;32mI (182547) wifi:stop sw txq[0m
+[0;32mI (182547) wifi:lmac stop hw txq[0m
+[0;32mI (182547) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (182667) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (182667) wifi:enable tsf[0m
+[0;32mI (182667) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (182677) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (182677) wifi:state: init -> auth (b0)[0m
+[0;32mI (182687) wifi:state: auth -> assoc (0)[0m
+[0;32mI (182697) wifi:state: assoc -> run (10)[0m
+[0;32mI (182727) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (182727) wifi:security: WPA2-PSK, phy: bgn, rssi: -44[0m
+[0;32mI (182737) wifi:pm start, type: 1[0m
+
+[0;32mI (182757) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (183177) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+[0;32mI (183737) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (183737) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (183737) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+Successfully connected
+Shutting down socket
+[0;32mI (184087) irrigation_system: Stopping WiFi...[0m
+[0;32mI (184087) wifi:state: run -> init (0)[0m
+[0;32mI (184087) wifi:pm stop, total sleep time: 720415 us / 1345398 us[0m
+
+[0;32mI (184087) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (184087) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (184097) wifi:NAN WiFi stop[0m
+[0;32mI (184097) irrigation_system: retry to connect to the AP[0m
+[0;32mI (184107) irrigation_system: connect to the AP fail[0m
+[0;32mI (184107) wifi:flush txq[0m
+[0;32mI (184117) wifi:stop sw txq[0m
+[0;32mI (184117) wifi:lmac stop hw txq[0m
+[0;32mI (184117) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (184237) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (184237) wifi:enable tsf[0m
+[0;32mI (184237) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (184247) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (184247) wifi:state: init -> auth (b0)[0m
+[0;32mI (184257) wifi:state: auth -> assoc (0)[0m
+[0;32mI (184257) wifi:state: assoc -> run (10)[0m
+[0;32mI (184307) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (184317) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (184317) wifi:pm start, type: 1[0m
+
+[0;32mI (184387) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (185317) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (185317) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (185317) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (185597) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (185897) irrigation_system: Stopping WiFi...[0m
+[0;32mI (185897) wifi:state: run -> init (0)[0m
+[0;32mI (185897) wifi:pm stop, total sleep time: 934836 us / 1575826 us[0m
+
+[0;32mI (185897) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (185897) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (185907) wifi:NAN WiFi stop[0m
+[0;32mI (185907) irrigation_system: retry to connect to the AP[0m
+[0;32mI (185917) irrigation_system: connect to the AP fail[0m
+[0;32mI (185937) wifi:flush txq[0m
+[0;32mI (185937) wifi:stop sw txq[0m
+[0;32mI (185937) wifi:lmac stop hw txq[0m
+[0;32mI (185937) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (186047) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (186047) wifi:enable tsf[0m
+[0;32mI (186047) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (186057) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (186057) wifi:state: init -> auth (b0)[0m
+[0;32mI (186067) wifi:state: auth -> assoc (0)[0m
+[0;32mI (186067) wifi:state: assoc -> run (10)[0m
+[0;32mI (186117) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (186117) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (186117) wifi:pm start, type: 1[0m
+
+[0;32mI (186127) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (187117) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (187117) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (187117) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (187167) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (187437) irrigation_system: Stopping WiFi...[0m
+[0;32mI (187437) wifi:state: run -> init (0)[0m
+[0;32mI (187437) wifi:pm stop, total sleep time: 802050 us / 1315081 us[0m
+
+[0;32mI (187437) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (187437) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (187447) wifi:NAN WiFi stop[0m
+[0;32mI (187447) irrigation_system: retry to connect to the AP[0m
+[0;32mI (187457) irrigation_system: connect to the AP fail[0m
+[0;32mI (187507) wifi:flush txq[0m
+[0;32mI (187507) wifi:stop sw txq[0m
+[0;32mI (187507) wifi:lmac stop hw txq[0m
+[0;32mI (187507) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (187617) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (187617) wifi:enable tsf[0m
+[0;32mI (187617) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (187627) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (187627) wifi:state: init -> auth (b0)[0m
+[0;32mI (187637) wifi:state: auth -> assoc (0)[0m
+[0;32mI (187637) wifi:state: assoc -> run (10)[0m
+[0;32mI (187687) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (187687) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (187697) wifi:pm start, type: 1[0m
+
+[0;32mI (187767) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (188697) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (188697) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (188697) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (189317) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (189857) irrigation_system: Stopping WiFi...[0m
+[0;32mI (189857) wifi:state: run -> init (0)[0m
+[0;32mI (189857) wifi:pm stop, total sleep time: 1505002 us / 2157068 us[0m
+
+[0;32mI (189857) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (189857) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (189867) wifi:NAN WiFi stop[0m
+[0;32mI (189867) irrigation_system: retry to connect to the AP[0m
+[0;32mI (189877) irrigation_system: connect to the AP fail[0m
+[0;32mI (189877) wifi:flush txq[0m
+[0;32mI (189887) wifi:stop sw txq[0m
+[0;32mI (189887) wifi:lmac stop hw txq[0m
+[0;32mI (189887) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (190007) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (190007) wifi:enable tsf[0m
+[0;32mI (190007) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (190017) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (190017) wifi:state: init -> auth (b0)[0m
+[0;32mI (190027) wifi:state: auth -> assoc (0)[0m
+[0;32mI (190037) wifi:state: assoc -> run (10)[0m
+[0;32mI (190077) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (190077) wifi:security: WPA2-PSK, phy: bgn, rssi: -45[0m
+[0;32mI (190087) wifi:pm start, type: 1[0m
+
+[0;32mI (190127) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (190587) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+[0;32mI (191087) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (191087) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (191087) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+Successfully connected
+Shutting down socket
+[0;32mI (191857) irrigation_system: Stopping WiFi...[0m
+[0;32mI (191857) wifi:state: run -> init (0)[0m
+[0;32mI (191857) wifi:pm stop, total sleep time: 1102117 us / 1765785 us[0m
+
+[0;32mI (191857) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (191857) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (191867) wifi:NAN WiFi stop[0m
+[0;32mI (191867) irrigation_system: retry to connect to the AP[0m
+[0;32mI (191877) irrigation_system: connect to the AP fail[0m
+[0;32mI (191907) wifi:flush txq[0m
+[0;32mI (191907) wifi:stop sw txq[0m
+[0;32mI (191907) wifi:lmac stop hw txq[0m
+[0;32mI (191907) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (192017) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (192017) wifi:enable tsf[0m
+[0;32mI (192017) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (192027) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (192037) wifi:state: init -> auth (b0)[0m
+[0;32mI (192037) wifi:state: auth -> assoc (0)[0m
+[0;32mI (192047) wifi:state: assoc -> run (10)[0m
+[0;32mI (192087) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (192087) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (192097) wifi:pm start, type: 1[0m
+
+[0;32mI (192177) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (193097) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (193097) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (193097) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (193627) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (193897) irrigation_system: Stopping WiFi...[0m
+[0;32mI (193897) wifi:state: run -> init (0)[0m
+[0;32mI (193897) wifi:pm stop, total sleep time: 1258077 us / 1801782 us[0m
+
+[0;32mI (193897) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (193897) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (193907) wifi:NAN WiFi stop[0m
+[0;32mI (193907) irrigation_system: retry to connect to the AP[0m
+[0;32mI (193917) irrigation_system: connect to the AP fail[0m
+[0;32mI (193917) wifi:flush txq[0m
+[0;32mI (193927) wifi:stop sw txq[0m
+[0;32mI (193927) wifi:lmac stop hw txq[0m
+[0;32mI (193927) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (194047) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (194047) wifi:enable tsf[0m
+[0;32mI (194047) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (194057) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (194057) wifi:state: init -> auth (b0)[0m
+[0;32mI (194067) wifi:state: auth -> assoc (0)[0m
+[0;32mI (194067) wifi:state: assoc -> run (10)[0m
+[0;32mI (194107) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (194107) wifi:security: WPA2-PSK, phy: bgn, rssi: -44[0m
+[0;32mI (194117) wifi:pm start, type: 1[0m
+
+[0;32mI (194117) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (194227) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+[0;32mI (195117) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (195117) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (195117) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+Successfully connected
+Shutting down socket
+[0;32mI (195857) irrigation_system: Stopping WiFi...[0m
+[0;32mI (195857) wifi:state: run -> init (0)[0m
+[0;32mI (195857) wifi:pm stop, total sleep time: 1073235 us / 1740645 us[0m
+
+[0;32mI (195857) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (195857) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (195867) wifi:NAN WiFi stop[0m
+[0;32mI (195867) irrigation_system: retry to connect to the AP[0m
+[0;32mI (195877) irrigation_system: connect to the AP fail[0m
+[0;32mI (195877) wifi:flush txq[0m
+[0;32mI (195887) wifi:stop sw txq[0m
+[0;32mI (195887) wifi:lmac stop hw txq[0m
+[0;32mI (195887) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+INICIANDO WIFI
+[0;32mI (196007) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (196007) wifi:enable tsf[0m
+[0;32mI (196007) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (196017) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (196017) wifi:state: init -> auth (b0)[0m
+[0;32mI (196027) wifi:state: auth -> assoc (0)[0m
+[0;32mI (196027) wifi:state: assoc -> run (10)[0m
+[0;32mI (196077) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (196077) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (196077) wifi:pm start, type: 1[0m
+
+[0;32mI (196267) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (197077) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (197077) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (197077) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (199147) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (199707) irrigation_system: Stopping WiFi...[0m
+[0;32mI (199707) wifi:state: run -> init (0)[0m
+[0;32mI (199707) wifi:pm stop, total sleep time: 2385901 us / 3624480 us[0m
+
+[0;32mI (199707) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (199707) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (199717) wifi:NAN WiFi stop[0m
+[0;32mI (199717) irrigation_system: retry to connect to the AP[0m
+[0;32mI (199727) irrigation_system: connect to the AP fail[0m
+[0;32mI (199727) wifi:flush txq[0m
+[0;32mI (199737) wifi:stop sw txq[0m
+[0;32mI (199737) wifi:lmac stop hw txq[0m
+[0;32mI (199737) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Apagada - Esperando
+Tiempo de espera terminado
+INICIANDO WIFI
+[0;32mI (199857) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (199857) wifi:enable tsf[0m
+[0;32mI (199857) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (199867) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (199867) wifi:state: init -> auth (b0)[0m
+[0;32mI (199877) wifi:state: auth -> assoc (0)[0m
+[0;32mI (199887) wifi:state: assoc -> run (10)[0m
+[0;32mI (199927) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (199927) wifi:security: WPA2-PSK, phy: bgn, rssi: -44[0m
+[0;32mI (199937) wifi:pm start, type: 1[0m
+
+[0;32mI (199957) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (200937) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (200937) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (200937) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (200987) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (201257) irrigation_system: Stopping WiFi...[0m
+[0;32mI (201257) wifi:state: run -> init (0)[0m
+[0;32mI (201257) wifi:pm stop, total sleep time: 771406 us / 1321748 us[0m
+
+[0;32mI (201257) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (201257) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (201267) wifi:NAN WiFi stop[0m
+[0;32mI (201267) irrigation_system: retry to connect to the AP[0m
+[0;32mI (201277) irrigation_system: connect to the AP fail[0m
+[0;32mI (201277) wifi:flush txq[0m
+[0;32mI (201287) wifi:stop sw txq[0m
+[0;32mI (201287) wifi:lmac stop hw txq[0m
+[0;32mI (201287) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+INICIANDO WIFI
+[0;32mI (201407) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (201407) wifi:enable tsf[0m
+[0;32mI (201407) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (201417) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (201417) wifi:state: init -> auth (b0)[0m
+[0;32mI (201427) wifi:state: auth -> assoc (0)[0m
+[0;32mI (201427) wifi:state: assoc -> run (10)[0m
+[0;32mI (201467) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (201467) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (201477) wifi:pm start, type: 1[0m
+
+[0;32mI (201487) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (202477) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (202477) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (202477) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (202527) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (202797) irrigation_system: Stopping WiFi...[0m
+[0;32mI (202797) wifi:state: run -> init (0)[0m
+[0;32mI (202797) wifi:pm stop, total sleep time: 759831 us / 1317691 us[0m
+
+[0;32mI (202797) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (202797) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (202807) wifi:NAN WiFi stop[0m
+[0;32mI (202807) irrigation_system: retry to connect to the AP[0m
+[0;32mI (202817) irrigation_system: connect to the AP fail[0m
+[0;32mI (202817) wifi:flush txq[0m
+[0;32mI (202827) wifi:stop sw txq[0m
+[0;32mI (202827) wifi:lmac stop hw txq[0m
+[0;32mI (202827) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Configurando ADC water sensor
+adc water raw 3755
+Nivel de agua normal
+INICIANDO WIFI
+[0;32mI (204157) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (204157) wifi:enable tsf[0m
+[0;32mI (204157) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (204167) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (204167) wifi:state: init -> auth (b0)[0m
+[0;32mI (204177) wifi:state: auth -> assoc (0)[0m
+[0;32mI (204177) wifi:state: assoc -> run (10)[0m
+[0;32mI (204247) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (204247) wifi:security: WPA2-PSK, phy: bgn, rssi: -43[0m
+[0;32mI (204257) wifi:pm start, type: 1[0m
+
+[0;32mI (204257) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (205257) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (205257) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (205257) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (206207) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (206777) irrigation_system: Stopping WiFi...[0m
+[0;32mI (206777) wifi:state: run -> init (0)[0m
+[0;32mI (206777) wifi:pm stop, total sleep time: 1804750 us / 2521741 us[0m
+
+[0;32mI (206777) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (206777) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (206787) wifi:NAN WiFi stop[0m
+[0;32mI (206787) irrigation_system: retry to connect to the AP[0m
+[0;32mI (206797) irrigation_system: connect to the AP fail[0m
+[0;32mI (206797) wifi:flush txq[0m
+[0;32mI (206807) wifi:stop sw txq[0m
+[0;32mI (206807) wifi:lmac stop hw txq[0m
+[0;32mI (206807) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (206927) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (206927) wifi:enable tsf[0m
+[0;32mI (206927) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (206937) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (206937) wifi:state: init -> auth (b0)[0m
+[0;32mI (206947) wifi:state: auth -> assoc (0)[0m
+[0;32mI (206947) wifi:state: assoc -> run (10)[0m
+[0;32mI (206987) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (206987) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (206997) wifi:pm start, type: 1[0m
+
+[0;32mI (207017) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (207997) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (207997) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (207997) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (208057) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (208327) irrigation_system: Stopping WiFi...[0m
+[0;32mI (208327) wifi:state: run -> init (0)[0m
+[0;32mI (208327) wifi:pm stop, total sleep time: 767041 us / 1329586 us[0m
+
+[0;32mI (208327) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (208327) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (208337) wifi:NAN WiFi stop[0m
+[0;32mI (208337) irrigation_system: retry to connect to the AP[0m
+[0;32mI (208347) irrigation_system: connect to the AP fail[0m
+[0;32mI (208347) wifi:flush txq[0m
+[0;32mI (208357) wifi:stop sw txq[0m
+[0;32mI (208357) wifi:lmac stop hw txq[0m
+[0;32mI (208357) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (208477) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (208477) wifi:enable tsf[0m
+[0;32mI (208477) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (208487) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (208487) wifi:state: init -> auth (b0)[0m
+[0;32mI (208497) wifi:state: auth -> assoc (0)[0m
+[0;32mI (208507) wifi:state: assoc -> run (10)[0m
+[0;32mI (208537) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (208537) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (208547) wifi:pm start, type: 1[0m
+
+[0;32mI (208557) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (209547) esp_netif_handlers: sta ip: 172.20.10.4, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (209547) irrigation_system: got ip:172.20.10.4[0m
+[0;32mI (209547) irrigation_system: Connected to AP[0m
+Socket created, connecting to 172.20.10.2:23001
+[0;32mI (209587) wifi:<ba-add>idx:0 (ifx:0, ca:84:c2:07:c6:a4), tid:0, ssn:2, winSize:64[0m
+Successfully connected
+Shutting down socket
+[0;32mI (209857) irrigation_system: Stopping WiFi...[0m
+[0;32mI (209857) wifi:state: run -> init (0)[0m
+[0;32mI (209857) wifi:pm stop, total sleep time: 735473 us / 1308416 us[0m
+
+[0;32mI (209857) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (209857) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[1;31mE (209867) wifi:NAN WiFi stop[0m
+[0;32mI (209867) irrigation_system: retry to connect to the AP[0m
+[0;32mI (209877) irrigation_system: connect to the AP fail[0m
+[0;32mI (209877) wifi:flush txq[0m
+[0;32mI (209887) wifi:stop sw txq[0m
+[0;32mI (209887) wifi:lmac stop hw txq[0m
+[0;32mI (209887) irrigation_system: WiFi stopped - ADC2 available[0m
+Desconectando WIFI
+portick 10 
+Configurando ADC 2
+adc raw 2 4095
+Valor del adc 2 bajo
+Bomba 2 Encendida
+INICIANDO WIFI
+[0;32mI (210007) wifi:mode : sta (a0:b7:65:59:00:68)[0m
+[0;32mI (210007) wifi:enable tsf[0m
+[0;32mI (210007) irrigation_system: WiFi started, connecting...[0m
+[0;32mI (210017) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1[0m
+[0;32mI (210017) wifi:state: init -> auth (b0)[0m
+[0;32mI (210027) wifi:state: auth -> assoc (0)[0m
+[0;32mI (210037) wifi:state: assoc -> run (10)[0m
+[0;32mI (210077) wifi:connected with Maxi, aid = 1, channel 6, BW20, bssid = ca:84:c2:07:c6:a4[0m
+[0;32mI (210077) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (210077) wifi:pm start, type: 1[0m
+
+[0;32mI (210097) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m

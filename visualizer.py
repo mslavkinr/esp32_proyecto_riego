@@ -5,7 +5,7 @@ from datetime import datetime
 
 # Escuchar en el puerto 23
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind(('0.0.0.0', 23000))
+server.bind(('0.0.0.0', 23001))
 server.listen(1)
 
 data = {'humedad1': [], 'humedad2': [], 'nivel': [], 'time': []}
